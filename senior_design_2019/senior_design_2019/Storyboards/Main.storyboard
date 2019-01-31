@@ -50,8 +50,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTL-vu-5bC">
-                                <rect key="frame" x="301" y="333" width="48" height="48"/>
-                                <state key="normal" image="orange-arrow">
+                                <rect key="frame" x="285" y="333" width="64" height="64"/>
+                                <state key="normal" image="arrow-32-65">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -156,7 +156,7 @@
         <!--MoneyValue-->
         <scene sceneID="jB8-Xr-rYO">
             <objects>
-                <viewControllerPlaceholder storyboardName="MoneyValue" referencedIdentifier="MoneyValue" id="Cyi-Zs-fl3" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MoneyValue" id="Cyi-Zs-fl3" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcU-LR-4qu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1636.8" y="-7.1964017991004505"/>
@@ -412,7 +412,7 @@
     </scenes>
     <resources>
         <image name="008080_Swatch" width="336" height="280"/>
-        <image name="orange-arrow" width="48" height="48"/>
+        <image name="arrow-32-65" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LbO-JK-UAB"/>

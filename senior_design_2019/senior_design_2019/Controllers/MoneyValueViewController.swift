@@ -13,7 +13,6 @@ import UIKit
 class MoneyValueViewController: UIViewController {
 
     @IBOutlet weak var logoutButton: UIButton!
-    @IBOutlet weak var myAccountButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     
     override func viewDidLoad() {
@@ -22,10 +21,6 @@ class MoneyValueViewController: UIViewController {
         // Pad and round the 'Logout' Button
         logoutButton.layer.cornerRadius = 5
         logoutButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
-        
-        // Pad and round the 'My Account' Button
-        myAccountButton.layer.cornerRadius = 5
-        myAccountButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
         
         // Pad and round the '+' Button
         plusButton.layer.cornerRadius = 5

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64CBA2C022038346002C6425 /* AddGoalFromPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CBA2BF22038346002C6425 /* AddGoalFromPageController.swift */; };
 		753777AB22024FBC00FD7F4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753777AA22024FBC00FD7F4C /* User.swift */; };
 		753777AD22024FC900FD7F4C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753777AC22024FC900FD7F4C /* Goal.swift */; };
 		753777AF22024FD700FD7F4C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753777AE22024FD700FD7F4C /* Transaction.swift */; };
@@ -16,7 +17,6 @@
 		75C21AA521FFA9AB0020E727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AA421FFA9AB0020E727 /* AppDelegate.swift */; };
 		75C21ABA21FFA9B00020E727 /* senior_design_2019Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AB921FFA9B00020E727 /* senior_design_2019Tests.swift */; };
 		75C21AC521FFA9B00020E727 /* senior_design_2019UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AC421FFA9B00020E727 /* senior_design_2019UITests.swift */; };
-		75C21AD321FFAA040020E727 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75C21AD221FFAA040020E727 /* Account.storyboard */; };
 		75C21AD521FFAA1F0020E727 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75C21AD421FFAA1F0020E727 /* Main.storyboard */; };
 		75C21AD721FFAA2B0020E727 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75C21AD621FFAA2B0020E727 /* LaunchScreen.storyboard */; };
 		75C21AD921FFAA300020E727 /* SaveMoney.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75C21AD821FFAA300020E727 /* SaveMoney.storyboard */; };
@@ -30,7 +30,6 @@
 		75C21AE921FFAA600020E727 /* ManualSaveMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AE821FFAA600020E727 /* ManualSaveMoneyViewController.swift */; };
 		75C21AEB21FFAA740020E727 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AEA21FFAA740020E727 /* ViewController.swift */; };
 		75C21AED21FFAA7A0020E727 /* IdealMenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AEC21FFAA7A0020E727 /* IdealMenuItemViewController.swift */; };
-		75C21AEF21FFAA7F0020E727 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AEE21FFAA7F0020E727 /* AccountViewController.swift */; };
 		75C21AF121FFAB080020E727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75C21AF021FFAB080020E727 /* Assets.xcassets */; };
 		75C21AF322010AD40020E727 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75C21AF222010AD40020E727 /* GoogleService-Info.plist */; };
 		75C21AF422010AD40020E727 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75C21AF222010AD40020E727 /* GoogleService-Info.plist */; };
@@ -61,6 +60,7 @@
 /* Begin PBXFileReference section */
 		03BCCB9A90D37642D7CD2C77 /* Pods-senior_design_2019Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019Tests/Pods-senior_design_2019Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		33088D3025DC94187EFC6DC4 /* Pods-senior_design_2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019.release.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019/Pods-senior_design_2019.release.xcconfig"; sourceTree = "<group>"; };
+		64CBA2BF22038346002C6425 /* AddGoalFromPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalFromPageController.swift; sourceTree = "<group>"; };
 		6F783671B1F5A1F60B1188D6 /* Pods_senior_design_2019Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_senior_design_2019Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		753777AA22024FBC00FD7F4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		753777AC22024FC900FD7F4C /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
@@ -77,7 +77,6 @@
 		75C21AC021FFA9B00020E727 /* senior_design_2019UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = senior_design_2019UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C21AC421FFA9B00020E727 /* senior_design_2019UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = senior_design_2019UITests.swift; sourceTree = "<group>"; };
 		75C21AC621FFA9B00020E727 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75C21AD221FFAA040020E727 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		75C21AD421FFAA1F0020E727 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		75C21AD621FFAA2B0020E727 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75C21AD821FFAA300020E727 /* SaveMoney.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SaveMoney.storyboard; sourceTree = "<group>"; };
@@ -91,7 +90,6 @@
 		75C21AE821FFAA600020E727 /* ManualSaveMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualSaveMoneyViewController.swift; sourceTree = "<group>"; };
 		75C21AEA21FFAA740020E727 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		75C21AEC21FFAA7A0020E727 /* IdealMenuItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdealMenuItemViewController.swift; sourceTree = "<group>"; };
-		75C21AEE21FFAA7F0020E727 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		75C21AF021FFAB080020E727 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75C21AF222010AD40020E727 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		75C21AF6220114E80020E727 /* DatabaseAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAccess.swift; sourceTree = "<group>"; };
@@ -143,7 +141,7 @@
 				75C21AE421FFAA570020E727 /* MoneyValueViewController.swift */,
 				75C21AE821FFAA600020E727 /* ManualSaveMoneyViewController.swift */,
 				75C21ADE21FFAA460020E727 /* SaveMoneyController.swift */,
-				75C21AEE21FFAA7F0020E727 /* AccountViewController.swift */,
+				64CBA2BF22038346002C6425 /* AddGoalFromPageController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,7 +152,6 @@
 				75C21AD421FFAA1F0020E727 /* Main.storyboard */,
 				75C21AD821FFAA300020E727 /* SaveMoney.storyboard */,
 				75C21ADA21FFAA330020E727 /* MoneyValue.storyboard */,
-				75C21AD221FFAA040020E727 /* Account.storyboard */,
 				75C21AD621FFAA2B0020E727 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -362,7 +359,6 @@
 			files = (
 				75C21AF322010AD40020E727 /* GoogleService-Info.plist in Resources */,
 				75C21AD921FFAA300020E727 /* SaveMoney.storyboard in Resources */,
-				75C21AD321FFAA040020E727 /* Account.storyboard in Resources */,
 				75C21ADB21FFAA330020E727 /* MoneyValue.storyboard in Resources */,
 				75C21AF121FFAB080020E727 /* Assets.xcassets in Resources */,
 				75C21AD721FFAA2B0020E727 /* LaunchScreen.storyboard in Resources */,
@@ -521,6 +517,7 @@
 				75C21AEB21FFAA740020E727 /* ViewController.swift in Sources */,
 				753777AD22024FC900FD7F4C /* Goal.swift in Sources */,
 				753777B9220270DD00FD7F4C /* MenuEntryTransaction.swift in Sources */,
+				64CBA2C022038346002C6425 /* AddGoalFromPageController.swift in Sources */,
 				75C21AE321FFAA540020E727 /* AddGoalViewController.swift in Sources */,
 				753777B7220270D800FD7F4C /* ManualEntryTransaction.swift in Sources */,
 				75C21AF7220114E80020E727 /* DatabaseAccess.swift in Sources */,
@@ -528,7 +525,6 @@
 				75C21AE721FFAA5D0020E727 /* MenuSaveMoneyViewController.swift in Sources */,
 				75C21ADF21FFAA460020E727 /* SaveMoneyController.swift in Sources */,
 				75C21AE521FFAA570020E727 /* MoneyValueViewController.swift in Sources */,
-				75C21AEF21FFAA7F0020E727 /* AccountViewController.swift in Sources */,
 				753777AF22024FD700FD7F4C /* Transaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

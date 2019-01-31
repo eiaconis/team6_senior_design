@@ -228,7 +228,7 @@
         <!--MoneyValue-->
         <scene sceneID="FBG-dW-85S">
             <objects>
-                <viewControllerPlaceholder storyboardName="MoneyValue" referencedIdentifier="MoneyValue" id="ItX-D4-hel" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MoneyValue" id="ItX-D4-hel" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rDf-dg-geX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1659" y="392"/>
