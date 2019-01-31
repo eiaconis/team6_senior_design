@@ -22,10 +22,10 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         picker.delegate = self
         picker.dataSource = self
         categoryLabel.inputView = picker
-    }
-    
-    @IBAction func saveButtonPressed(_ sender: Any) {
-        print("save button pressed in manual entry")
+        
+        // Pad and round the 'Save' Button
+        saveButton.layer.cornerRadius = 5
+        saveButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

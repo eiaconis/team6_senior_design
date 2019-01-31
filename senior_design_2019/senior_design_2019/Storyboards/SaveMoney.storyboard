@@ -30,17 +30,17 @@
                                     <segue destination="QyN-9f-WqQ" kind="show" id="3Ww-Nf-0Nu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTZ-Tc-KiC">
-                                <rect key="frame" x="126" y="313" width="122" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gky-WV-bk7">
+                                <rect key="frame" x="126" y="341" width="122" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
                                 <state key="normal" title="Manual Entry">
                                     <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="manualEntryButtonPressed:" destination="IBn-ri-VHf" eventType="touchUpInside" id="hZS-U7-ySr"/>
-                                    <action selector="saveButtonPressed:" destination="IBn-ri-VHf" eventType="touchUpInside" id="zJK-ub-Flo"/>
-                                    <segue destination="fQU-5W-zuI" kind="show" id="4hu-4c-CXC"/>
+                                    <action selector="manualEntryButtonPressed:" destination="IBn-ri-VHf" eventType="touchUpInside" id="phe-Un-TE4"/>
+                                    <action selector="menuEntryButtonPressed:" destination="IBn-ri-VHf" eventType="touchUpInside" id="6EL-Zi-5vW"/>
+                                    <segue destination="fQU-5W-zuI" kind="show" id="aBt-xI-ivr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,7 +48,7 @@
                         <viewLayoutGuide key="safeArea" id="AYi-Gm-we2"/>
                     </view>
                     <connections>
-                        <outlet property="manualEntryButton" destination="wTZ-Tc-KiC" id="SZr-yp-chP"/>
+                        <outlet property="manualEntryButton" destination="Gky-WV-bk7" id="Kew-T4-hf1"/>
                         <outlet property="menuEntryButton" destination="Zcy-cd-bq9" id="rSB-h0-ev5"/>
                     </connections>
                 </viewController>
@@ -262,20 +262,6 @@
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrm-Dx-Jc8">
-                                <rect key="frame" x="161" y="515" width="70" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.81960784310000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
-                                <state key="normal" title="Save!">
-                                    <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="fQU-5W-zuI" eventType="touchUpInside" id="T35-gI-Gs8"/>
-                                    <action selector="saveButtonPressed:" destination="IBn-ri-VHf" eventType="touchUpInside" id="cg4-mK-JVT"/>
-                                    <segue destination="ItX-D4-hel" kind="show" id="20I-vI-4Ni"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGB-zg-XnW">
                                 <rect key="frame" x="172" y="428" width="187" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -290,6 +276,19 @@
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="45"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYf-6O-2yk">
+                                <rect key="frame" x="136" y="528" width="102" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.81960784310000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="menuEntryButtonPressed:" destination="IBn-ri-VHf" eventType="touchUpInside" id="bUM-Wl-WkO"/>
+                                    <segue destination="ItX-D4-hel" kind="show" id="qyf-OS-ITP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="haw-fS-bOt"/>
@@ -297,7 +296,7 @@
                     <connections>
                         <outlet property="amountTextField" destination="Izl-uN-5Kf" id="llb-XC-vmn"/>
                         <outlet property="categoryLabel" destination="gGB-zg-XnW" id="TsW-Gt-H0w"/>
-                        <outlet property="saveButton" destination="yrm-Dx-Jc8" id="K28-4H-371"/>
+                        <outlet property="saveButton" destination="lYf-6O-2yk" id="TQm-n0-qtn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30I-vr-bkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -306,6 +305,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="20I-vI-4Ni"/>
+        <segue reference="qyf-OS-ITP"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -13,6 +13,7 @@ class SaveMoneyController: UIViewController {
     @IBOutlet weak var menuEntryButton: UIButton!
     @IBOutlet weak var manualEntryButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,7 +26,7 @@ class SaveMoneyController: UIViewController {
     }
     
     @IBAction func manualEntryButtonPressed(_ sender: Any) {
-         print("manual entry pressed")
+        print("manual entry pressed")
     }
     /*
     // MARK: - Navigation
