@@ -12,6 +12,7 @@ class AddGoalViewController: UIViewController {
 
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var addGoalButton: UIButton!
+    @IBOutlet weak var dateField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,17 @@ class AddGoalViewController: UIViewController {
         // Pad and round the 'Add Goal' Button
         addGoalButton.layer.cornerRadius = 5
         addGoalButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
+        
+        // Add Date Picker
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.addTarget(self, action: #selector(AddGoalViewController.datePickerValueChanged(picker:)), for: UIControl.Event.valueChanged)
+        
+        // Tap to dismiss Date Picker
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddGoalViewController.viewTapped(gestureRecognizer:)))
+        view.addGestureRecognizer(tapGesture)
+        
+        dateField.inputView = datePicker
     }
     
 
@@ -34,14 +46,15 @@ class AddGoalViewController: UIViewController {
         print("add goal pressed")
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func datePickerValueChanged(picker: UIDatePicker) {
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.none
+        dateField.text = formatter.string(from: picker.date)
     }
-    */
+    
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
 
 }
