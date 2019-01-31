@@ -16,6 +16,7 @@ class User {
     var firstName: String?
     var lastName: String?
     var phoneNumber: String?
+    var currentGoal: String? // unique identifier of goal that is currently set
     var goals: [String] // Array of unique goal identifiers
     
     

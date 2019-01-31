@@ -21,6 +21,7 @@ import FirebaseUI
  */
 
 class DatabaseAccess {
+    
     static var instance: DatabaseAccess? = nil
     
     var ref: DatabaseReference!
@@ -101,6 +102,9 @@ class DatabaseAccess {
     }
     
     // TODO: Edit password
+    func editPassword(email: String, newPassword: String) {
+        
+    }
     
     // TODO: Edit account phone number
     
@@ -110,9 +114,11 @@ class DatabaseAccess {
 
  
     //----------------------- Goal Methods----------------------------------------
-    // TODO: Add goal to currently logged in account
+    // TODO: Add goal to currently logged in account's list of goals
     
     // TODO: Add saving to associated goal
+    
+    // TODO: Set goal in user acount
     
     // TODO: Get current state of goal
     
