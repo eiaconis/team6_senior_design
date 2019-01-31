@@ -21,7 +21,6 @@ import FirebaseUI
  */
 
 class DatabaseAccess {
-    
     static var instance: DatabaseAccess? = nil
     
     var ref: DatabaseReference!
