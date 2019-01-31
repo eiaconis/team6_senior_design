@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6421283822038EA4005B58AA /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6421283722038EA4005B58AA /* FirstPageViewController.swift */; };
 		64CBA2C022038346002C6425 /* AddGoalFromPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CBA2BF22038346002C6425 /* AddGoalFromPageController.swift */; };
 		753777AB22024FBC00FD7F4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753777AA22024FBC00FD7F4C /* User.swift */; };
 		753777AD22024FC900FD7F4C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753777AC22024FC900FD7F4C /* Goal.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		03BCCB9A90D37642D7CD2C77 /* Pods-senior_design_2019Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019Tests/Pods-senior_design_2019Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		33088D3025DC94187EFC6DC4 /* Pods-senior_design_2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019.release.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019/Pods-senior_design_2019.release.xcconfig"; sourceTree = "<group>"; };
+		6421283722038EA4005B58AA /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
 		64CBA2BF22038346002C6425 /* AddGoalFromPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalFromPageController.swift; sourceTree = "<group>"; };
 		6F783671B1F5A1F60B1188D6 /* Pods_senior_design_2019Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_senior_design_2019Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		753777AA22024FBC00FD7F4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				75C21AE821FFAA600020E727 /* ManualSaveMoneyViewController.swift */,
 				75C21ADE21FFAA460020E727 /* SaveMoneyController.swift */,
 				64CBA2BF22038346002C6425 /* AddGoalFromPageController.swift */,
+				6421283722038EA4005B58AA /* FirstPageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				75C21ADF21FFAA460020E727 /* SaveMoneyController.swift in Sources */,
 				75C21AE521FFAA570020E727 /* MoneyValueViewController.swift in Sources */,
 				753777AF22024FD700FD7F4C /* Transaction.swift in Sources */,
+				6421283822038EA4005B58AA /* FirstPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
