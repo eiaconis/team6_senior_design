@@ -53,7 +53,7 @@ class DatabaseAccess {
     
     // Create a new authenticated account and add user to UserTable
     // Input: Email and password for a new user
-    // Output:
+    // Output: TODO
     func createAccount(newUser: User, password: String, view: UIViewController?) {
         print("creating user")
         Auth.auth().createUser(withEmail: newUser.email!, password: password) { user, error in
@@ -72,26 +72,27 @@ class DatabaseAccess {
     }
     
     // TODO: Login to an existing account with provided email and password
-    // Input:
-    // Output:
+    // Input: email and password
+    // Output: void. Success will be determined by page shown. 
     func login(email: String, password: String, view: UIViewController?){
         print("loging in: \(email) , \(password)")
         //TODO
-        Auth.auth().signIn(withEmail: email, password: password) //{ user, error in
-//            // Handle error logging into account
-//            if error != nil {
-//                print("error logging in: \(error.debugDescription)")
-//                if view != nil {
-//                    //TODO:
-//                  //  self.loginError(error: error!, view: view!)
-//                }
-//            } else if user != nil {
-//                if view != nil {
-//                    //TODO: OK login, show accounth homepage
-//                    view?.performSegue(withIdentifier: "log_in", sender: view!)
-//                }
-//            }
-//        }
+        Auth.auth().signIn(withEmail: email, password: password) { user, error in
+            // Handle error logging into account
+            if error != nil {
+                print("error logging in: \(error.debugDescription)")
+                if view != nil {
+                    print("error")
+                    //TODO: Do NOT perform segue. Popup error.
+                }
+            } else if user != nil {
+                if view != nil {
+                    //OK login, show account homepage
+                    //TODO: Perform segue
+                    
+                }
+            }
+        }
     }
     
     // Puts user item in UserTable for user generated information and details
@@ -129,20 +130,79 @@ class DatabaseAccess {
     func addGoal(goal: Goal)-> ReturnValue<Bool> {
         print("adding goal")
         let newGoal : Any = [ "userId" : goal.userId,
-                                  "title" : goal.title,
-                                  "target" : goal.target,
+                            "title" : goal.title,
+                            "target" : goal.target,
         ]
         let goalId = self.ref.child("GoalTable").childByAutoId().key
         goal.setGoalId(id: goalId!)
         self.ref.child("GoalTable/\(goalId!)").setValue(newGoal)
         return ExpectedExecution()
     }
+    
+    // Puts goal identifier in user's list of goals
+    // Input: String goalId, String userId
+    // Output: ???
+    func addGoalToUser(goalId: String, userId: String) {
+        print("adding goal to user")
+        self.ref.child("UserTable/\(userId)/goals/\(goalId)").setValue(true)
+    }
+    
     // TODO: Get current state of goal
     
     // TODO: Transfer balance of goal 1 to goal 2
     
     // TODO: Delete goal
     
+    //----------------------- Transaction Methods----------------------------------------
+    // Puts transaction item in TransactionTable
+    // Input: Transaction
+    // Output: String, transaction's unique identifier
+    func addTransaction(transaction: Transaction)-> String? {
+        print("adding transaction")
+        let newTransaction : Any = [ "userId" : transaction.userId,
+                                     "amount": transaction.amount,
+                                     "category": transaction.category,
+                                     "goalId": transaction.goalId,
+                                     "timestamp": self.getTimestampAsString()
+                              ]
+        let transactionId = self.ref.child("TransactionTable").childByAutoId().key
+        transaction.setTransactionId(id: transactionId!)
+        self.ref.child("TransactionTable/\(transactionId!)").setValue(newTransaction)
+        return transactionId
+    }
+    
+    // Puts transaction item in user's list of transactions
+    // Input: String transactionId, String userId
+    // Output: ???
+    func addTransactionToUser(transactionId: String, userId: String) {
+        print("adding transaction to user")
+        self.ref.child("UserTable/\(userId)/transactions/\(transactionId)").setValue(true)
+    }
+    
+    // Puts transaction item in goal's list of transactions
+    // Input: String transactionId, String goalId
+    // Output: ???
+    func addTransactionToGoal(transactionId: String, goalId: String) {
+        print("adding transaction to goal")
+        self.ref.child("GoalTable/\(goalId)/transactions/\(transactionId)").setValue(true)
+    }
+    
+    
+    //----------------------- Helper Methods ----------------------------------------
+    /*
+     Gets the current time stamp and returns it as a string
+     Input: N/A
+     Output: String representation of timestamp
+     */
+    func getTimestampAsString() -> String {
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let timeStamp = formatter.string(from: Date())
+        print("Current time stamp = \(timeStamp)")
+        return timeStamp
+    }
     
 
 }

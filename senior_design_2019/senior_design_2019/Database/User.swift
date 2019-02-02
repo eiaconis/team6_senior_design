@@ -17,6 +17,7 @@ class User {
     var lastName: String?
     var phoneNumber: String?
     var goals: [String]? // Array of unique goal identifiers associated with this account
+    var transactions: [String]? // Array of all unique transaction identifiers associated with this account
     // TODO: add field for levels
     
     

@@ -17,6 +17,7 @@ class Goal {
     var lastSaved: String?
     var title: String?
     var target: Double?
+    var transactions: [String]? // Array of all transactions contributing to this goal
     
     // Constructor for goal. All goals must have a userId associated, title, and target amount
     // associated when created.

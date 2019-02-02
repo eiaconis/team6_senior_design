@@ -14,10 +14,11 @@ class ViewController: UIViewController {
     
     let database: DatabaseAccess = DatabaseAccess.getInstance()
     
+
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -30,14 +31,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        print("login button pressed")
-
+        database.login(email: emailTextField.text!, password: passwordTextField.text!, view: self)
     }
     
-    @IBAction func createAccountButtonPressed(_ sender: Any) {
-        print("create account button pressed")
-
-    }
 
 }
 
