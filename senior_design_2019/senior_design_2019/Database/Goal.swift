@@ -15,7 +15,23 @@ class Goal {
     var amountSaved: NSNumber?
     var deadline: String?
     var lastSaved: String?
-    var name: String?
-    var targetAmount: NSNumber?
+    var title: String?
+    var target: Double?
+    
+    // Constructor for goal. All goals must have a userId associated, title, and target amount
+    // associated when created.
+    init(userId: String, title: String, target: Double) {
+        print("creating goal")
+        self.userId = userId
+        self.title = title
+        self.target = target
+    }
+    
+    // Sets goal id to unique identifier created when it is added to database
+    func setGoalId(id: String) {
+        if goalId == nil {
+            self.goalId = id
+        }
+    }
     
 }

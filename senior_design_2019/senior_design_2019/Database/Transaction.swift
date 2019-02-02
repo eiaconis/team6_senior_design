@@ -18,4 +18,11 @@ class Transaction {
     var info: String?
     var timestamp: String?
     
+    // Sets user id to unique identifier created when it is added to database
+    func setTransationid(id: String) {
+        if transactionId == nil {
+            self.transactionId = id
+        }
+    }
+    
 }

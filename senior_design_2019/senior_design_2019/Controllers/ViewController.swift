@@ -21,7 +21,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
+        // Test adding goal
+        // var testGoal = Goal(userId: "test", title: "test", target: 100.00)
+        // database.addGoal(goal: testGoal)
+        // Test creating user
+        let newUser = User(email: "testAcounn2@email.com", firstName: "elena", lastName: "Iaconis", phoneNumber: "3333333")
+        database.createAccount(newUser: newUser, password: "test4443", view: self)
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
