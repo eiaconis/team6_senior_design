@@ -23,11 +23,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         // Test adding goal
-        // var testGoal = Goal(userId: "test", title: "test", target: 100.00)
-        // database.addGoal(goal: testGoal)
+//         var testGoal = Goal(userId: "test", title: "test", target: 100.00)
+//         database.addGoal(goal: testGoal)
+        // Test getting goal's value
+//        self.database.getStateOfGoal(goalId: "-LXoYEgmrwnhQifxEOAj", callback: {(amount) -> Void in
+//            print("got goal amount")
+//            print(amount)
+//        })
         // Test creating user
-        let newUser = User(email: "testAcounn2@email.com", firstName: "elena", lastName: "Iaconis", phoneNumber: "3333333")
-        database.createAccount(newUser: newUser, password: "test4443", view: self)
+        // let newUser = User(email: "testAcounn2@email.com", firstName: "elena", lastName: "Iaconis", phoneNumber: "3333333")
+        // database.createAccount(newUser: newUser, password: "test4443", view: self)
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {

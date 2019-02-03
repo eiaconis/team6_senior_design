@@ -120,9 +120,6 @@ class DatabaseAccess {
 
  
     //----------------------- Goal Methods----------------------------------------
-    // TODO: Add goal to currently logged in account
-    
-    // TODO: Add saving to associated goal
     
     // Puts goal item in GoalTable
     // Input: Goal
@@ -132,6 +129,7 @@ class DatabaseAccess {
         let newGoal : Any = [ "userId" : goal.userId,
                             "title" : goal.title,
                             "target" : goal.target,
+                            "amountSaved": 0,
         ]
         let goalId = self.ref.child("GoalTable").childByAutoId().key
         goal.setGoalId(id: goalId!)
@@ -147,7 +145,25 @@ class DatabaseAccess {
         self.ref.child("UserTable/\(userId)/goals/\(goalId)").setValue(true)
     }
     
-    // TODO: Get current state of goal
+    // TODO: Update state of goal after transaction
+    
+    /* Gets current state of goal
+     Input: String goalId, callback function
+     Output: ???
+     */
+    func getStateOfGoal(goalId: String, callback : @escaping (Double?) -> Void) {
+//        if let currUID = Auth.auth().currentUser?.uid {
+//            print("DB: \(currUid)")
+            self.ref.child("GoalTable/\(goalId)/amountSaved").observe(.value, with: { (snapshot) in
+                if snapshot.exists(){
+                    let currAmount = snapshot.value as? Double
+                    callback(currAmount!)
+                } else {
+                    callback(nil)
+                }
+            })
+//        }
+    }
     
     // TODO: Transfer balance of goal 1 to goal 2
     

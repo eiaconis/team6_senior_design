@@ -26,6 +26,7 @@ class Goal {
         self.userId = userId
         self.title = title
         self.target = target
+        self.amountSaved = 0
     }
     
     // Sets goal id to unique identifier created when it is added to database
