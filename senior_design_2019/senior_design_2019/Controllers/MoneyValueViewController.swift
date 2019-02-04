@@ -18,6 +18,7 @@ class MoneyValueViewController: UIViewController {
     
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var currentAmountLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,7 @@ class MoneyValueViewController: UIViewController {
                 print("got goal amount")
                 print(amount!)
                 // TODO: make this what is displayed
+                self.currentAmountLabel.text = "\(amount!)"
             })
         })
     

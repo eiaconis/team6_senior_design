@@ -58,11 +58,18 @@
                                     <segue destination="eTo-eR-zLl" kind="show" id="ltk-xz-4d7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have saved $81.23 this week" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmx-X7-TTc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have saved            towards your goal." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmx-X7-TTc">
                                 <rect key="frame" x="26" y="197" width="323" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBg-18-pAo">
+                                <rect key="frame" x="148" y="217" width="53" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -75,6 +82,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home-7-32" selectedImage="home-7-32" id="GbX-8J-TNH"/>
                     <connections>
+                        <outlet property="currentAmountLabel" destination="cBg-18-pAo" id="q4v-AS-1Bk"/>
                         <outlet property="logoutButton" destination="LRJ-Pu-h0o" id="hiO-zA-mzf"/>
                         <outlet property="plusButton" destination="yE5-aP-QMH" id="GyI-AM-DR5"/>
                     </connections>
@@ -395,11 +403,11 @@
     </scenes>
     <resources>
         <image name="008080_Swatch" width="336" height="280"/>
-        <image name="home-7-32" width="25" height="25"/>
-        <image name="info-2-64" width="64" height="64"/>
-        <image name="plus-64" width="64" height="64"/>
-        <image name="trophy-32" width="25" height="25"/>
-        <image name="user-32" width="25" height="25"/>
+        <image name="home-7-32" width="18.75" height="18.75"/>
+        <image name="info-2-64" width="48" height="48"/>
+        <image name="plus-64" width="48" height="48"/>
+        <image name="trophy-32" width="18.75" height="18.75"/>
+        <image name="user-32" width="18.75" height="18.75"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hFo-pr-uE9"/>
