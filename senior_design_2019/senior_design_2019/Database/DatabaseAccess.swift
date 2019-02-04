@@ -126,9 +126,30 @@ class DatabaseAccess {
         self.ref.child("UserTable/\(userId)/currentGoal/").setValue(goalId)
     }
     
+    // Edit currently signed in user's email
+    // Input: String new email
+    // Output: ??
+    func editEmail(newEmail: String) {
+        // Update in authentication
+        Auth.auth().currentUser?.updateEmail(to: newEmail) { (error) in
+            // TODO: Error handle
+        }
+        // Update in UserTable
+        let newFormatEmail = reformatEmail(email: newEmail)
+        let userId = Auth.auth().currentUser?.uid
+        self.ref.child("UserTable/\(String(describing: userId))/formattedEmail").setValue(newFormatEmail)
+    }
+    
     // TODO: Edit password
     
-    // TODO: Edit account phone number
+    // Edit currently signed in user's phone
+    // Input: String new phone
+    // Output: ??
+    func editPhone(newPhone: String) {
+        // Update in UserTable
+        let userId = Auth.auth().currentUser?.uid
+        self.ref.child("UserTable/\(String(describing: userId))/phoneNumber").setValue(newPhone)
+    }
     
     // TODO: Error handler for invalid login
     
@@ -142,9 +163,9 @@ class DatabaseAccess {
     // Output: String goalId of newly created goal
     func addGoal(goal: Goal)-> String{
         print("adding goal")
-        let newGoal : Any = [ "userId" : goal.userId,
-                            "title" : goal.title,
-                            "target" : goal.target,
+        let newGoal : Any = [ "userId" : goal.userId!,
+                              "title" : goal.title!,
+                              "target" : goal.target ?? 100.00,
                             "amountSaved": 0,
         ]
         let goalId = self.ref.child("GoalTable").childByAutoId().key
@@ -241,5 +262,38 @@ class DatabaseAccess {
         return timeStamp
     }
     
+    /*
+     Firebase does not allow querying in the database with the following characters: # $ [ or ]
+     The following mapping resolves this:
+     . --> &
+     # --> *
+     $ --> @
+     [ --> <
+     ] --> >
+     */
+    func reformatEmail(email: String) -> String {
+        let period : Character = "."
+        let pound : Character = "#"
+        let dollar : Character = "$"
+        let lBracket : Character = "["
+        let rBracket : Character = "]"
+        var reformattedEmail : String = ""
+        for char in email {
+            if char == period {
+                reformattedEmail.append("&")
+            } else if char == pound {
+                reformattedEmail.append("*")
+            } else if char == dollar {
+                reformattedEmail.append("@")
+            } else if char == lBracket {
+                reformattedEmail.append("<")
+            } else if char == rBracket {
+                reformattedEmail.append(">")
+            } else {
+                reformattedEmail.append(char)
+            }
+        }
+        return reformattedEmail
+    }
 
 }
