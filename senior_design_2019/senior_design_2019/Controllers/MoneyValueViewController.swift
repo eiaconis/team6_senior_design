@@ -19,6 +19,7 @@ class MoneyValueViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var currentAmountLabel: UILabel!
+    @IBOutlet weak var progressPercentageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +40,16 @@ class MoneyValueViewController: UIViewController {
             self.database.getStateOfGoal(goalId: goalId!, callback: {(amount) -> Void in
                 print("got goal amount")
                 print(amount!)
+                currAmount = amount!
                 // TODO: make this what is displayed
                 self.currentAmountLabel.text = "\(amount!)"
+            })
+            self.database.getTargetOfGoal(goalId: goalId!, callback: {(target) -> Void in
+                print("got target amount")
+                print(target!)
+                var percentage = currAmount / target!
+                // TODO: make this what is displayed
+                self.progressPercentageLabel.text = "\(percentage)"
             })
         })
     
