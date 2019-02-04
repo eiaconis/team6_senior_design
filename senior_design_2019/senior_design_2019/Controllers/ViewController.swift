@@ -30,9 +30,11 @@ class ViewController: UIViewController {
 //            print("got goal amount")
 //            print(amount)
 //        })
+        // Test adding transaction to goal
+        //self.database.addTransactionToGoal(transactionId:"fake", goalId: "-LXoYEgmrwnhQifxEOAj")
         // Test creating user
-        // let newUser = User(email: "testAcounn2@email.com", firstName: "elena", lastName: "Iaconis", phoneNumber: "3333333")
-        // database.createAccount(newUser: newUser, password: "test4443", view: self)
+         let newUser = User(email: "testingLots5558@email.com", firstName: "elena", lastName: "Iaconis", phoneNumber: "3333333")
+        database.createAccount(newUser: newUser, goal: nil, password: "test4443", view: self)
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
