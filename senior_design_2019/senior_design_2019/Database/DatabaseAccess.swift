@@ -119,6 +119,20 @@ class DatabaseAccess {
         return ExpectedExecution()
     }
     
+    func getUserCurrGoal(uid: String, callback : @escaping (String?) -> Void) {
+        //        if let currUID = Auth.auth().currentUser?.uid {
+        //            print("DB: \(currUid)")
+        self.ref.child("UserTable/\(uid)/currentGoal").observe(.value, with: { (snapshot) in
+            if snapshot.exists(){
+                let currGoalId = snapshot.value as? String
+                callback(currGoalId!)
+            } else {
+                callback(nil)
+            }
+        })
+        //        }
+    }
+    
     // Edit currently set goal in user account
     // Input: String userId, String goalId
     // Output:
