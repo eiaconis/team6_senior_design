@@ -1,5 +1,5 @@
 //
-//  ManualEntryTransaction.swift
+//  ManualEntryTransaction.swift - Subclass of Transaction
 //  senior_design_2019
 //
 //  Created by Elena Iaconis on 1/30/19.
@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class ManualEntryTransaction: Transaction {
+    
+    var category: String?
+
+    override func isManualEntryTransaction() -> Bool {
+        return true
+    }
+    
+    override func getCategory() -> String? {
+        return self.category   
+    }
+}

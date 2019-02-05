@@ -13,7 +13,6 @@ class Transaction {
     var transactionId: String?
     var userId: String?
     var amount: NSNumber?
-    var category: String?
     var goalId: String?
     var info: String?
     var timestamp: String?
@@ -24,5 +23,34 @@ class Transaction {
             self.transactionId = id
         }
     }
+    
+    func isManualEntryTransaction() -> Bool {
+        return true
+    }
+    
+    func getCategory() -> String? {
+        return nil
+    }
+    
+    func getItemPurchased() -> String? {
+        return nil
+    }
+    
+    func getPriceItemPurchased() -> Double? {
+        return nil
+    }
+    
+    func getItemDesired() -> String? {
+        return nil
+    }
+    
+    func getPriceItemDesired() -> Double? {
+        return nil
+    }
+    
+    func getPricePerceived() -> Double? {
+        return nil
+    }
+    
     
 }

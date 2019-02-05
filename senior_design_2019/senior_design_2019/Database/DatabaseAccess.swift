@@ -16,8 +16,8 @@ import FirebaseDatabase
 import FirebaseUI
 
 /*
-    Class to contain all database calls to retrieve, update, or add data to the database. Implemented as
-    a singleton throughout application.
+ Class to contain all database calls to retrieve, update, or add data to the database. Implemented as
+ a singleton throughout application.
  */
 
 class DatabaseAccess {
@@ -114,7 +114,7 @@ class DatabaseAccess {
                               "lastName": user.lastName,
                               "phoneNumber": user.phoneNumber,
                               "currentGoal": newGoalId
-                              ]
+        ]
         self.ref.child("UserTable/\(uid)").setValue(newUser)
         //return ExpectedExecution()
     }
@@ -168,8 +168,8 @@ class DatabaseAccess {
     // TODO: Error handler for invalid login
     
     // TODO: Error handler for invalid account creation
-
- 
+    
+    
     //----------------------- Goal Methods----------------------------------------
     
     // Puts goal item in GoalTable
@@ -180,8 +180,8 @@ class DatabaseAccess {
         let newGoal : Any = [ "userId" : goal.userId!,
                               "title" : goal.title!,
                               "target" : goal.target ?? 100.00,
-                            "amountSaved": 0,
-        ]
+                              "amountSaved": 0,
+                              ]
         let goalId = self.ref.child("GoalTable").childByAutoId().key
         goal.setGoalId(id: goalId!)
         self.ref.child("GoalTable/\(goalId!)").setValue(newGoal)
@@ -208,17 +208,17 @@ class DatabaseAccess {
      Output: ???
      */
     func getStateOfGoal(goalId: String, callback : @escaping (Double?) -> Void) {
-//        if let currUID = Auth.auth().currentUser?.uid {
-//            print("DB: \(currUid)")
-            self.ref.child("GoalTable/\(goalId)/amountSaved").observe(.value, with: { (snapshot) in
-                if snapshot.exists(){
-                    let currAmount = snapshot.value as? Double
-                    callback(currAmount!)
-                } else {
-                    callback(nil)
-                }
-            })
-//        }
+        //        if let currUID = Auth.auth().currentUser?.uid {
+        //            print("DB: \(currUid)")
+        self.ref.child("GoalTable/\(goalId)/amountSaved").observe(.value, with: { (snapshot) in
+            if snapshot.exists(){
+                let currAmount = snapshot.value as? Double
+                callback(currAmount!)
+            } else {
+                callback(nil)
+            }
+        })
+        //        }
     }
     
     /* Gets current state of goal
@@ -249,12 +249,27 @@ class DatabaseAccess {
     // Output: String, transaction's unique identifier
     func addTransaction(transaction: Transaction)-> String? {
         print("adding transaction")
-        let newTransaction : Any = [ "userId" : transaction.userId!,
-                                     "amount": transaction.amount!,
-                                     "category": transaction.category!,
-                                     "goalId": transaction.goalId!,
-                                     "timestamp": self.getTimestampAsString()
-                              ]
+        var newTransaction : Any = []
+        if transaction.isManualEntryTransaction() {
+            newTransaction = [ "userId" : transaction.userId!,
+                               "amount": transaction.amount!,
+                               "goalId": transaction.goalId!,
+                               "timestamp": self.getTimestampAsString(),
+                               "category": transaction.getCategory()!
+                ] as [String : Any]
+        } else {
+            newTransaction = [ "userId" : transaction.userId!,
+                               "amount": transaction.amount!,
+                               "goalId": transaction.goalId!,
+                               "timestamp": self.getTimestampAsString(),
+                               "itemPurchased" : transaction.getItemPurchased()!,
+                               "priceItemPurchased" : transaction.getPriceItemPurchased()!,
+                               "itemDesired" : transaction.getItemDesired()!,
+                               "priceItemDesired" : transaction.getPriceItemDesired()!,
+                               "perceivedAmount" : transaction.getPricePerceived()!,
+            ]as [String : Any]
+        }
+        
         let transactionId = self.ref.child("TransactionTable").childByAutoId().key
         transaction.setTransactionId(id: transactionId!)
         self.ref.child("TransactionTable/\(transactionId!)").setValue(newTransaction)
@@ -327,5 +342,5 @@ class DatabaseAccess {
         }
         return reformattedEmail
     }
-
+    
 }
