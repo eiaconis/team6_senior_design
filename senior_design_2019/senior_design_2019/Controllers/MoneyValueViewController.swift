@@ -36,7 +36,7 @@ class MoneyValueViewController: UIViewController {
         var currAmount = 0.0
         self.database.getUserCurrGoal(uid: Auth.auth().currentUser!.uid, callback: {(goalId) -> Void in
             print("got goal id")
-            print(goalId)
+            print(goalId ?? "Something went wrong getting goal id.")
             self.database.getStateOfGoal(goalId: goalId!, callback: {(amount) -> Void in
                 print("got goal amount")
                 print(amount!)
@@ -47,7 +47,7 @@ class MoneyValueViewController: UIViewController {
             self.database.getTargetOfGoal(goalId: goalId!, callback: {(target) -> Void in
                 print("got target amount")
                 print(target!)
-                var percentage = currAmount / target!
+                let percentage = currAmount / target!
                 // TODO: make this what is displayed
                 self.progressPercentageLabel.text = "\(percentage)"
             })

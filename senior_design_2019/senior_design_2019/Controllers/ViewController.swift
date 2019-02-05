@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+       // let appDelegate = UIApplication.shared.delegate as! AppDelegate
         // Test adding goal
 //         var testGoal = Goal(userId: "test", title: "test", target: 100.00)
 //         database.addGoal(goal: testGoal)
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         // Test adding transaction to goal
         //self.database.addTransactionToGoal(transactionId:"fake", goalId: "-LXoYEgmrwnhQifxEOAj")
         // Test creating user
-         let newUser = User(email: "eiaconis@email.com", firstName: "elena", lastName: "Iaconis", phoneNumber: "3826603")
+         //let newUser = User(email: "eiaconis@email.com", firstName: "elena", lastName: "Iaconis", phoneNumber: "3826603")
         //database.createAccount(newUser: newUser, goal: nil, password: "test4443", view: self)
     }
     
