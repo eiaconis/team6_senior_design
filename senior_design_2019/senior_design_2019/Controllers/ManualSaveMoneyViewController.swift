@@ -48,7 +48,7 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         categoryLabel.text = categories[row]
     }
-
+    
     @IBAction func saveButtonPressed(_ sender: Any) {
         print("save in manual pressed")
         // Get value from amount field
@@ -62,18 +62,28 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         //Get current user's goal
         var currGoalId : String? = nil
         self.database.getUserCurrGoal(uid: (Auth.auth().currentUser?.uid)!, callback: {(goalId) -> Void in
-                    print("got goalid")
-                    print(goalId)
-                    currGoalId = goalId
-                    // Create transaction
-                    var newTransaction = ManualEntryTransaction(category: currCategory, userId: (Auth.auth().currentUser?.uid)!, amount: currAmount!, goalId: currGoalId!)
-                    // Add transaction to db
-                    self.database.addTransaction(transaction: newTransaction)
-                })
-
+            print("got goalid")
+            print(goalId)
+            currGoalId = goalId
+            // Create transaction
+            var newTransaction = ManualEntryTransaction(category: currCategory, userId: (Auth.auth().currentUser?.uid)!, amount: currAmount!, goalId: currGoalId!)
+            // Add transaction to db
+            var newTransactionId = self.database.addTransaction(transaction: newTransaction)
+            // Add transaction to user
+            self.database.addTransactionToUser(transactionId: newTransactionId!, userId: (Auth.auth().currentUser?.uid)!)
+            // Add transaction to goal
+            self.database.addTransactionToGoal(transactionId: newTransactionId!, goalId: currGoalId!)
+            // Update goal--> Get current state, perform operations, update
+            self.database.getStateOfGoal(goalId: currGoalId!, callback: {(amount) -> Void in
+                print("got goal amount")
+                print(amount)
+                var newAmount = amount?.advanced(by: currAmount!)
+                self.database.updateGoalAmountSaved(goalId: currGoalId!, newAmount: newAmount!)
+                print("here")
+            })
+            return
+        })
         
-        // Add transaction to user
-        // Add transaction to goal
-        // Update goal
+        
     }
 }
