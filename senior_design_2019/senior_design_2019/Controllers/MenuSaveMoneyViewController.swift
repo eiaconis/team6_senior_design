@@ -23,6 +23,7 @@ class MenuSaveMoneyViewController: UIViewController {
     
 
     @IBAction func saveButtonPressed(_ sender: Any) {
+        print("save pressed")
     }
     /*
     // MARK: - Navigation

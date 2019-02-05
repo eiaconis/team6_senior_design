@@ -12,6 +12,11 @@ class ManualEntryTransaction: Transaction {
     
     var category: String?
 
+    init(category: String, userId: String, amount: Double, goalId: String) {
+        super.init(userId: userId, amount: amount, goalId: goalId)
+        self.category = category
+    }
+    
     override func isManualEntryTransaction() -> Bool {
         return true
     }

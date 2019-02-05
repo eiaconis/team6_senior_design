@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseUI
 
 class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var categoryLabel: UITextField!
     @IBOutlet weak var saveButton: UIButton!
+    
+    let database: DatabaseAccess = DatabaseAccess.getInstance()
     
     var categories = ["Food", "Transportation", "Entertainment", "Rent", "Shopping"]
     var picker = UIPickerView()
@@ -44,4 +49,31 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         categoryLabel.text = categories[row]
     }
 
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        print("save in manual pressed")
+        // Get value from amount field
+        let currAmount = Double(amountTextField.text!)
+        // If amount field is blank or negative, popup error and stay
+        if (currAmount == nil || currAmount! <= 0.0) {
+            // TODO:
+        }
+        // Else get category
+        let currCategory = categoryLabel.text!
+        //Get current user's goal
+        var currGoalId : String? = nil
+        self.database.getUserCurrGoal(uid: (Auth.auth().currentUser?.uid)!, callback: {(goalId) -> Void in
+                    print("got goalid")
+                    print(goalId)
+                    currGoalId = goalId
+                    // Create transaction
+                    var newTransaction = ManualEntryTransaction(category: currCategory, userId: (Auth.auth().currentUser?.uid)!, amount: currAmount!, goalId: currGoalId!)
+                    // Add transaction to db
+                    self.database.addTransaction(transaction: newTransaction)
+                })
+
+        
+        // Add transaction to user
+        // Add transaction to goal
+        // Update goal
+    }
 }

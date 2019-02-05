@@ -286,6 +286,7 @@
                                 </state>
                                 <connections>
                                     <action selector="menuEntryButtonPressed:" destination="IBn-ri-VHf" eventType="touchUpInside" id="bUM-Wl-WkO"/>
+                                    <action selector="saveButtonPressed:" destination="fQU-5W-zuI" eventType="touchUpInside" id="fQc-qG-7a8"/>
                                     <segue destination="ItX-D4-hel" kind="show" id="qyf-OS-ITP"/>
                                 </connections>
                             </button>

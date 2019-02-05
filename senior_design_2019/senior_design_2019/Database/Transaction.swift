@@ -12,10 +12,16 @@ class Transaction {
     
     var transactionId: String?
     var userId: String?
-    var amount: NSNumber?
+    var amount: Double?
     var goalId: String?
     var info: String?
     var timestamp: String?
+    
+    init(userId: String, amount: Double, goalId: String) {
+        self.userId = userId
+        self.amount = amount
+        self.goalId = goalId
+    }
     
     // Sets user id to unique identifier created when it is added to database
     func setTransactionId(id: String) {
