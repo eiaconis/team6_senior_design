@@ -71,12 +71,13 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
             // TODO:
             return
         }
-        currAmount! += self.prevAmount!
         // Else get category
         let currCategory = categoryLabel.text!
         
         // Create transaction
         var newTransaction = ManualEntryTransaction(category: currCategory, userId: (Auth.auth().currentUser?.uid)!, amount: currAmount!, goalId: self.currGoalId!)
+        currAmount! += self.prevAmount!
+
         // Add transaction to db
         var newTransactionId = self.database.addTransaction(transaction: newTransaction)
         // Add transaction to user
