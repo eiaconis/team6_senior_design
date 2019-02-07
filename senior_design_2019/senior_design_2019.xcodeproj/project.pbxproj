@@ -15,6 +15,7 @@
 		753777B122024FEB00FD7F4C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753777B022024FEB00FD7F4C /* Notification.swift */; };
 		753777B7220270D800FD7F4C /* ManualEntryTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753777B6220270D800FD7F4C /* ManualEntryTransaction.swift */; };
 		753777B9220270DD00FD7F4C /* MenuEntryTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753777B8220270DD00FD7F4C /* MenuEntryTransaction.swift */; };
+		75BC25412206370B0053DE59 /* ReturnValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BC25402206370B0053DE59 /* ReturnValue.swift */; };
 		75C21AA521FFA9AB0020E727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AA421FFA9AB0020E727 /* AppDelegate.swift */; };
 		75C21ABA21FFA9B00020E727 /* senior_design_2019Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AB921FFA9B00020E727 /* senior_design_2019Tests.swift */; };
 		75C21AC521FFA9B00020E727 /* senior_design_2019UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AC421FFA9B00020E727 /* senior_design_2019UITests.swift */; };
@@ -70,6 +71,7 @@
 		753777B022024FEB00FD7F4C /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		753777B6220270D800FD7F4C /* ManualEntryTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualEntryTransaction.swift; sourceTree = "<group>"; };
 		753777B8220270DD00FD7F4C /* MenuEntryTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuEntryTransaction.swift; sourceTree = "<group>"; };
+		75BC25402206370B0053DE59 /* ReturnValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnValue.swift; sourceTree = "<group>"; };
 		75C21AA121FFA9AB0020E727 /* senior_design_2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = senior_design_2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C21AA421FFA9AB0020E727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75C21AB021FFA9B00020E727 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				753777B6220270D800FD7F4C /* ManualEntryTransaction.swift */,
 				753777B022024FEB00FD7F4C /* Notification.swift */,
 				753777B8220270DD00FD7F4C /* MenuEntryTransaction.swift */,
+				75BC25402206370B0053DE59 /* ReturnValue.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				753777AB22024FBC00FD7F4C /* User.swift in Sources */,
+				75BC25412206370B0053DE59 /* ReturnValue.swift in Sources */,
 				75C21AED21FFAA7A0020E727 /* IdealMenuItemViewController.swift in Sources */,
 				75C21AE121FFAA4F0020E727 /* CreateAccountViewController.swift in Sources */,
 				75C21ADD21FFAA420020E727 /* MenuItemViewController.swift in Sources */,
