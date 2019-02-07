@@ -69,6 +69,7 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         // If amount field is blank or negative, popup error and stay
         if (currAmount == nil || currAmount! <= 0.0) {
             // TODO:
+            return
         }
         currAmount! += self.prevAmount!
         // Else get category

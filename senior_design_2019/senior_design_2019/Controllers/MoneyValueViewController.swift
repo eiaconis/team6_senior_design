@@ -47,9 +47,9 @@ class MoneyValueViewController: UIViewController {
             self.database.getTargetOfGoal(goalId: goalId!, callback: {(target) -> Void in
                 print("got target amount")
                 print(target!)
-                let percentage = currAmount / target!
+                let percentage = (currAmount / target!)*100
                 // TODO: make this what is displayed
-                self.progressPercentageLabel.text = "\(percentage)"
+                self.progressPercentageLabel.text = "\(percentage)%"
             })
         })
     
