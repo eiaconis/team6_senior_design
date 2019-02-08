@@ -49,7 +49,9 @@ class MoneyValueViewController: UIViewController {
                 print(target!)
                 let percentage = (currAmount / target!)*100
                 // TODO: make this what is displayed
-                self.progressPercentageLabel.text = "\(percentage)%"
+//                self.progressPercentageLabel.text = "\(percentage)"
+                self.progressPercentageLabel.text = "\(currAmount) %"
+
             })
         })
     
