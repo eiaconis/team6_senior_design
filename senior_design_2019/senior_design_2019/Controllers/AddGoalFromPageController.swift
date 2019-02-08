@@ -47,5 +47,16 @@ class AddGoalFromPageController: UIViewController {
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
         view.endEditing(true)
     }
-
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        createAlert(title: "Goal Added!")
+    }
+    
+    func createAlert(title: String) {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in self.performSegue(withIdentifier: "addGoalSegue", sender: nil)}))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

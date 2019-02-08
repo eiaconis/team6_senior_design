@@ -229,7 +229,8 @@
                                     <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5LB-8f-QSd" kind="show" id="hFo-pr-uE9"/>
+                                    <action selector="addButtonPressed:" destination="z1v-Lg-ax3" eventType="touchUpInside" id="slR-HK-zCJ"/>
+                                    <segue destination="5LB-8f-QSd" kind="show" identifier="addGoalSegue" id="hFo-pr-uE9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -418,11 +419,11 @@
     </scenes>
     <resources>
         <image name="008080_Swatch" width="336" height="280"/>
-        <image name="home-7-32" width="18.75" height="18.75"/>
-        <image name="info-2-64" width="48" height="48"/>
-        <image name="plus-64" width="48" height="48"/>
-        <image name="trophy-32" width="18.75" height="18.75"/>
-        <image name="user-32" width="18.75" height="18.75"/>
+        <image name="home-7-32" width="25" height="25"/>
+        <image name="info-2-64" width="64" height="64"/>
+        <image name="plus-64" width="64" height="64"/>
+        <image name="trophy-32" width="25" height="25"/>
+        <image name="user-32" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hFo-pr-uE9"/>
