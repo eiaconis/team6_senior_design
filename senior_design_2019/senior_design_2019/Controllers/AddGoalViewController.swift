@@ -83,8 +83,9 @@ class AddGoalViewController: UIViewController {
             if date != "" {
                 newGoal.setDeadline(date: date)
             }
-            // Add Goal
-            database.addGoal(goal: newGoal)
+            // Add Goal and update user's current goal
+            let goalId = database.addGoal(goal: newGoal)
+            database.addGoalToUser(goalId: goalId, userId: (Auth.auth().currentUser?.uid)!)
             createSuccessAlert(title: "Goal Added!")
         }
     }
