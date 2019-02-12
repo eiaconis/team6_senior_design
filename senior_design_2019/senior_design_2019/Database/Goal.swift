@@ -36,4 +36,9 @@ class Goal {
         }
     }
     
+    // Sets deadline to a string representing the date
+    func setDeadline(date: String) {
+        self.deadline = date
+    }
+    
 }

@@ -393,6 +393,8 @@
                                 <exclude reference="WAZ-t7-M2j"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="j6i-pE-t6w"/>
+                                <exclude reference="krI-tC-pTE"/>
                                 <exclude reference="0jC-BI-NRt"/>
                                 <exclude reference="3cP-gL-Tf6"/>
                                 <exclude reference="B6M-Ti-jbd"/>
@@ -406,12 +408,10 @@
                                 <exclude reference="sgL-WW-ssl"/>
                                 <exclude reference="teW-2B-yEH"/>
                                 <exclude reference="xZ4-2r-8el"/>
-                                <exclude reference="j6i-pE-t6w"/>
-                                <exclude reference="krI-tC-pTE"/>
                                 <exclude reference="nt7-vZ-C1Y"/>
-                                <exclude reference="DIc-ht-fra"/>
                                 <exclude reference="TBA-vI-bf2"/>
                                 <exclude reference="dnx-kY-XZm"/>
+                                <exclude reference="DIc-ht-fra"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -420,6 +420,8 @@
                                 <include reference="WAZ-t7-M2j"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="j6i-pE-t6w"/>
+                                <include reference="krI-tC-pTE"/>
                                 <include reference="0jC-BI-NRt"/>
                                 <include reference="3cP-gL-Tf6"/>
                                 <exclude reference="B6M-Ti-jbd"/>
@@ -433,12 +435,10 @@
                                 <include reference="sgL-WW-ssl"/>
                                 <include reference="teW-2B-yEH"/>
                                 <include reference="xZ4-2r-8el"/>
-                                <include reference="j6i-pE-t6w"/>
-                                <include reference="krI-tC-pTE"/>
                                 <include reference="nt7-vZ-C1Y"/>
-                                <include reference="DIc-ht-fra"/>
                                 <include reference="TBA-vI-bf2"/>
                                 <include reference="dnx-kY-XZm"/>
+                                <include reference="DIc-ht-fra"/>
                             </mask>
                         </variation>
                     </view>
@@ -479,7 +479,7 @@
                                 <connections>
                                     <action selector="addGoalButtonPressed:" destination="WWV-DH-tee" eventType="touchUpInside" id="9jC-I8-iRj"/>
                                     <action selector="signUpButtonPressed:" destination="pk3-kI-KxE" eventType="touchUpInside" id="d38-Eb-dMj"/>
-                                    <segue destination="Cyi-Zs-fl3" kind="show" id="dxN-q2-mJI"/>
+                                    <segue destination="Cyi-Zs-fl3" kind="show" identifier="loginNewUser" id="dxN-q2-mJI"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nJ2-1f-l02">
@@ -600,7 +600,9 @@
                     </view>
                     <connections>
                         <outlet property="addGoalButton" destination="W6a-et-Xdt" id="aI0-14-ps0"/>
+                        <outlet property="amountField" destination="9qY-mp-VcQ" id="uad-I6-sBr"/>
                         <outlet property="dateField" destination="sAC-fM-3jM" id="8Ao-ri-8wQ"/>
+                        <outlet property="goalNameField" destination="nJ2-1f-l02" id="kUS-XM-4F7"/>
                         <outlet property="skipButton" destination="Tjb-ld-jDh" id="Oct-kQ-rsa"/>
                     </connections>
                 </viewController>
@@ -614,7 +616,7 @@
         <image name="arrow-32-65" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LbO-JK-UAB"/>
+        <segue reference="dxN-q2-mJI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
