@@ -21,6 +21,7 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         updatePickerView()
         print("Checking goals...")
+        print("goal ids = \(goalIDs)")
         for goal in goalIDs {
             print(goal)
         }

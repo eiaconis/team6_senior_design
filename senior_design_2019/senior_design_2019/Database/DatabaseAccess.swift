@@ -274,6 +274,7 @@ class DatabaseAccess {
             if snapshot.exists() {
                 let goalIDs = snapshot.value as? NSDictionary
                 if let goalIDstr = goalIDs?.allKeys as? [String]? {
+                    print("id in db = \(goalIDstr)")
                     callback(goalIDstr)
                 }
             } else {
@@ -289,7 +290,9 @@ class DatabaseAccess {
         self.ref.child("GoalTable/\(goalID)/title").observe(.value, with: { (snapshot) in
             if snapshot.exists() {
                 if let title = snapshot.value as? String {
+                    print("title in db = \(title)")
                     let goalTitle : String = title
+                    print("goal title in db = \(goalTitle)")
                     callback(goalTitle)
                 } else {
                     print("Goal Name not found")
