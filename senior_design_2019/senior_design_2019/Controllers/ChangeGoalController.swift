@@ -19,20 +19,11 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let goalsClosure = {(returnedGoalIDs: [String]?) -> Void in
-            self.goalIDs = returnedGoalIDs
-            let goalNameClosure = { (goalName : String?) -> Void in
-                if goalName != nil {
-                    self.goalNames.append(goalName!)
-                }
-            }
-            self.goalIDs = returnedGoalIDs ?? []
-            for goalID in self.goalIDs {
-                self.database.getStringGoalTitle(goalID: goalID, callback: goalNameClosure)
-            }
+        updatePickerView()
+        print("Checking goals...")
+        for goal in goalIDs {
+            print(goal)
         }
-        self.database.getAllGoalsForUser(callback: goalsClosure)
-        
     }
     
 
@@ -46,6 +37,23 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return goalNames[row]
+    }
+    
+    func updatePickerView() {
+        let goalsClosure = {(returnedGoalIDs: [String]?) -> Void in
+            self.goalIDs = returnedGoalIDs
+            let goalNameClosure = { (goalName : String?) -> Void in
+                if goalName != nil {
+                    self.goalNames.append(goalName!)
+                    self.goalPicker.reloadAllComponents()
+                }
+            }
+            self.goalIDs = returnedGoalIDs ?? []
+            for goalID in self.goalIDs {
+                self.database.getStringGoalTitle(goalID: goalID, callback: goalNameClosure)
+            }
+        }
+        self.database.getAllGoalsForUser(callback: goalsClosure)
     }
 
 }
