@@ -11,6 +11,8 @@ import UIKit
 class MenuItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let menu = ["Small Coffee", "Medium Coffee", "Large Coffee"]
+    let menuPrice = [1.00, 2.00, 3.00]
+    var itemPurchasedPrice : Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,15 @@ class MenuItemViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.itemPurchasedPrice = menuPrice[indexPath.row]
         self.performSegue(withIdentifier: "menuItemSegue", sender: self)
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is IdealMenuItemViewController {
+            // Pass purchased item price to next page
+            let vc = segue.destination as? IdealMenuItemViewController
+            vc?.itemPurchasedPrice = self.itemPurchasedPrice
+        }
+    }
 }

@@ -27,7 +27,7 @@
                                 </state>
                                 <connections>
                                     <action selector="menuEntryButtonPressed:" destination="IBn-ri-VHf" eventType="touchUpInside" id="0Jl-Ro-Jkg"/>
-                                    <segue destination="QyN-9f-WqQ" kind="show" id="3Ww-Nf-0Nu"/>
+                                    <segue destination="THK-04-Js4" kind="show" id="srP-xB-BVd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gky-WV-bk7">
@@ -55,55 +55,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5E-Ij-kSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-751" y="255"/>
-        </scene>
-        <!--Menu Save Money View Controller-->
-        <scene sceneID="Z5z-aE-pIX">
-            <objects>
-                <viewController storyboardIdentifier="MenuSaveMoneyViewController" id="QyN-9f-WqQ" customClass="MenuSaveMoneyViewController" customModule="senior_design_2019" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lqA-CJ-OJr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How much did you save?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAl-EC-mC2">
-                                <rect key="frame" x="49" y="127" width="277" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="45"/>
-                                <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAS-si-4zr">
-                                <rect key="frame" x="226" y="275" width="84" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.81960784310000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
-                                <state key="normal" title="Save!">
-                                    <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="QyN-9f-WqQ" eventType="touchUpInside" id="HSa-F4-uam"/>
-                                    <action selector="saveButtonPressed:" destination="IBn-ri-VHf" eventType="touchUpInside" id="f8l-cK-xQO"/>
-                                    <segue destination="THK-04-Js4" kind="show" id="lsI-6c-cR8"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ep2-18-m3J">
-                                <rect key="frame" x="63" y="275" width="127" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="45"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="4Zh-cL-W5W"/>
-                    </view>
-                    <connections>
-                        <outlet property="saveButton" destination="hAS-si-4zr" id="rVZ-RV-Alj"/>
-                        <outlet property="valueTextField" destination="Ep2-18-m3J" id="w7L-Gz-yLz"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DIS-K9-0Kv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="21.600000000000001" y="-170.46476761619192"/>
         </scene>
         <!--Menu Item View Controller-->
         <scene sceneID="lPn-7s-pJ8">
@@ -149,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p4x-4d-q9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="732" y="-167.76611694152925"/>
+            <point key="canvasLocation" x="14" y="-171"/>
         </scene>
         <!--Ideal Menu Item View Controller-->
         <scene sceneID="GmP-62-vvu">
@@ -195,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsW-Ij-Szc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1444" y="-171.36431784107947"/>
+            <point key="canvasLocation" x="815" y="-171"/>
         </scene>
         <!--MoneyValue-->
         <scene sceneID="FBG-dW-85S">
@@ -203,7 +154,7 @@
                 <viewControllerPlaceholder storyboardName="MoneyValue" id="ItX-D4-hel" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rDf-dg-geX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1659" y="392"/>
+            <point key="canvasLocation" x="813" y="608"/>
         </scene>
         <!--Manual Save Money View Controller-->
         <scene sceneID="xIu-97-qJB">

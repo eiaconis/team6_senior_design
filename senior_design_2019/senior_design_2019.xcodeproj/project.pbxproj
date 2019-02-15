@@ -31,7 +31,6 @@
 		75C21AE121FFAA4F0020E727 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AE021FFAA4F0020E727 /* CreateAccountViewController.swift */; };
 		75C21AE321FFAA540020E727 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AE221FFAA530020E727 /* AddGoalViewController.swift */; };
 		75C21AE521FFAA570020E727 /* MoneyValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AE421FFAA570020E727 /* MoneyValueViewController.swift */; };
-		75C21AE721FFAA5D0020E727 /* MenuSaveMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AE621FFAA5D0020E727 /* MenuSaveMoneyViewController.swift */; };
 		75C21AE921FFAA600020E727 /* ManualSaveMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AE821FFAA600020E727 /* ManualSaveMoneyViewController.swift */; };
 		75C21AEB21FFAA740020E727 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AEA21FFAA740020E727 /* ViewController.swift */; };
 		75C21AED21FFAA7A0020E727 /* IdealMenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AEC21FFAA7A0020E727 /* IdealMenuItemViewController.swift */; };
@@ -96,7 +95,6 @@
 		75C21AE021FFAA4F0020E727 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		75C21AE221FFAA530020E727 /* AddGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		75C21AE421FFAA570020E727 /* MoneyValueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyValueViewController.swift; sourceTree = "<group>"; };
-		75C21AE621FFAA5D0020E727 /* MenuSaveMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSaveMoneyViewController.swift; sourceTree = "<group>"; };
 		75C21AE821FFAA600020E727 /* ManualSaveMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualSaveMoneyViewController.swift; sourceTree = "<group>"; };
 		75C21AEA21FFAA740020E727 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		75C21AEC21FFAA7A0020E727 /* IdealMenuItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdealMenuItemViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				75C21ADC21FFAA420020E727 /* MenuItemViewController.swift */,
 				64946A3E2217422F00622CF4 /* AccountViewController.swift */,
 				75C21AEC21FFAA7A0020E727 /* IdealMenuItemViewController.swift */,
-				75C21AE621FFAA5D0020E727 /* MenuSaveMoneyViewController.swift */,
 				75C21AE421FFAA570020E727 /* MoneyValueViewController.swift */,
 				75C21AE821FFAA600020E727 /* ManualSaveMoneyViewController.swift */,
 				75C21ADE21FFAA460020E727 /* SaveMoneyController.swift */,
@@ -541,7 +538,6 @@
 				75C21AF7220114E80020E727 /* DatabaseAccess.swift in Sources */,
 				64946A4122174EC200622CF4 /* EditProfileController.swift in Sources */,
 				75C21AA521FFA9AB0020E727 /* AppDelegate.swift in Sources */,
-				75C21AE721FFAA5D0020E727 /* MenuSaveMoneyViewController.swift in Sources */,
 				75C21ADF21FFAA460020E727 /* SaveMoneyController.swift in Sources */,
 				75C21AE521FFAA570020E727 /* MoneyValueViewController.swift in Sources */,
 				753777AF22024FD700FD7F4C /* Transaction.swift in Sources */,
