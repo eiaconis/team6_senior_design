@@ -206,37 +206,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How much did you save?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iI-VJ-JTX">
-                                <rect key="frame" x="49" y="173" width="277" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much did you save?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iI-VJ-JTX">
+                                <rect key="frame" x="15" y="160" width="345.5" height="45"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="45"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEd-h2-6jh">
-                                <rect key="frame" x="38" y="339" width="126" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEd-h2-6jh">
+                                <rect key="frame" x="70" y="280" width="71" height="30"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expense Category" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kas-P6-sti">
-                                <rect key="frame" x="13" y="411" width="151" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Category" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kas-P6-sti">
+                                <rect key="frame" x="20" y="350" width="165.5" height="30"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGB-zg-XnW">
-                                <rect key="frame" x="172" y="428" width="187" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Izl-uN-5Kf">
-                                <rect key="frame" x="172" y="329" width="127" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Izl-uN-5Kf">
+                                <rect key="frame" x="156" y="270" width="139" height="49"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="45"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -255,8 +244,28 @@
                                     <segue destination="ItX-D4-hel" kind="show" id="qyf-OS-ITP"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGB-zg-XnW">
+                                <rect key="frame" x="190.5" y="346" width="164.5" height="34"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Izl-uN-5Kf" firstAttribute="top" secondItem="1iI-VJ-JTX" secondAttribute="bottom" constant="65" id="0oF-je-STC"/>
+                            <constraint firstItem="XEd-h2-6jh" firstAttribute="leading" secondItem="haw-fS-bOt" secondAttribute="leading" constant="70" id="1Df-2W-wDL"/>
+                            <constraint firstItem="Izl-uN-5Kf" firstAttribute="leading" secondItem="XEd-h2-6jh" secondAttribute="trailing" constant="15" id="5dc-MR-bzl"/>
+                            <constraint firstItem="kas-P6-sti" firstAttribute="leading" secondItem="haw-fS-bOt" secondAttribute="leading" constant="20" id="6iw-9N-oMz"/>
+                            <constraint firstItem="XEd-h2-6jh" firstAttribute="top" secondItem="1iI-VJ-JTX" secondAttribute="bottom" constant="75" id="HnU-KY-xza"/>
+                            <constraint firstItem="haw-fS-bOt" firstAttribute="trailing" secondItem="Izl-uN-5Kf" secondAttribute="trailing" constant="80" id="JsQ-k3-zVQ"/>
+                            <constraint firstItem="gGB-zg-XnW" firstAttribute="leading" secondItem="kas-P6-sti" secondAttribute="trailing" constant="5" id="LdB-jF-Cmd"/>
+                            <constraint firstItem="haw-fS-bOt" firstAttribute="trailing" secondItem="gGB-zg-XnW" secondAttribute="trailing" constant="20" id="PhJ-LZ-pru"/>
+                            <constraint firstItem="1iI-VJ-JTX" firstAttribute="centerX" secondItem="cto-W6-hXE" secondAttribute="centerX" id="axx-qW-npT"/>
+                            <constraint firstItem="1iI-VJ-JTX" firstAttribute="top" secondItem="haw-fS-bOt" secondAttribute="top" constant="140" id="hEo-14-yXI"/>
+                            <constraint firstItem="kas-P6-sti" firstAttribute="top" secondItem="XEd-h2-6jh" secondAttribute="bottom" constant="40" id="iBN-C3-C7f"/>
+                            <constraint firstItem="gGB-zg-XnW" firstAttribute="top" secondItem="Izl-uN-5Kf" secondAttribute="bottom" constant="27" id="v1T-jg-tT6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="haw-fS-bOt"/>
                     </view>
                     <connections>
