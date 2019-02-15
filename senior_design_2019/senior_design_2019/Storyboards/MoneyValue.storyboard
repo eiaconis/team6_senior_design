@@ -282,10 +282,10 @@
             </objects>
             <point key="canvasLocation" x="1980" y="640.92953523238384"/>
         </scene>
-        <!--Account View Controller-->
+        <!--View Controller-->
         <scene sceneID="jve-8D-QEl">
             <objects>
-                <viewController id="obj-ag-amh" customClass="AccountViewController" customModule="senior_design_2019" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="obj-ag-amh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OeN-5i-b3V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

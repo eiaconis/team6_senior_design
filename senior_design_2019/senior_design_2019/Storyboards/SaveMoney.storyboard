@@ -139,25 +139,11 @@
                                     <outlet property="delegate" destination="THK-04-Js4" id="apB-QE-Xhy"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wW4-FA-mwt">
-                                <rect key="frame" x="154" y="533" width="66" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.81960784310000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
-                                <state key="normal" title="Skip">
-                                    <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="IBn-ri-VHf" eventType="touchUpInside" id="6lW-4v-iNR"/>
-                                    <segue destination="ItX-D4-hel" kind="show" id="bsf-02-StO"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xoN-jV-Bqm"/>
                     </view>
                     <connections>
-                        <outlet property="skipButton" destination="wW4-FA-mwt" id="w5H-pX-jSg"/>
                         <segue destination="hqP-CO-EyG" kind="show" identifier="menuItemSegue" id="nGe-oO-TQe"/>
                     </connections>
                 </viewController>
@@ -199,25 +185,11 @@
                                     <outlet property="delegate" destination="hqP-CO-EyG" id="rhY-HX-4fX"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcN-VK-vzq">
-                                <rect key="frame" x="153" y="532" width="68" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.81960784310000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
-                                <state key="normal" title="Skip">
-                                    <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="IBn-ri-VHf" eventType="touchUpInside" id="c1N-kQ-suy"/>
-                                    <segue destination="ItX-D4-hel" kind="show" id="tAa-J4-IcT"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vOu-ez-Ur5"/>
                     </view>
                     <connections>
-                        <outlet property="skipButton" destination="EcN-VK-vzq" id="JPq-Ud-68e"/>
                         <segue destination="ItX-D4-hel" kind="show" identifier="backToMain" id="eg2-iv-gZ3"/>
                     </connections>
                 </viewController>
@@ -306,6 +278,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qyf-OS-ITP"/>
+        <segue reference="eg2-iv-gZ3"/>
     </inferredMetricsTieBreakers>
 </document>

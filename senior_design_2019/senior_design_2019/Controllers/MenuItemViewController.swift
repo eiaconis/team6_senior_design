@@ -12,14 +12,8 @@ class MenuItemViewController: UIViewController, UITableViewDelegate, UITableView
     
     let menu = ["Small Coffee", "Medium Coffee", "Large Coffee"]
     
-    @IBOutlet weak var skipButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Pad and round the 'Skip' Button
-        skipButton.layer.cornerRadius = 5
-        skipButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
