@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6421283822038EA4005B58AA /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6421283722038EA4005B58AA /* FirstPageViewController.swift */; };
+		64946A3F2217422F00622CF4 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64946A3E2217422F00622CF4 /* AccountViewController.swift */; };
+		64946A4122174EC200622CF4 /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64946A4022174EC200622CF4 /* EditProfileController.swift */; };
+		64946A452217526A00622CF4 /* ChangeGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64946A442217526A00622CF4 /* ChangeGoalController.swift */; };
 		64CBA2C022038346002C6425 /* AddGoalFromPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CBA2BF22038346002C6425 /* AddGoalFromPageController.swift */; };
 		753777AB22024FBC00FD7F4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753777AA22024FBC00FD7F4C /* User.swift */; };
 		753777AD22024FC900FD7F4C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753777AC22024FC900FD7F4C /* Goal.swift */; };
@@ -63,6 +66,9 @@
 		03BCCB9A90D37642D7CD2C77 /* Pods-senior_design_2019Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019Tests/Pods-senior_design_2019Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		33088D3025DC94187EFC6DC4 /* Pods-senior_design_2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019.release.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019/Pods-senior_design_2019.release.xcconfig"; sourceTree = "<group>"; };
 		6421283722038EA4005B58AA /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
+		64946A3E2217422F00622CF4 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		64946A4022174EC200622CF4 /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
+		64946A442217526A00622CF4 /* ChangeGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGoalController.swift; sourceTree = "<group>"; };
 		64CBA2BF22038346002C6425 /* AddGoalFromPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalFromPageController.swift; sourceTree = "<group>"; };
 		6F783671B1F5A1F60B1188D6 /* Pods_senior_design_2019Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_senior_design_2019Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		753777AA22024FBC00FD7F4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -136,10 +142,13 @@
 		753777A722024EFF00FD7F4C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				64946A4022174EC200622CF4 /* EditProfileController.swift */,
+				64946A442217526A00622CF4 /* ChangeGoalController.swift */,
 				75C21AE221FFAA530020E727 /* AddGoalViewController.swift */,
 				75C21AEA21FFAA740020E727 /* ViewController.swift */,
 				75C21AE021FFAA4F0020E727 /* CreateAccountViewController.swift */,
 				75C21ADC21FFAA420020E727 /* MenuItemViewController.swift */,
+				64946A3E2217422F00622CF4 /* AccountViewController.swift */,
 				75C21AEC21FFAA7A0020E727 /* IdealMenuItemViewController.swift */,
 				75C21AE621FFAA5D0020E727 /* MenuSaveMoneyViewController.swift */,
 				75C21AE421FFAA570020E727 /* MoneyValueViewController.swift */,
@@ -515,7 +524,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				753777AB22024FBC00FD7F4C /* User.swift in Sources */,
+				64946A452217526A00622CF4 /* ChangeGoalController.swift in Sources */,
 				75BC25412206370B0053DE59 /* ReturnValue.swift in Sources */,
+				64946A3F2217422F00622CF4 /* AccountViewController.swift in Sources */,
 				75C21AED21FFAA7A0020E727 /* IdealMenuItemViewController.swift in Sources */,
 				75C21AE121FFAA4F0020E727 /* CreateAccountViewController.swift in Sources */,
 				75C21ADD21FFAA420020E727 /* MenuItemViewController.swift in Sources */,
@@ -528,6 +539,7 @@
 				75C21AE321FFAA540020E727 /* AddGoalViewController.swift in Sources */,
 				753777B7220270D800FD7F4C /* ManualEntryTransaction.swift in Sources */,
 				75C21AF7220114E80020E727 /* DatabaseAccess.swift in Sources */,
+				64946A4122174EC200622CF4 /* EditProfileController.swift in Sources */,
 				75C21AA521FFA9AB0020E727 /* AppDelegate.swift in Sources */,
 				75C21AE721FFAA5D0020E727 /* MenuSaveMoneyViewController.swift in Sources */,
 				75C21ADF21FFAA460020E727 /* SaveMoneyController.swift in Sources */,

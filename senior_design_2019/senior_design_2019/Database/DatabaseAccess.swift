@@ -264,6 +264,41 @@ class DatabaseAccess {
         //        }
     }
     
+    /* Gets titles of all goals associated with a user
+     Input: N/A
+     Output: String array of goal titles
+     */
+    func getAllGoalsForUser(callback : @escaping ([String]?) -> Void) {
+        let uid = Auth.auth().currentUser?.uid
+        self.ref.child("UserTable/\(uid)/goals").observe(.value, with : {(snapshot) in
+            if snapshot.exists() {
+                let goalIDs = snapshot.value as? NSDictionary
+                if let goalIDstr = goalIDs?.allKeys as? [String]? {
+                    callback(goalIDstr)
+                }
+            } else {
+                callback(nil)
+            }
+        })
+    }
+    
+    /*
+     Function to get a goal's title from its goalID
+     */
+    func getStringGoalTitle(goalID: String, callback: @escaping (String?) -> Void) {
+        self.ref.child("GoalTable/\(goalID)/title").observe(.value, with: { (snapshot) in
+            if snapshot.exists() {
+                if let title = snapshot.value as? String {
+                    let goalTitle : String = title
+                    callback(goalTitle)
+                } else {
+                    print("Goal Name not found")
+                    callback(nil)
+                }
+            }
+        })
+    }
+    
     // TODO: Transfer balance of goal 1 to goal 2
     
     // TODO: Delete goal

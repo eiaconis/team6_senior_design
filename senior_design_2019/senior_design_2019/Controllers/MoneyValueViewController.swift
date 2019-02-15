@@ -23,7 +23,7 @@ class MoneyValueViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Pad and round the 'Logout' Button
         logoutButton.layer.cornerRadius = 5
         logoutButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
@@ -56,22 +56,5 @@ class MoneyValueViewController: UIViewController {
         })
     
     }
-    
-    
-    
-    @IBAction func logoutButtonPressed(_ sender: Any) {
-        print("signout pressed")
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
