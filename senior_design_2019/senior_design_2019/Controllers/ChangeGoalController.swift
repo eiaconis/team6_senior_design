@@ -7,24 +7,28 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var goalPicker: UIPickerView!
+    @IBOutlet weak var saveButton: UIButton!
+    
     
     let database : DatabaseAccess = DatabaseAccess.getInstance()
     var goalIDs : [String]! = [String]()
     var goalNames : [String]! = [String]()
+    var goalSelected : String = ""
+    var goalSelectedRow : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         updatePickerView()
-        print("Checking goals...")
-        print("goal ids = \(goalIDs)")
-        for goal in goalIDs {
-            print(goal)
-        }
+        
+        // Pad and round the 'Save' Button
+        saveButton.layer.cornerRadius = 5
+        saveButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
     }
     
 
@@ -38,6 +42,16 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return goalNames[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        goalSelected = goalNames[row] as String
+        goalSelectedRow = row
+        print("goal selected = \(goalSelected) at row = \(goalSelectedRow) with id = \(goalIDs[goalSelectedRow])")
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        self.database.editGoalInUser(userId: (Auth.auth().currentUser?.uid)!, goalId: goalIDs[goalSelectedRow])
     }
     
     func updatePickerView() {
@@ -54,7 +68,7 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
                 self.database.getStringGoalTitle(goalID: goalID, callback: goalNameClosure)
             }
         }
-        self.database.getAllGoalsForUser(callback: goalsClosure)
+        self.database.getAllGoalsForUser(uid: (Auth.auth().currentUser?.uid)!, callback: goalsClosure)
     }
 
 }

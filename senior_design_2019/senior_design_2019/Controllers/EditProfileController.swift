@@ -10,11 +10,15 @@ import UIKit
 
 class EditProfileController: UIViewController {
     
+    // Text Fields
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
+    
+    // Buttons
+    @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,10 @@ class EditProfileController: UIViewController {
         firstNameField.placeholder = "first name saved in database"
         lastNameField.placeholder = "last name saved in database"
         phoneField.placeholder = "phone saved in database"
+        
+        // Pad and round the 'Save' Button
+        saveButton.layer.cornerRadius = 5
+        saveButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
     }
     
 }

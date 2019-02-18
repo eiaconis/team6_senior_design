@@ -266,18 +266,17 @@ class DatabaseAccess {
     
     /* Gets titles of all goals associated with a user
      Input: N/A
-     Output: String array of goal titles
+     Output: String array of goal IDs
      */
-    func getAllGoalsForUser(callback : @escaping ([String]?) -> Void) {
-        let uid = Auth.auth().currentUser?.uid
+    func getAllGoalsForUser(uid: String, callback : @escaping ([String]?) -> Void) {
         self.ref.child("UserTable/\(uid)/goals").observe(.value, with : {(snapshot) in
             if snapshot.exists() {
                 let goalIDs = snapshot.value as? NSDictionary
                 if let goalIDstr = goalIDs?.allKeys as? [String]? {
-                    print("id in db = \(goalIDstr)")
                     callback(goalIDstr)
                 }
             } else {
+                print("No Goals found for user with id \(uid)")
                 callback(nil)
             }
         })
@@ -285,17 +284,17 @@ class DatabaseAccess {
     
     /*
      Function to get a goal's title from its goalID
+     Input: String goal ID
+     Output: String goal name escaping via callback
      */
     func getStringGoalTitle(goalID: String, callback: @escaping (String?) -> Void) {
         self.ref.child("GoalTable/\(goalID)/title").observe(.value, with: { (snapshot) in
             if snapshot.exists() {
                 if let title = snapshot.value as? String {
-                    print("title in db = \(title)")
                     let goalTitle : String = title
-                    print("goal title in db = \(goalTitle)")
                     callback(goalTitle)
                 } else {
-                    print("Goal Name not found")
+                    print("Goal Name not found for goal ID \(goalID)")
                     callback(nil)
                 }
             }

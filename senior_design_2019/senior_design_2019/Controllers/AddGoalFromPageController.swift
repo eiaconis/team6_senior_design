@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class AddGoalFromPageController: UIViewController {
     
+    let database : DatabaseAccess = DatabaseAccess.getInstance()
+    
+    // Buttons
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
+    
+    // Text Fields
+    @IBOutlet weak var goalNameField: UITextField!
+    @IBOutlet weak var amountField: UITextField!
     @IBOutlet weak var dateField: UITextField!
     
     override func viewDidLoad() {
@@ -49,21 +58,54 @@ class AddGoalFromPageController: UIViewController {
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        createAlert(title: "Goal Added!")
-    }
-    
-    func createAlert(title: String) {
-        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in self.performSegue(withIdentifier: "addGoalSegue", sender: nil)}))
+        // Get field values
+        let goalName = goalNameField.text ?? ""
+        let amount = amountField.text ?? ""
+        let date = dateField.text ?? ""
+        print("goalName = \(goalName)")
+        print("amount = \(amount)")
+        print("date = \(date)")
         
-        self.present(alert, animated: true) {
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissAlertController))
-            alert.view.superview?.subviews[0].addGestureRecognizer(tapGesture)
+        // Check field values
+        if goalName == "" {
+            createErrorAlert(title: "Goal name required")
+        } else if amount == "" {
+            createErrorAlert(title: "Target amount required")
+        } else {
+            // Convert amount field string to a double
+            if Double(amountField.text!) != nil {
+                print("Valid goal amount of \(amountField.text!)")
+            } else {
+                createErrorAlert(title: "Not a valid number: \(amountField.text!)")
+                return
+            }
+            
+            // Create goal
+            let numAmount = Double(amountField.text!)
+            let newGoal = Goal(userId: (Auth.auth().currentUser?.uid)!, title: goalName, target: numAmount ?? 100.0)
+            // Set deadline
+            if date != "" {
+                newGoal.setDeadline(date: date)
+            }
+            // Add Goal and update user's current goal
+            let goalId = database.addGoal(goal: newGoal)
+            database.addGoalToUser(goalId: goalId, userId: (Auth.auth().currentUser?.uid)!)
+            createSuccessAlert(title: "Goal Added!")
         }
     }
     
-    @objc func dismissAlertController(){
-        self.dismiss(animated: true, completion: nil)
+    func createErrorAlert(title: String) {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func createSuccessAlert(title: String) {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in self.performSegue(withIdentifier: "addGoalSegue", sender: nil)}))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

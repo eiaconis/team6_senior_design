@@ -25,7 +25,6 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         cell.textLabel?.text = options[indexPath.row]
         cell.textLabel?.font = UIFont(name:"DIN Condensed", size:20)
-        print(options[indexPath.row])
         return cell
     }
     
