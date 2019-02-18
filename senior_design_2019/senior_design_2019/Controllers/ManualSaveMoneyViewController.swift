@@ -60,6 +60,7 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         categoryLabel.text = categories[row]
+        self.view.endEditing(true)
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {

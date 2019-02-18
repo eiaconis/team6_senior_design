@@ -61,6 +61,8 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         // Set label text
         goalField.text = goalSelected
+        
+        self.view.endEditing(true)
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
