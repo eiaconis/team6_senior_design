@@ -16,8 +16,8 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var goalField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
-    
     let database : DatabaseAccess = DatabaseAccess.getInstance()
+    
     var goalIDs : [String]! = [String]()
     var goalNames : [String]! = [String]()
     var goalSelected : String = ""

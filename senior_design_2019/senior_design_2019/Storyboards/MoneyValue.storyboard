@@ -102,7 +102,7 @@
         <!--Goals-->
         <scene sceneID="VOZ-sg-vWe">
             <objects>
-                <viewController id="LRo-7A-4Sv" sceneMemberID="viewController">
+                <viewController id="LRo-7A-4Sv" customClass="GoalFeedController" customModule="senior_design_2019" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OEI-pe-ILk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,17 +126,42 @@
                                     <segue destination="z1v-Lg-ax3" kind="show" id="X7L-kG-EHj"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-HE-eHp">
+                                <rect key="frame" x="30" y="163" width="315" height="425"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="goalCell" id="ysa-GK-PSf">
+                                        <rect key="frame" x="0.0" y="28" width="315" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ysa-GK-PSf" id="wMa-BW-4C9">
+                                            <rect key="frame" x="0.0" y="0.0" width="315" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LRo-7A-4Sv" id="8sO-dg-MPp"/>
+                                    <outlet property="delegate" destination="LRo-7A-4Sv" id="KXJ-w7-j8Z"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WHL-qz-Krz" firstAttribute="top" secondItem="DvC-lP-r3T" secondAttribute="top" constant="45" id="54W-JK-1iJ"/>
+                            <constraint firstItem="DvC-lP-r3T" firstAttribute="bottom" secondItem="hnf-HE-eHp" secondAttribute="bottom" constant="30" id="DVJ-5s-UqQ"/>
+                            <constraint firstItem="hnf-HE-eHp" firstAttribute="top" secondItem="mgk-rC-PlP" secondAttribute="bottom" constant="50" id="GLQ-RY-Cvt"/>
+                            <constraint firstItem="DvC-lP-r3T" firstAttribute="trailing" secondItem="hnf-HE-eHp" secondAttribute="trailing" constant="30" id="GTu-nI-P0O"/>
                             <constraint firstItem="mgk-rC-PlP" firstAttribute="top" secondItem="DvC-lP-r3T" secondAttribute="top" constant="45" id="QBl-aG-4py"/>
                             <constraint firstItem="mgk-rC-PlP" firstAttribute="centerX" secondItem="OEI-pe-ILk" secondAttribute="centerX" id="RIv-cH-k7a"/>
                             <constraint firstItem="DvC-lP-r3T" firstAttribute="trailing" secondItem="WHL-qz-Krz" secondAttribute="trailing" constant="20" id="hOM-wC-fNa"/>
+                            <constraint firstItem="hnf-HE-eHp" firstAttribute="leading" secondItem="DvC-lP-r3T" secondAttribute="leading" constant="30" id="xRN-qo-aNu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DvC-lP-r3T"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Goals" image="trophy-32" selectedImage="trophy-32" id="GBW-B2-rxf"/>
+                    <connections>
+                        <outlet property="goalTableView" destination="hnf-HE-eHp" id="uF4-xH-shb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2R-DG-dH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

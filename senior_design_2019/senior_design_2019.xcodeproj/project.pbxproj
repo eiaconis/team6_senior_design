@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6421283822038EA4005B58AA /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6421283722038EA4005B58AA /* FirstPageViewController.swift */; };
+		643BFAAF221B53C10088DD14 /* GoalFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643BFAAE221B53C10088DD14 /* GoalFeedController.swift */; };
 		64946A3F2217422F00622CF4 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64946A3E2217422F00622CF4 /* AccountViewController.swift */; };
 		64946A4122174EC200622CF4 /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64946A4022174EC200622CF4 /* EditProfileController.swift */; };
 		64946A452217526A00622CF4 /* ChangeGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64946A442217526A00622CF4 /* ChangeGoalController.swift */; };
@@ -65,6 +66,7 @@
 		03BCCB9A90D37642D7CD2C77 /* Pods-senior_design_2019Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019Tests/Pods-senior_design_2019Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		33088D3025DC94187EFC6DC4 /* Pods-senior_design_2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019.release.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019/Pods-senior_design_2019.release.xcconfig"; sourceTree = "<group>"; };
 		6421283722038EA4005B58AA /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
+		643BFAAE221B53C10088DD14 /* GoalFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalFeedController.swift; sourceTree = "<group>"; };
 		64946A3E2217422F00622CF4 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		64946A4022174EC200622CF4 /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		64946A442217526A00622CF4 /* ChangeGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGoalController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				64946A4022174EC200622CF4 /* EditProfileController.swift */,
 				64946A442217526A00622CF4 /* ChangeGoalController.swift */,
+				643BFAAE221B53C10088DD14 /* GoalFeedController.swift */,
 				75C21AE221FFAA530020E727 /* AddGoalViewController.swift */,
 				75C21AEA21FFAA740020E727 /* ViewController.swift */,
 				75C21AE021FFAA4F0020E727 /* CreateAccountViewController.swift */,
@@ -541,6 +544,7 @@
 				75C21ADF21FFAA460020E727 /* SaveMoneyController.swift in Sources */,
 				75C21AE521FFAA570020E727 /* MoneyValueViewController.swift in Sources */,
 				753777AF22024FD700FD7F4C /* Transaction.swift in Sources */,
+				643BFAAF221B53C10088DD14 /* GoalFeedController.swift in Sources */,
 				6421283822038EA4005B58AA /* FirstPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
