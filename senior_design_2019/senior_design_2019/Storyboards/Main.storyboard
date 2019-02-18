@@ -121,7 +121,7 @@
                                 <rect key="frame" x="122" y="281" width="228" height="30"/>
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="008080_Swatch" translatesAutoresizingMaskIntoConstraints="NO" id="cBm-fB-Q5l">
                                 <rect key="frame" x="121" y="316" width="228" height="1"/>
@@ -304,7 +304,7 @@
                                 <rect key="frame" x="106" y="224" width="249" height="30"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqV-mu-92Y">
                                 <rect key="frame" x="20" y="234" width="81" height="25"/>
@@ -616,7 +616,7 @@
         <image name="arrow-32-65" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dxN-q2-mJI"/>
+        <segue reference="LbO-JK-UAB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
