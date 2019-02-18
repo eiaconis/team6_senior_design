@@ -11,8 +11,9 @@ import Firebase
 import FirebaseAuth
 
 class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
-    @IBOutlet weak var goalPicker: UIPickerView!
+    
+    
+    @IBOutlet weak var goalField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
     
@@ -21,10 +22,18 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
     var goalNames : [String]! = [String]()
     var goalSelected : String = ""
     var goalSelectedRow : Int = 0
+    var goalSelectedID : String = ""
+    var picker = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Picker set up
+        picker.delegate = self
+        picker.dataSource = self
+        goalField.inputView = picker
         updatePickerView()
+        populatePlaceholderText()
         
         // Pad and round the 'Save' Button
         saveButton.layer.cornerRadius = 5
@@ -47,7 +56,11 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         goalSelected = goalNames[row] as String
         goalSelectedRow = row
+        goalSelectedID = goalIDs[row]
         print("goal selected = \(goalSelected) at row = \(goalSelectedRow) with id = \(goalIDs[goalSelectedRow])")
+        
+        // Set label text
+        goalField.text = goalSelected
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
@@ -60,7 +73,7 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
             let goalNameClosure = { (goalName : String?) -> Void in
                 if goalName != nil {
                     self.goalNames.append(goalName!)
-                    self.goalPicker.reloadAllComponents()
+                    self.picker.reloadAllComponents()
                 }
             }
             self.goalIDs = returnedGoalIDs ?? []
@@ -69,6 +82,23 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
             }
         }
         self.database.getAllGoalsForUser(uid: (Auth.auth().currentUser?.uid)!, callback: goalsClosure)
+    }
+    
+    /* Populates placeholder text in label to current user goal
+     */
+    func populatePlaceholderText() {
+        let placeholderClosure = {(goalID: String?) -> Void in
+            self.goalSelectedID = goalID ?? ""
+            let goalNameClosure = { (goalName : String?) -> Void in
+                if goalName != nil {
+                    print("Current goal is '\(goalName)'")
+                    self.goalField.placeholder = goalName
+                    self.goalSelected = goalName ?? ""
+                }
+            }
+            self.database.getStringGoalTitle(goalID: goalID!, callback: goalNameClosure)
+        }
+        self.database.getUserCurrGoal(uid: (Auth.auth().currentUser?.uid)!, callback: placeholderClosure)
     }
 
 }
