@@ -67,6 +67,7 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         self.database.editGoalInUser(userId: (Auth.auth().currentUser?.uid)!, goalId: goalIDs[goalSelectedRow])
+        createAlert(title: "Current goal changed to '\(goalSelected)'")
     }
     
     func updatePickerView() {
@@ -101,6 +102,13 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
             self.database.getStringGoalTitle(goalID: goalID!, callback: goalNameClosure)
         }
         self.database.getUserCurrGoal(uid: (Auth.auth().currentUser?.uid)!, callback: placeholderClosure)
+    }
+    
+    func createAlert(title: String) {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
