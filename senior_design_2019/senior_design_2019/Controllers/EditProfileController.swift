@@ -28,6 +28,34 @@ class EditProfileController: UIViewController {
         super.viewDidLoad()
         
         // Fetch profile info and set placeholder text for each field
+        updatePlaceholderText()
+        
+        // Pad and round the 'Save' Button
+        saveButton.layer.cornerRadius = 5
+        saveButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        // TODO: Save new user information - Doesn't update in DB currently
+        // TODO: Add for password field. Not currently saving passwords
+        if emailField.text != emailField.placeholder {
+            self.database.setUserEmail(uid: (Auth.auth().currentUser?.uid)!, email: emailField.text!)
+        } else if firstNameField.text != firstNameField.placeholder {
+            self.database.setUserFirstName(uid: (Auth.auth().currentUser?.uid)!, firstName: firstNameField.text!)
+        } else if lastNameField.text != lastNameField.placeholder {
+            self.database.setUserLastName(uid: (Auth.auth().currentUser?.uid)!, lastName: lastNameField.text!)
+        } else if phoneField.text != phoneField.placeholder {
+            self.database.setUserPhoneNumber(uid: (Auth.auth().currentUser?.uid)!, phone: phoneField.text!)
+        }
+        
+        // Display alert
+        createAlert(title: "Profile information updated!")
+        
+        // Update placeholder text with new information
+        updatePlaceholderText()
+    }
+    
+    func updatePlaceholderText() {
         self.database.getUserEmail(uid: (Auth.auth().currentUser?.uid)!, callback: {(email) -> Void in
             print("email in db = \(email)")
             self.emailField.placeholder = email
@@ -42,11 +70,14 @@ class EditProfileController: UIViewController {
         self.database.getUserPhone(uid: (Auth.auth().currentUser?.uid)!, callback: {(phone) -> Void in
             self.phoneField.placeholder = phone
         })
-        phoneField.placeholder = "phone saved in database"
-        
-        // Pad and round the 'Save' Button
-        saveButton.layer.cornerRadius = 5
-        saveButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
     }
+    
+    func createAlert(title: String) {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
 }

@@ -481,6 +481,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="6nO-e0-LZj" eventType="touchUpInside" id="jyl-hk-R7W"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="008080_Swatch" translatesAutoresizingMaskIntoConstraints="NO" id="zXF-PE-eBT">
                                 <rect key="frame" x="71" y="208" width="284" height="1"/>

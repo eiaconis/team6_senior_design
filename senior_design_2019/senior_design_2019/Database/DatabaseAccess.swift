@@ -182,6 +182,32 @@ class DatabaseAccess {
         })
     }
     
+    // Set user email
+    func setUserEmail(uid: String, email: String) {
+        let formattedEmail = reformatEmail(email: email)
+        self.ref.child("UserTable/\(uid)/formattedEmail/").setValue(formattedEmail)
+    }
+    
+    // Set user password
+    func setUserPassword(uid: String, password: String) {
+        self.ref.child("UserTable/\(uid)/password/").setValue(password)
+    }
+    
+    // Set user first name
+    func setUserFirstName(uid: String, firstName: String) {
+        self.ref.child("UserTable/\(uid)/firstName/").setValue(firstName)
+    }
+    
+    // Set user last name
+    func setUserLastName(uid: String, lastName: String) {
+        self.ref.child("UserTable/\(uid)/lastName/").setValue(lastName)
+    }
+    
+    // Set user phone number
+    func setUserPhoneNumber(uid: String, phone: String) {
+        self.ref.child("UserTable/\(uid)/phoneNumber/").setValue(phone)
+    }
+    
     // Edit currently set goal in user account
     // Input: String userId, String goalId
     // Output:
