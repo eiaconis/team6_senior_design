@@ -24,23 +24,13 @@
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOf-Oq-8lk">
-                                <rect key="frame" x="155" y="304" width="65" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fA-F5-O3p">
+                                <rect key="frame" x="0.0" y="162" width="375" height="300"/>
                                 <color key="backgroundColor" red="0.81960784310000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
-                                <state key="normal" title="Sign In">
-                                    <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="continueButtonPressed:" destination="pk3-kI-KxE" eventType="touchUpInside" id="xhx-bm-EFv"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="idK-Gd-dD6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fA-F5-O3p">
-                                <rect key="frame" x="117" y="207" width="141" height="42"/>
-                                <color key="backgroundColor" red="0.81960784310000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
-                                <state key="normal" title="Create Account">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="IEq-qf-oGg"/>
+                                </constraints>
+                                <state key="normal" image="add-user-2-64">
                                     <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -48,15 +38,45 @@
                                     <segue destination="pk3-kI-KxE" kind="show" id="gNE-fY-D7Y"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOf-Oq-8lk">
+                                <rect key="frame" x="0.0" y="462" width="375" height="316"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="login-64">
+                                    <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButtonPressed:" destination="pk3-kI-KxE" eventType="touchUpInside" id="xhx-bm-EFv"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="idK-Gd-dD6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgw-Gn-ihm">
+                                <rect key="frame" x="105.66666666666669" y="367" width="164" height="35"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="35"/>
+                                <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAg-Ey-kfS">
+                                <rect key="frame" x="149.66666666666666" y="678" width="76" height="35"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="35"/>
+                                <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2fA-F5-O3p" firstAttribute="centerX" secondItem="LTP-Mc-jPd" secondAttribute="centerX" id="4vw-Hi-M7Y"/>
                             <constraint firstItem="dDm-iQ-GB8" firstAttribute="top" secondItem="ufq-xS-nfS" secondAttribute="top" constant="65" id="FZe-4m-SbT"/>
+                            <constraint firstItem="ufq-xS-nfS" firstAttribute="trailing" secondItem="2fA-F5-O3p" secondAttribute="trailing" id="GcD-w9-rUy"/>
+                            <constraint firstItem="2fA-F5-O3p" firstAttribute="top" secondItem="dDm-iQ-GB8" secondAttribute="bottom" constant="10" id="Hx7-45-JUB"/>
                             <constraint firstItem="dDm-iQ-GB8" firstAttribute="centerX" secondItem="LTP-Mc-jPd" secondAttribute="centerX" id="ILn-FY-dOP"/>
-                            <constraint firstItem="2fA-F5-O3p" firstAttribute="top" secondItem="dDm-iQ-GB8" secondAttribute="bottom" constant="55" id="Pkx-SH-mQX"/>
-                            <constraint firstItem="bOf-Oq-8lk" firstAttribute="centerX" secondItem="LTP-Mc-jPd" secondAttribute="centerX" id="u1y-rT-aDn"/>
-                            <constraint firstItem="bOf-Oq-8lk" firstAttribute="top" secondItem="2fA-F5-O3p" secondAttribute="bottom" constant="55" id="x2M-FT-b6u"/>
+                            <constraint firstItem="cAg-Ey-kfS" firstAttribute="centerX" secondItem="LTP-Mc-jPd" secondAttribute="centerX" id="KPu-yu-tZZ"/>
+                            <constraint firstItem="ufq-xS-nfS" firstAttribute="bottom" secondItem="bOf-Oq-8lk" secondAttribute="bottom" id="Oyq-um-Xmn"/>
+                            <constraint firstItem="ufq-xS-nfS" firstAttribute="bottom" secondItem="cAg-Ey-kfS" secondAttribute="bottom" constant="65" id="hcB-15-QdV"/>
+                            <constraint firstItem="Jgw-Gn-ihm" firstAttribute="centerX" secondItem="LTP-Mc-jPd" secondAttribute="centerX" id="i6g-Yy-T0X"/>
+                            <constraint firstItem="bOf-Oq-8lk" firstAttribute="leading" secondItem="ufq-xS-nfS" secondAttribute="leading" id="lRS-gZ-7XQ"/>
+                            <constraint firstItem="bOf-Oq-8lk" firstAttribute="top" secondItem="2fA-F5-O3p" secondAttribute="bottom" id="oEz-ul-TRa"/>
+                            <constraint firstItem="2fA-F5-O3p" firstAttribute="leading" secondItem="ufq-xS-nfS" secondAttribute="leading" id="oY8-zJ-5eY"/>
+                            <constraint firstItem="Jgw-Gn-ihm" firstAttribute="top" secondItem="dDm-iQ-GB8" secondAttribute="bottom" constant="215" id="rIi-bK-QGM"/>
+                            <constraint firstItem="ufq-xS-nfS" firstAttribute="trailing" secondItem="bOf-Oq-8lk" secondAttribute="trailing" id="wEq-Sa-oW9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ufq-xS-nfS"/>
                     </view>
@@ -67,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJL-cs-htS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="27"/>
+            <point key="canvasLocation" x="125.59999999999999" y="26.600985221674879"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -613,7 +633,9 @@
     </scenes>
     <resources>
         <image name="008080_Swatch" width="336" height="280"/>
+        <image name="add-user-2-64" width="64" height="64"/>
         <image name="arrow-32-65" width="64" height="64"/>
+        <image name="login-64" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LbO-JK-UAB"/>
