@@ -133,6 +133,55 @@ class DatabaseAccess {
         //        }
     }
     
+    // Get user's current email
+    func getUserEmail(uid: String, callback : @escaping (String?) -> Void) {
+        self.ref.child("UserTable/\(uid)/formattedEmail").observe(.value, with: { (snapshot) in
+            if snapshot.exists(){
+                let formattedEmail = snapshot.value as? String
+                let email = self.unformatEmail(email: formattedEmail!)
+                callback(email)
+            } else {
+                callback(nil)
+            }
+        })
+    }
+    
+    // Get user's current first name
+    func getUserFirstName(uid: String, callback : @escaping (String?) -> Void) {
+        self.ref.child("UserTable/\(uid)/firstName").observe(.value, with: { (snapshot) in
+            if snapshot.exists(){
+                let firstName = snapshot.value as? String
+                callback(firstName!)
+            } else {
+                callback(nil)
+            }
+        })
+    }
+    
+    // Get user's current last name
+    func getUserLastName(uid: String, callback : @escaping (String?) -> Void) {
+        self.ref.child("UserTable/\(uid)/lastName").observe(.value, with: { (snapshot) in
+            if snapshot.exists(){
+                let lastName = snapshot.value as? String
+                callback(lastName!)
+            } else {
+                callback(nil)
+            }
+        })
+    }
+    
+    // Get user's current phone number
+    func getUserPhone(uid: String, callback : @escaping (String?) -> Void) {
+        self.ref.child("UserTable/\(uid)/phoneNumber").observe(.value, with: { (snapshot) in
+            if snapshot.exists(){
+                let phoneNumber = snapshot.value as? String
+                callback(phoneNumber!)
+            } else {
+                callback(nil)
+            }
+        })
+    }
+    
     // Edit currently set goal in user account
     // Input: String userId, String goalId
     // Output:
@@ -395,11 +444,37 @@ class DatabaseAccess {
             } else if char == pound {
                 reformattedEmail.append("*")
             } else if char == dollar {
-                reformattedEmail.append("@")
+                reformattedEmail.append("^")
             } else if char == lBracket {
                 reformattedEmail.append("<")
             } else if char == rBracket {
                 reformattedEmail.append(">")
+            } else {
+                reformattedEmail.append(char)
+            }
+        }
+        return reformattedEmail
+    }
+    
+    func unformatEmail(email: String) -> String {
+        let andSign : Character = "&"
+        let star : Character = "*"
+        let carrot : Character = "^"
+        let lessThan : Character = "<"
+        let greaterThan : Character = ">"
+        
+        var reformattedEmail : String = ""
+        for char in email {
+            if char == andSign {
+                reformattedEmail.append(".")
+            } else if char == star {
+                reformattedEmail.append("#")
+            } else if char == carrot {
+                reformattedEmail.append("$")
+            } else if char == lessThan {
+                reformattedEmail.append("[")
+            } else if char == greaterThan {
+                reformattedEmail.append("]")
             } else {
                 reformattedEmail.append(char)
             }

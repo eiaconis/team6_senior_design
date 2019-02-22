@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class EditProfileController: UIViewController {
+    
+    let database: DatabaseAccess = DatabaseAccess.getInstance()
     
     // Text Fields
     @IBOutlet weak var emailField: UITextField!
@@ -22,11 +26,22 @@ class EditProfileController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: Fetch profile info and set placeholder text for each field
-        emailField.placeholder = "email saved in database"
-        passwordField.placeholder = "password saved in database"
-        firstNameField.placeholder = "first name saved in database"
-        lastNameField.placeholder = "last name saved in database"
+        
+        // Fetch profile info and set placeholder text for each field
+        self.database.getUserEmail(uid: (Auth.auth().currentUser?.uid)!, callback: {(email) -> Void in
+            print("email in db = \(email)")
+            self.emailField.placeholder = email
+        })
+        passwordField.placeholder = "******"
+        self.database.getUserFirstName(uid: (Auth.auth().currentUser?.uid)!, callback: {(firstName) -> Void in
+            self.firstNameField.placeholder = firstName
+        })
+        self.database.getUserLastName(uid: (Auth.auth().currentUser?.uid)!, callback: {(lastName) -> Void in
+            self.lastNameField.placeholder = lastName
+        })
+        self.database.getUserPhone(uid: (Auth.auth().currentUser?.uid)!, callback: {(phone) -> Void in
+            self.phoneField.placeholder = phone
+        })
         phoneField.placeholder = "phone saved in database"
         
         // Pad and round the 'Save' Button
