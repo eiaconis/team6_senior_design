@@ -18,29 +18,31 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
     @IBOutlet weak var saveButton: UIButton!
     
     let database: DatabaseAccess = DatabaseAccess.getInstance()
-    var currGoalId : String?
     var prevAmount : Double?
     
-    var categories = ["Food", "Transportation", "Entertainment", "Rent", "Shopping"]
     var picker = UIPickerView()
+    var goalNames : [String] = [String]()
+    var goalNameToID : [String: String] = [:]
+    var goalSelected : String = ""
+    var goalSelectedID : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Picker set up
         picker.delegate = self
         picker.dataSource = self
         categoryLabel.inputView = picker
+        updatePickerView()
+        populatePlaceholderText()
         
         // Pad and round the 'Save' Button
         saveButton.layer.cornerRadius = 5
         saveButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
         
+        // Initialize state for saving to default/current goal
         self.database.getUserCurrGoal(uid: (Auth.auth().currentUser?.uid)!, callback: {(goalId) -> Void in
-            print("got goalid")
-            print(goalId)
-            self.currGoalId = goalId
             self.database.getStateOfGoal(goalId: goalId!, callback: {(prev) -> Void in
-                print("got prev")
-                print(prev)
                 self.prevAmount = prev
             })
         })
@@ -51,20 +53,32 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return categories.count
+        return goalNames.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return categories[row]
+        return goalNames[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        categoryLabel.text = categories[row]
+        goalSelected = goalNames[row] as String
+        goalSelectedID = goalNameToID[goalSelected]!
+        print("goal selected = \(goalSelected) with id = \(goalSelectedID)")
+        
+        // Get current amount towards selected goal
+        self.database.getStateOfGoal(goalId: goalSelectedID, callback: {(prev) -> Void in
+            print("Previous amount saved towards goal = \(prev)")
+            self.prevAmount = prev
+        })
+        
+        
+        // Set label text
+        categoryLabel.text = goalSelected
+        
         self.view.endEditing(true)
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        print("save in manual pressed")
         // Get value from amount field
         var currAmount = Double(amountTextField.text!)
         // If amount field is blank or negative, popup error and stay
@@ -72,11 +86,9 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
             // TODO:
             return
         }
-        // Else get category
-        let currCategory = categoryLabel.text!
         
         // Create transaction
-        var newTransaction = ManualEntryTransaction(category: currCategory, userId: (Auth.auth().currentUser?.uid)!, amount: currAmount!, goalId: self.currGoalId!)
+        var newTransaction = ManualEntryTransaction(category: "manual", userId: (Auth.auth().currentUser?.uid)!, amount: currAmount!, goalId: self.goalSelectedID)
         currAmount! += self.prevAmount!
 
         // Add transaction to db
@@ -84,9 +96,44 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         // Add transaction to user
         self.database.addTransactionToUser(transactionId: newTransactionId!, userId: (Auth.auth().currentUser?.uid)!)
         // Add transaction to goal
-        self.database.addTransactionToGoal(transactionId: newTransactionId!, goalId: self.currGoalId!)
+        self.database.addTransactionToGoal(transactionId: newTransactionId!, goalId: self.goalSelectedID)
         // Update goal--> Get current state, perform operations, update
-        self.database.updateGoalAmountSaved(goalId: self.currGoalId!, newAmount: currAmount!)
-        
+        self.database.updateGoalAmountSaved(goalId: goalSelectedID, newAmount: currAmount!)
+    }
+    
+    // Function to load picker view with goal names for user
+    func updatePickerView() {
+        let goalsClosure = {(returnedGoalIDs: [String]?) -> Void in
+            let goalIDs = returnedGoalIDs ?? []
+            for goalID in goalIDs {
+                let goalNameClosure = { (goalName : String?) -> Void in
+                    if goalName != nil {
+                        self.goalNames.append(goalName!)
+                        self.goalNameToID[goalName!] = goalID
+                        self.picker.reloadAllComponents()
+                    }
+                }
+                self.database.getStringGoalTitle(goalID: goalID, callback: goalNameClosure)
+            }
+        }
+        self.database.getAllGoalsForUser(uid: (Auth.auth().currentUser?.uid)!, callback: goalsClosure)
+    }
+    
+    /* Populates placeholder text in label to current user goal and "selects"
+     current goal as default to save to
+     */
+    func populatePlaceholderText() {
+        let placeholderClosure = {(goalID: String?) -> Void in
+            self.goalSelectedID = goalID ?? ""
+            let goalNameClosure = { (goalName : String?) -> Void in
+                if goalName != nil {
+                    print("Current goal is '\(goalName)'")
+                    self.categoryLabel.placeholder = goalName
+                    self.goalSelected = goalName ?? ""
+                }
+            }
+            self.database.getStringGoalTitle(goalID: goalID!, callback: goalNameClosure)
+        }
+        self.database.getUserCurrGoal(uid: (Auth.auth().currentUser?.uid)!, callback: placeholderClosure)
     }
 }
