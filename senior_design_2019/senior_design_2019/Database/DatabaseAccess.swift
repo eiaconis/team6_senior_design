@@ -83,16 +83,40 @@ class DatabaseAccess {
                 print("error logging in: \(error.debugDescription)")
                 if view != nil {
                     print("error")
-                    //TODO: Do NOT perform segue. Popup error.
+                    self.loginError(error: error!, view: view!)
                 }
             } else if user != nil {
                 if view != nil {
                     //OK login, show account homepage
-                    //TODO: Perform segue
+                        if view != nil {
+                            view?.performSegue(withIdentifier: "log_in", sender: view!)
+                        }
                     
                 }
             }
         }
+    }
+    
+    private func loginError(error: Error, view: UIViewController) {
+        let alert = UIAlertController(title: "Login Error",
+                                      message: error.localizedDescription ,
+                                      preferredStyle: .alert)
+        //TODO: popup
+        print("login error")
+        presentPopup(alert: alert, view: view, returnToLogin: false)
+    }
+    
+    private func presentPopup(alert: UIAlertController, view: UIViewController, returnToLogin: Bool) {
+        
+        let returnAction = UIAlertAction(title:"Login Again",
+                                         style: .default,
+                                         handler:  { action in view.performSegue(withIdentifier: "loginErrorSegue", sender: self) })
+        
+        let continueAction = UIAlertAction(title: "Continue",
+                                           style: .default)
+        
+        alert.addAction(returnToLogin ? returnAction : continueAction)
+        view.present(alert, animated: true, completion: nil)
     }
     
     // Puts user item in UserTable for user generated information and details
