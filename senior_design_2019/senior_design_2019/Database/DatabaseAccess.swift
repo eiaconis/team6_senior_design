@@ -257,6 +257,7 @@ class DatabaseAccess {
         Auth.auth().currentUser?.updatePassword(to: newPassword)
     }
     
+    
     // Edit currently signed in user's phone
     // Input: String new phone
     // Output: ??
