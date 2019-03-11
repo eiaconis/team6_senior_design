@@ -71,12 +71,11 @@ class DatabaseAccess {
         }
     }
     
-    // TODO: Login to an existing account with provided email and password
+    // Login to an existing account with provided email and password
     // Input: email and password
     // Output: void. Success will be determined by page shown. 
     func login(email: String, password: String, view: UIViewController?){
         print("loging in: \(email) , \(password)")
-        //TODO
         Auth.auth().signIn(withEmail: email, password: password) { user, error in
             // Handle error logging into account
             if error != nil {
@@ -97,12 +96,30 @@ class DatabaseAccess {
         }
     }
     
+    // Logout of currently logged in account
+    // Output: void. Success will be determined by page shown.
+    func logout(view: UIViewController?){
+        print("logging out")
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            self.logoutError(view: view!)
+        }
+    }
+    
     private func loginError(error: Error, view: UIViewController) {
         let alert = UIAlertController(title: "Login Error",
                                       message: error.localizedDescription ,
                                       preferredStyle: .alert)
-        //TODO: popup
         print("login error")
+        presentPopup(alert: alert, view: view, returnToLogin: false)
+    }
+    
+    private func logoutError( view: UIViewController) {
+        let alert = UIAlertController(title: "Logout Error",
+                                      message: "Unknown logout error.",
+                                      preferredStyle: .alert)
+        print("logout error")
         presentPopup(alert: alert, view: view, returnToLogin: false)
     }
     

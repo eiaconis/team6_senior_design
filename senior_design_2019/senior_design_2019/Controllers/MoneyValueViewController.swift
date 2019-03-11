@@ -56,5 +56,9 @@ class MoneyValueViewController: UIViewController {
         })
     
     }
-
+    
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        self.database.logout(view: self)
+    }
+    
 }
