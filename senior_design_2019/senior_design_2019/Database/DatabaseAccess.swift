@@ -174,19 +174,6 @@ class DatabaseAccess {
         //        }
     }
     
-    // Get user's current email
-    func getUserEmail(uid: String, callback : @escaping (String?) -> Void) {
-        self.ref.child("UserTable/\(uid)/formattedEmail").observe(.value, with: { (snapshot) in
-            if snapshot.exists(){
-                let formattedEmail = snapshot.value as? String
-                let email = self.unformatEmail(email: formattedEmail!)
-                callback(email)
-            } else {
-                callback(nil)
-            }
-        })
-    }
-    
     // Get user's current first name
     func getUserFirstName(uid: String, callback : @escaping (String?) -> Void) {
         self.ref.child("UserTable/\(uid)/firstName").observe(.value, with: { (snapshot) in
@@ -229,11 +216,6 @@ class DatabaseAccess {
         self.ref.child("UserTable/\(uid)/formattedEmail/").setValue(formattedEmail)
     }
     
-    // Set user password
-    func setUserPassword(uid: String, password: String) {
-        self.ref.child("UserTable/\(uid)/password/").setValue(password)
-    }
-    
     // Set user first name
     func setUserFirstName(uid: String, firstName: String) {
         self.ref.child("UserTable/\(uid)/firstName/").setValue(firstName)
@@ -270,7 +252,10 @@ class DatabaseAccess {
         self.ref.child("UserTable/\(String(describing: userId))/formattedEmail").setValue(newFormatEmail)
     }
     
-    // TODO: Edit password
+    // Edit password
+    func editPassword(newPassword: String) {
+        Auth.auth().currentUser?.updatePassword(to: newPassword)
+    }
     
     // Edit currently signed in user's phone
     // Input: String new phone
@@ -304,6 +289,7 @@ class DatabaseAccess {
         self.ref.child("GoalTable/\(goalId!)").setValue(newGoal)
         return goalId!
     }
+    
     
     // Puts goal identifier in user's list of goals
     // Input: String goalId, String userId

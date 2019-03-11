@@ -41,7 +41,6 @@ class MoneyValueViewController: UIViewController {
                 print("got goal amount")
                 print(amount!)
                 currAmount = amount!
-                // TODO: make this what is displayed
                 self.currentAmountLabel.text = "\(amount!)"
             })
             self.database.getTargetOfGoal(goalId: goalId!, callback: {(target) -> Void in
