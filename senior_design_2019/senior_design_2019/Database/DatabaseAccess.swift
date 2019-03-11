@@ -297,6 +297,7 @@ class DatabaseAccess {
                               "title" : goal.title!,
                               "target" : goal.target ?? 100.00,
                               "amountSaved": 0,
+                              "deadline": goal.deadline ?? nil,
                               ]
         let goalId = self.ref.child("GoalTable").childByAutoId().key
         goal.setGoalId(id: goalId!)

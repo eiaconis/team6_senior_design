@@ -51,6 +51,7 @@ class AddGoalFromPageController: UIViewController {
         formatter.dateStyle = DateFormatter.Style.medium
         formatter.timeStyle = DateFormatter.Style.none
         dateField.text = formatter.string(from: picker.date)
+        print(dateField.text)
     }
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
