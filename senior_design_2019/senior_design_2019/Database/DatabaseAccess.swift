@@ -243,9 +243,7 @@ class DatabaseAccess {
     // Output: ??
     func editEmail(newEmail: String) {
         // Update in authentication
-        Auth.auth().currentUser?.updateEmail(to: newEmail) { (error) in
-            // TODO: Error handle
-        }
+        Auth.auth().currentUser?.updateEmail(to: newEmail)
         // Update in UserTable
         let newFormatEmail = reformatEmail(email: newEmail)
         let userId = Auth.auth().currentUser?.uid
@@ -267,9 +265,6 @@ class DatabaseAccess {
         self.ref.child("UserTable/\(String(describing: userId))/phoneNumber").setValue(newPhone)
     }
     
-    // TODO: Error handler for invalid login
-    
-    // TODO: Error handler for invalid account creation
     
     
     //----------------------- Goal Methods----------------------------------------
@@ -283,7 +278,7 @@ class DatabaseAccess {
                               "title" : goal.title!,
                               "target" : goal.target ?? 100.00,
                               "amountSaved": 0,
-                              "deadline": goal.deadline ?? nil,
+                              "deadline": goal.deadline! ?? nil,
                               ]
         let goalId = self.ref.child("GoalTable").childByAutoId().key
         goal.setGoalId(id: goalId!)
@@ -305,30 +300,6 @@ class DatabaseAccess {
     // Input: String goalId, Double new current amount saved
     func updateGoalAmountSaved(goalId: String, newAmount: Double) -> Void{
         self.ref.child("GoalTable/\(goalId)/amountSaved").setValue(newAmount)
-//        self.ref.child("GoalTable/\(goalId)").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
-//            if var post = currentData.value as? [String : AnyObject], let uid = Auth.auth().currentUser?.uid {
-//                var amountSaved: Dictionary<String, Bool>
-//                amountSaved = post["amountSaved"] as? [String : Bool] ?? [:]
-//                var currVal = post["amountSaved"] as? Double ?? 0
-//                if let _ = amountSaved[uid] {
-//                    // Unstar the post and remove self from stars
-//                    currVal += newAmount
-//                    amountSaved.removeValue(forKey: uid)
-//                } else {
-//                    // Star the post and add self to stars
-//                    currVal += newAmount
-//                    amountSaved[uid] = true
-//                }
-//                post["currVal"] = currVal as AnyObject?
-//                post["amountSaved"] = amountSaved as AnyObject?
-//
-//                // Set value and report transaction success
-//                currentData.value = post
-//                print(currentData)
-//                return TransactionResult.success(withValue: currentData)
-//            }
-//            return TransactionResult.success(withValue: currentData)
-//        })
     }
     
     /* Gets current state of goal
@@ -336,9 +307,6 @@ class DatabaseAccess {
      Output: ???
      */
     func getStateOfGoal(goalId: String, callback : @escaping (Double?) -> Void) {
-       
-        //        if let currUID = Auth.auth().currentUser?.uid {
-        //            print("DB: \(currUid)")
         self.ref.child("GoalTable/\(goalId)/amountSaved").observe(.value, with: { (snapshot) in
             if snapshot.exists(){
                 let currAmount = snapshot.value as? Double
@@ -347,7 +315,6 @@ class DatabaseAccess {
                 callback(nil)
             }
         })
-        //        }
     }
     
     /* Gets current state of goal
