@@ -9,11 +9,11 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
-
+import CoreLocation
 
 
 class MoneyValueViewController: UIViewController {
-
+    
     var database : DatabaseAccess = DatabaseAccess.getInstance()
     
     @IBOutlet weak var logoutButton: UIButton!
@@ -48,16 +48,59 @@ class MoneyValueViewController: UIViewController {
                 print(target!)
                 let percentage = (currAmount / target!)*100
                 // TODO: make this what is displayed
-//                self.progressPercentageLabel.text = "\(percentage)"
+                //                self.progressPercentageLabel.text = "\(percentage)"
                 self.progressPercentageLabel.text = "\(currAmount) %"
-
+                
             })
         })
-    
+        let locManager = CLLocationManager()
+//        locManager.requestLocation()
+//        print(locManager.location)
+        if (CLLocationManager.locationServicesEnabled()) {
+            let geocoder = CLGeocoder()
+            // TODO: Get location of device
+//            let deviceLatitude = locManager.location?.coordinate.latitude
+//            let deviceLongitude = locManager.location?.coordinate.longitude
+//            print("Devices lat = \(deviceLatitude!) and lon = \(deviceLongitude!)")
+            
+            let address = "3401 Walnut St, Philadelphia, PA 19104"
+            geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
+                if ((error) != nil){
+                    // If we get an error, print it
+                    print("Error", error ?? "")
+                }
+                if let placemark = placemarks?.first {
+                    let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
+                    // Get latitude and longitude of house
+                    let lat = coordinates.latitude
+                    let lon = coordinates.longitude
+                    // Calculate distance between house and device
+//                    let latDif = abs(lat - deviceLatitude!)
+//                    let lonDif = abs(lon - deviceLongitude!)
+//                    print("latitude difference = \(latDif)")
+//                    print("longitude difference = \(lonDif)")
+                    // If device is within 0.0001 km (about 36 feet), allow user to indicate that they are home
+//                    if latDif < 0.0001 && lonDif < 0.0001 {
+//                        self.createAlert(title: "Looks like you are in Starbucks. Want to log a saving transaction?")
+//                    }
+                  
+                        self.createAlert(title: "Looks like you are in Starbucks. Want to log a saving transaction?")
+                    
+                }
+            })
+        }
+        
     }
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
         self.database.logout(view: self)
+    }
+    
+    func createAlert(title: String) {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
