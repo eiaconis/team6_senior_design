@@ -80,6 +80,9 @@ class AddGoalViewController: UIViewController {
             let numAmount = Double(amountField.text!)
             let newGoal = Goal(userId: (Auth.auth().currentUser?.uid)!, title: goalName, target: numAmount ?? 100.0)
             // Set deadline
+            if date != "" && !isLater(date) {
+                // TODO: error that deadline must be in future
+            }
             if date != "" {
                 newGoal.setDeadline(date: date)
             }
@@ -88,6 +91,12 @@ class AddGoalViewController: UIViewController {
             database.addGoalToUser(goalId: goalId, userId: (Auth.auth().currentUser?.uid)!)
             createSuccessAlert(title: "Goal Added!")
         }
+    }
+    
+    // Helper method to determine chosen date is in future
+    func isLater(date : String) -> Bool {
+       //TODO
+        return true
     }
     
     @objc func datePickerValueChanged(picker: UIDatePicker) {
