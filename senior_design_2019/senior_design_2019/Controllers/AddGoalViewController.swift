@@ -80,7 +80,7 @@ class AddGoalViewController: UIViewController {
             let numAmount = Double(amountField.text!)
             let newGoal = Goal(userId: (Auth.auth().currentUser?.uid)!, title: goalName, target: numAmount ?? 100.0)
             // Set deadline
-            if date != "" && !isLater(date) {
+            if date != "" && !isLater(date: date) {
                 // TODO: error that deadline must be in future
             }
             if date != "" {
