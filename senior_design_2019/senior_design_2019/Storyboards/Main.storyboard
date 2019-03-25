@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to SaveYour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDm-iQ-GB8">
-                                <rect key="frame" x="44.666666666666657" y="109" width="286" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to SaveYour!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDm-iQ-GB8">
+                                <rect key="frame" x="39.666666666666657" y="109" width="295.66666666666674" height="43"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="43"/>
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -97,8 +97,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Into SaveYour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsW-gB-k5y">
-                                <rect key="frame" x="63.666666666666657" y="109" width="247.99999999999997" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SaveYour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsW-gB-k5y">
+                                <rect key="frame" x="126" y="109" width="123" height="43"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="43"/>
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -148,29 +148,44 @@
                                     <constraint firstAttribute="height" constant="1" id="eGy-ci-EMS"/>
                                 </constraints>
                             </imageView>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTO-bo-bFb">
+                                <rect key="frame" x="100" y="698" width="175" height="30"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="18"/>
+                                <state key="normal" title="Don't already have an account?">
+                                    <color key="titleColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pk3-kI-KxE" kind="show" id="MOa-1b-0bo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cBm-fB-Q5l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="105" id="1R6-90-Hm7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lTO-bo-bFb" secondAttribute="bottom" constant="50" id="4hQ-ca-uTR"/>
                             <constraint firstItem="rlv-7A-CEH" firstAttribute="top" secondItem="GU4-FG-HVF" secondAttribute="bottom" constant="15" id="8tD-00-GjR"/>
                             <constraint firstItem="xiZ-we-AI1" firstAttribute="leading" secondItem="EWa-6G-dNi" secondAttribute="trailing" constant="5" id="GMX-dd-hpB"/>
                             <constraint firstItem="EWa-6G-dNi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IgC-FZ-EB3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lTO-bo-bFb" secondAttribute="bottom" constant="50" id="Mdk-ea-qIU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cBm-fB-Q5l" secondAttribute="trailing" constant="10" id="OCd-fs-djt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GU4-FG-HVF" secondAttribute="trailing" constant="10" id="ReE-oD-9Zl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xiZ-we-AI1" secondAttribute="trailing" constant="25" id="SPM-5H-vQh"/>
                             <constraint firstItem="GU4-FG-HVF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="65" id="SqL-kM-t2x"/>
                             <constraint firstItem="FFG-sL-iex" firstAttribute="top" secondItem="EWa-6G-dNi" secondAttribute="bottom" constant="15" id="Un6-0V-VRP"/>
                             <constraint firstItem="rsW-gB-k5y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W4L-9I-dku"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lTO-bo-bFb" secondAttribute="trailing" constant="100" id="Zdh-sK-ycS"/>
                             <constraint firstItem="rsW-gB-k5y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="c1G-dF-Sxz"/>
                             <constraint firstItem="EWa-6G-dNi" firstAttribute="top" secondItem="rsW-gB-k5y" secondAttribute="bottom" constant="92" id="cBb-3g-2bc"/>
                             <constraint firstItem="GU4-FG-HVF" firstAttribute="top" secondItem="xiZ-we-AI1" secondAttribute="bottom" constant="5" id="cJd-Uh-hl8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yTL-vu-5bC" secondAttribute="trailing" constant="26" id="cgE-du-2OP"/>
+                            <constraint firstItem="lTO-bo-bFb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="g0S-Kr-7BK"/>
                             <constraint firstItem="FFG-sL-iex" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ghr-5W-tmX"/>
                             <constraint firstItem="xiZ-we-AI1" firstAttribute="top" secondItem="rsW-gB-k5y" secondAttribute="bottom" constant="78" id="hCG-c4-tXH"/>
                             <constraint firstItem="yTL-vu-5bC" firstAttribute="top" secondItem="cBm-fB-Q5l" secondAttribute="bottom" constant="16" id="ixO-Sk-8Hd"/>
                             <constraint firstItem="cBm-fB-Q5l" firstAttribute="top" secondItem="rlv-7A-CEH" secondAttribute="bottom" constant="5" id="mRO-9L-az7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rlv-7A-CEH" secondAttribute="trailing" constant="25" id="vGB-gJ-Wxb"/>
                             <constraint firstItem="rlv-7A-CEH" firstAttribute="leading" secondItem="FFG-sL-iex" secondAttribute="trailing" constant="5" id="yED-hT-7kt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lTO-bo-bFb" secondAttribute="bottom" constant="50" id="zrn-9V-pAq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
@@ -338,6 +353,16 @@
                                     <constraint firstAttribute="height" constant="1" id="YhQ-Vd-tBj"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezm-KO-7bG">
+                                <rect key="frame" x="100" y="699" width="175" height="29"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
+                                <state key="normal" title="Sign into existing account.">
+                                    <color key="titleColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="mSt-kG-ER6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -375,6 +400,8 @@
                             <constraint firstItem="SfS-aP-6dI" firstAttribute="top" secondItem="083-C0-5zK" secondAttribute="bottom" constant="20" id="a23-55-fL2"/>
                             <constraint firstItem="6NC-ob-LwY" firstAttribute="top" secondItem="4AJ-DT-tIT" secondAttribute="bottom" constant="50" id="b13-RD-GCY"/>
                             <constraint firstItem="gOt-jx-f8e" firstAttribute="top" secondItem="SfS-aP-6dI" secondAttribute="bottom" constant="20" id="b2T-hE-NEf"/>
+                            <constraint firstItem="HUg-pw-mdt" firstAttribute="trailing" secondItem="Ezm-KO-7bG" secondAttribute="trailing" constant="100" id="bAZ-mr-WZU"/>
+                            <constraint firstItem="HUg-pw-mdt" firstAttribute="bottom" secondItem="Ezm-KO-7bG" secondAttribute="bottom" constant="50" id="ccW-jo-WWg"/>
                             <constraint firstItem="Y7R-YS-erG" firstAttribute="top" secondItem="qVj-UW-ArN" secondAttribute="bottom" constant="1" id="cwf-5b-aZn"/>
                             <constraint firstItem="Mrk-OZ-f5d" firstAttribute="top" secondItem="Y7R-YS-erG" secondAttribute="bottom" constant="20" id="dnG-MH-FMz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WAZ-t7-M2j" secondAttribute="trailing" constant="4" id="dnx-kY-XZm"/>
@@ -389,6 +416,7 @@
                             <constraint firstItem="n3G-5a-uBs" firstAttribute="leading" secondItem="Ezz-k1-oNg" secondAttribute="leadingMargin" constant="50" id="krI-tC-pTE">
                                 <variation key="widthClass=compact" constant="95"/>
                             </constraint>
+                            <constraint firstItem="Ezm-KO-7bG" firstAttribute="leading" secondItem="HUg-pw-mdt" secondAttribute="leading" constant="100" id="lAF-nP-tlP"/>
                             <constraint firstItem="Y7R-YS-erG" firstAttribute="top" secondItem="qVj-UW-ArN" secondAttribute="bottom" constant="1" id="lXa-bY-Mct"/>
                             <constraint firstItem="dPI-p1-Icr" firstAttribute="top" secondItem="d1N-yA-T6H" secondAttribute="bottom" constant="20" id="mjR-W5-bj3">
                                 <variation key="widthClass=compact" constant="25"/>
@@ -413,8 +441,6 @@
                                 <exclude reference="WAZ-t7-M2j"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="j6i-pE-t6w"/>
-                                <exclude reference="krI-tC-pTE"/>
                                 <exclude reference="0jC-BI-NRt"/>
                                 <exclude reference="3cP-gL-Tf6"/>
                                 <exclude reference="B6M-Ti-jbd"/>
@@ -428,10 +454,12 @@
                                 <exclude reference="sgL-WW-ssl"/>
                                 <exclude reference="teW-2B-yEH"/>
                                 <exclude reference="xZ4-2r-8el"/>
+                                <exclude reference="j6i-pE-t6w"/>
+                                <exclude reference="krI-tC-pTE"/>
                                 <exclude reference="nt7-vZ-C1Y"/>
+                                <exclude reference="DIc-ht-fra"/>
                                 <exclude reference="TBA-vI-bf2"/>
                                 <exclude reference="dnx-kY-XZm"/>
-                                <exclude reference="DIc-ht-fra"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -440,8 +468,6 @@
                                 <include reference="WAZ-t7-M2j"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="j6i-pE-t6w"/>
-                                <include reference="krI-tC-pTE"/>
                                 <include reference="0jC-BI-NRt"/>
                                 <include reference="3cP-gL-Tf6"/>
                                 <exclude reference="B6M-Ti-jbd"/>
@@ -455,10 +481,12 @@
                                 <include reference="sgL-WW-ssl"/>
                                 <include reference="teW-2B-yEH"/>
                                 <include reference="xZ4-2r-8el"/>
+                                <include reference="j6i-pE-t6w"/>
+                                <include reference="krI-tC-pTE"/>
                                 <include reference="nt7-vZ-C1Y"/>
+                                <include reference="DIc-ht-fra"/>
                                 <include reference="TBA-vI-bf2"/>
                                 <include reference="dnx-kY-XZm"/>
-                                <include reference="DIc-ht-fra"/>
                             </mask>
                         </variation>
                     </view>
@@ -638,7 +666,9 @@
         <image name="login-64" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="MOa-1b-0bo"/>
         <segue reference="pQd-fp-Odd"/>
+        <segue reference="mSt-kG-ER6"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
