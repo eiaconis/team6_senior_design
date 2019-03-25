@@ -100,6 +100,7 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         self.database.addTransactionToGoal(transactionId: newTransactionId!, goalId: self.goalSelectedID)
         // Update goal--> Get current state, perform operations, update
         self.database.updateGoalAmountSaved(goalId: goalSelectedID, newAmount: currAmount!)
+        self.performSegue(withIdentifier: "manualSaveSegue", sender: nil)
     }
     
     // Function to load picker view with goal names for user
