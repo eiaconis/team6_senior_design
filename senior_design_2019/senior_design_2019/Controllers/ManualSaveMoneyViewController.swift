@@ -82,8 +82,9 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         // Get value from amount field
         var currAmount = Double(amountTextField.text!)
         // If amount field is blank or negative, popup error and stay
-        if (currAmount == nil || currAmount! <= 0.0) {
-            // TODO:
+        if (currAmount == nil || currAmount! <= 0.0 ) {
+            print("currAmount is /\(currAmount)")
+            createErrorAlert(title: "Invalid savings amount entered!")
             return
         }
         
@@ -136,4 +137,12 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         }
         self.database.getUserCurrGoal(uid: (Auth.auth().currentUser?.uid)!, callback: placeholderClosure)
     }
+    
+    func createErrorAlert(title: String) {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }

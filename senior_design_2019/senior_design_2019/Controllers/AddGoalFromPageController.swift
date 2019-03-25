@@ -85,8 +85,27 @@ class AddGoalFromPageController: UIViewController {
             let numAmount = Double(amountField.text!)
             let newGoal = Goal(userId: (Auth.auth().currentUser?.uid)!, title: goalName, target: numAmount ?? 100.0)
             // Set deadline
-            if date != "" {
-                newGoal.setDeadline(date: date)
+            let today = Date.init()
+            if date != ""  {
+                // error that deadline must be in future
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MMM dd, yyyy" //Your date format
+                //according to date format your date string
+                guard let dateForm = dateFormatter.date(from: date) else {
+                    fatalError()
+                }
+                print(dateForm)
+                if (today < dateForm) {
+                    print("HERE")
+                    newGoal.setDeadline(date: date)
+                } else {
+                    createErrorAlert(title: "That deadline has already passed.")
+                    return
+                }
+                
+            } else {
+                createErrorAlert(title: "Please select a deadline.")
+                return
             }
             // Add Goal and update user's current goal
             let goalId = database.addGoal(goal: newGoal)
