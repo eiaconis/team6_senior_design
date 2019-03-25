@@ -305,30 +305,6 @@ class DatabaseAccess {
     // Input: String goalId, Double new current amount saved
     func updateGoalAmountSaved(goalId: String, newAmount: Double) -> Void{
         self.ref.child("GoalTable/\(goalId)/amountSaved").setValue(newAmount)
-//        self.ref.child("GoalTable/\(goalId)").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
-//            if var post = currentData.value as? [String : AnyObject], let uid = Auth.auth().currentUser?.uid {
-//                var amountSaved: Dictionary<String, Bool>
-//                amountSaved = post["amountSaved"] as? [String : Bool] ?? [:]
-//                var currVal = post["amountSaved"] as? Double ?? 0
-//                if let _ = amountSaved[uid] {
-//                    // Unstar the post and remove self from stars
-//                    currVal += newAmount
-//                    amountSaved.removeValue(forKey: uid)
-//                } else {
-//                    // Star the post and add self to stars
-//                    currVal += newAmount
-//                    amountSaved[uid] = true
-//                }
-//                post["currVal"] = currVal as AnyObject?
-//                post["amountSaved"] = amountSaved as AnyObject?
-//
-//                // Set value and report transaction success
-//                currentData.value = post
-//                print(currentData)
-//                return TransactionResult.success(withValue: currentData)
-//            }
-//            return TransactionResult.success(withValue: currentData)
-//        })
     }
     
     /* Gets current state of goal
