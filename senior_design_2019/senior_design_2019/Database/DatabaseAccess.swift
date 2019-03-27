@@ -150,14 +150,14 @@ class DatabaseAccess {
             newGoalId = goal!.goalId
         }
         let newUser : Any = [ "uid" : uid,
-                              "formattedEmail": user.formattedEmail,
-                              "firstName": user.firstName,
-                              "lastName": user.lastName,
-                              "phoneNumber": user.phoneNumber,
-                              "currentGoal": newGoalId
+                              "formattedEmail": user.formattedEmail!,
+                              "firstName": user.firstName!,
+                              "lastName": user.lastName!,
+                              "phoneNumber": user.phoneNumber!,
+                              "currentGoal": newGoalId!,
+                              "totalSavings": 0
         ]
         self.ref.child("UserTable/\(uid)").setValue(newUser)
-        //return ExpectedExecution()
     }
     
     func getUserCurrGoal(uid: String, callback : @escaping (String?) -> Void) {
@@ -267,10 +267,20 @@ class DatabaseAccess {
         self.ref.child("UserTable/\(String(describing: userId))/phoneNumber").setValue(newPhone)
     }
     
-    // TODO: Error handler for invalid login
+    func getUserTotalSavings(uid: String, callback : @escaping (Double?) -> Void) {
+        self.ref.child("UserTable/\(uid)/totalSavings").observe(.value, with: { (snapshot) in
+            if snapshot.exists(){
+                let totalSav = snapshot.value as? Double
+                callback(totalSav)
+            } else {
+                callback(nil)
+            }
+        })
+    }
     
-    // TODO: Error handler for invalid account creation
-    
+    func updateUserTotalSavings(uid: String, newAmount: Double) {
+        self.ref.child("UserTable/\(uid)/totalSavings").setValue(newAmount)
+    }
     
     //----------------------- Goal Methods----------------------------------------
     
@@ -487,6 +497,7 @@ class DatabaseAccess {
         return reformattedEmail
     }
     
+    // Retrieves original email
     func unformatEmail(email: String) -> String {
         let andSign : Character = "&"
         let star : Character = "*"

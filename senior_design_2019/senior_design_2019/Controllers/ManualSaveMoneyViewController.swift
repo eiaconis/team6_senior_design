@@ -19,6 +19,7 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
     
     let database: DatabaseAccess = DatabaseAccess.getInstance()
     var prevAmount : Double?
+    var currTotal : Double?
     
     var picker = UIPickerView()
     var goalNames : [String] = [String]()
@@ -45,6 +46,9 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
             self.database.getStateOfGoal(goalId: goalId!, callback: {(prev) -> Void in
                 self.prevAmount = prev
             })
+        })
+        self.database.getUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, callback: {(totalSav) -> Void in
+            self.currTotal = totalSav
         })
     }
     
@@ -90,8 +94,8 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         
         // Create transaction
         var newTransaction = ManualEntryTransaction(category: "manual", userId: (Auth.auth().currentUser?.uid)!, amount: currAmount!, goalId: self.goalSelectedID)
+        var newTotal = self.currTotal! + currAmount!
         currAmount! += self.prevAmount!
-
         // Add transaction to db
         var newTransactionId = self.database.addTransaction(transaction: newTransaction)
         // Add transaction to user
@@ -100,6 +104,8 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         self.database.addTransactionToGoal(transactionId: newTransactionId!, goalId: self.goalSelectedID)
         // Update goal--> Get current state, perform operations, update
         self.database.updateGoalAmountSaved(goalId: goalSelectedID, newAmount: currAmount!)
+        // Add this amount to user's total savings
+        self.database.updateUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, newAmount: newTotal)
         self.performSegue(withIdentifier: "manualSaveSegue", sender: nil)
     }
     

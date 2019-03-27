@@ -19,6 +19,7 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
     var itemPurchasedPrice : Double = 0.0
     var currGoalId : String?
     var prevAmount : Double?
+    var currTotal : Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,9 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
             self.database.getStateOfGoal(goalId: goalId!, callback: {(prev) -> Void in
                 self.prevAmount = prev
             })
+        })
+        self.database.getUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, callback: {(totalSav) -> Void in
+            self.currTotal = totalSav
         })
     }
     
@@ -55,6 +59,7 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
         
             // Create transaction
             var newTransaction = ManualEntryTransaction(category: "menu", userId: (Auth.auth().currentUser?.uid)!, amount: saving, goalId: currGoalId!)
+            var newTotal = self.currTotal! + saving
             saving += self.prevAmount!
             // Add transaction to db
             var newTransactionId = self.database.addTransaction(transaction: newTransaction)
@@ -64,6 +69,7 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
             self.database.addTransactionToGoal(transactionId: newTransactionId!, goalId: self.currGoalId!)
             // Update goal--> Get current state, perform operations, update
             self.database.updateGoalAmountSaved(goalId: self.currGoalId!, newAmount: saving)
+            self.database.updateUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, newAmount: newTotal)
         }
         // Go back to homepage
         self.performSegue(withIdentifier: "backToMain", sender: self)
