@@ -703,13 +703,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UJAGDF8MUV;
+				DEVELOPMENT_TEAM = 9F5M4SK9Z3;
 				INFOPLIST_FILE = senior_design_2019/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.upenn.ese.SeniorDesign.senior-design-2019";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.upenn.ese.SeniorDesign.team6.senior-design-2019";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -722,13 +722,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UJAGDF8MUV;
+				DEVELOPMENT_TEAM = 9F5M4SK9Z3;
 				INFOPLIST_FILE = senior_design_2019/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.upenn.ese.SeniorDesign.senior-design-2019";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.upenn.ese.SeniorDesign.team6.senior-design-2019";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
