@@ -101,6 +101,7 @@
 		640FD119224C96C6004BE6D5 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountViewController.swift; path = ../../../senior_design_2019/senior_design_2019/Controllers/AccountViewController.swift; sourceTree = "<group>"; };
 		640FD11A224C96C6004BE6D5 /* ManualSaveMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManualSaveMoneyViewController.swift; path = ../../../senior_design_2019/senior_design_2019/Controllers/ManualSaveMoneyViewController.swift; sourceTree = "<group>"; };
 		640FD129224C9703004BE6D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../senior_design_2019/senior_design_2019/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		645785E8224D527F00E47FBB /* Save-Your.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Save-Your.entitlements"; sourceTree = "<group>"; };
 		68ECEC251D73BB184ECAFDC5 /* Pods-Save-YourTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save-YourTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Save-YourTests/Pods-Save-YourTests.release.xcconfig"; sourceTree = "<group>"; };
 		6B50392376D5144F0999A126 /* Pods-Save-Your.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save-Your.release.xcconfig"; path = "Pods/Target Support Files/Pods-Save-Your/Pods-Save-Your.release.xcconfig"; sourceTree = "<group>"; };
 		D2439F0D5660182D865FB956 /* Pods_Save_Your.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Save_Your.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +163,7 @@
 		640FD0C1224C95D8004BE6D5 /* Save-Your */ = {
 			isa = PBXGroup;
 			children = (
+				645785E8224D527F00E47FBB /* Save-Your.entitlements */,
 				640FD129224C9703004BE6D5 /* GoogleService-Info.plist */,
 				640FD0F4224C964D004BE6D5 /* Controllers */,
 				640FD0F2224C9640004BE6D5 /* Storyboards */,
@@ -333,6 +335,11 @@
 				TargetAttributes = {
 					640FD0BE224C95D8004BE6D5 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					640FD0D2224C95D9004BE6D5 = {
 						CreatedOnToolsVersion = 10.1;
@@ -697,6 +704,7 @@
 			baseConfigurationReference = 05B4A12FC1B4987425671EDD /* Pods-Save-Your.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Save-Your/Save-Your.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9F5M4SK9Z3;
 				INFOPLIST_FILE = "Save-Your/Info.plist";
@@ -716,6 +724,7 @@
 			baseConfigurationReference = 6B50392376D5144F0999A126 /* Pods-Save-Your.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Save-Your/Save-Your.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9F5M4SK9Z3;
 				INFOPLIST_FILE = "Save-Your/Info.plist";
