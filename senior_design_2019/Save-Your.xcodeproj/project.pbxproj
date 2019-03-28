@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00829B36A03140CC1BE752C8 /* Pods_Save_Your.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75698475077BD46CFD80537D /* Pods_Save_Your.framework */; };
+		45BAA65EB3E9A1D681E3C651 /* Pods_Save_YourUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68BF74BC9F6049026F6CC2A8 /* Pods_Save_YourUITests.framework */; };
 		6421283822038EA4005B58AA /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6421283722038EA4005B58AA /* FirstPageViewController.swift */; };
 		643BFAAF221B53C10088DD14 /* GoalFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643BFAAE221B53C10088DD14 /* GoalFeedController.swift */; };
 		64946A3F2217422F00622CF4 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64946A3E2217422F00622CF4 /* AccountViewController.swift */; };
 		64946A4122174EC200622CF4 /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64946A4022174EC200622CF4 /* EditProfileController.swift */; };
 		64946A452217526A00622CF4 /* ChangeGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64946A442217526A00622CF4 /* ChangeGoalController.swift */; };
 		64CBA2C022038346002C6425 /* AddGoalFromPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CBA2BF22038346002C6425 /* AddGoalFromPageController.swift */; };
+		6F313AE6562F6C9188A68638 /* Pods_Save_YourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91900B92CBBAFDCB660087C /* Pods_Save_YourTests.framework */; };
 		753777AB22024FBC00FD7F4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753777AA22024FBC00FD7F4C /* User.swift */; };
 		753777AD22024FC900FD7F4C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753777AC22024FC900FD7F4C /* Goal.swift */; };
 		753777AF22024FD700FD7F4C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753777AE22024FD700FD7F4C /* Transaction.swift */; };
@@ -41,7 +44,6 @@
 		75C21AF522010AD40020E727 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75C21AF222010AD40020E727 /* GoogleService-Info.plist */; };
 		75C21AF7220114E80020E727 /* DatabaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C21AF6220114E80020E727 /* DatabaseAccess.swift */; };
 		7A8E06B1DABB3E68CBA66317 /* Pods_senior_design_2019UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC1C8444DF84677C70C333B /* Pods_senior_design_2019UITests.framework */; };
-		C7FA7B291081295375FB93DC /* Pods_senior_design_2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864DCE0AA747002F541DA020 /* Pods_senior_design_2019.framework */; };
 		D1C127D753A94626A199B801 /* Pods_senior_design_2019Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F783671B1F5A1F60B1188D6 /* Pods_senior_design_2019Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		03BCCB9A90D37642D7CD2C77 /* Pods-senior_design_2019Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019Tests/Pods-senior_design_2019Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		067862BB6CC01CB4BE7FDC8F /* Pods-Save-Your.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save-Your.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Save-Your/Pods-Save-Your.debug.xcconfig"; sourceTree = "<group>"; };
 		33088D3025DC94187EFC6DC4 /* Pods-senior_design_2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019.release.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019/Pods-senior_design_2019.release.xcconfig"; sourceTree = "<group>"; };
 		6421283722038EA4005B58AA /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
 		643BFAAE221B53C10088DD14 /* GoalFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalFeedController.swift; sourceTree = "<group>"; };
@@ -71,6 +74,8 @@
 		64946A4022174EC200622CF4 /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		64946A442217526A00622CF4 /* ChangeGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGoalController.swift; sourceTree = "<group>"; };
 		64CBA2BF22038346002C6425 /* AddGoalFromPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalFromPageController.swift; sourceTree = "<group>"; };
+		68BF74BC9F6049026F6CC2A8 /* Pods_Save_YourUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Save_YourUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CDAA1822308D47379049F28 /* Pods-Save-YourTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save-YourTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Save-YourTests/Pods-Save-YourTests.release.xcconfig"; sourceTree = "<group>"; };
 		6F783671B1F5A1F60B1188D6 /* Pods_senior_design_2019Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_senior_design_2019Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		753777AA22024FBC00FD7F4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		753777AC22024FC900FD7F4C /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
@@ -78,6 +83,7 @@
 		753777B022024FEB00FD7F4C /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		753777B6220270D800FD7F4C /* ManualEntryTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualEntryTransaction.swift; sourceTree = "<group>"; };
 		753777B8220270DD00FD7F4C /* MenuEntryTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuEntryTransaction.swift; sourceTree = "<group>"; };
+		75698475077BD46CFD80537D /* Pods_Save_Your.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Save_Your.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BC25402206370B0053DE59 /* ReturnValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnValue.swift; sourceTree = "<group>"; };
 		75C21AA121FFA9AB0020E727 /* Save-Your.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Save-Your.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C21AA421FFA9AB0020E727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,11 +109,16 @@
 		75C21AF021FFAB080020E727 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75C21AF222010AD40020E727 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		75C21AF6220114E80020E727 /* DatabaseAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAccess.swift; sourceTree = "<group>"; };
+		780CDC1711F19436B60B4746 /* Pods-Save-YourTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save-YourTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Save-YourTests/Pods-Save-YourTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7BC1C8444DF84677C70C333B /* Pods_senior_design_2019UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_senior_design_2019UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		864DCE0AA747002F541DA020 /* Pods_senior_design_2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_senior_design_2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A82AEF87BBECA3367113F0C /* Pods-Save-Your.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save-Your.release.xcconfig"; path = "Pods/Target Support Files/Pods-Save-Your/Pods-Save-Your.release.xcconfig"; sourceTree = "<group>"; };
+		92FD12BD7A77A58A8B1213F0 /* Pods-Save-YourUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save-YourUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Save-YourUITests/Pods-Save-YourUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		93EDAFF8199D37715AC27373 /* Pods-senior_design_2019Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019Tests/Pods-senior_design_2019Tests.release.xcconfig"; sourceTree = "<group>"; };
 		966DF74401B35F7FFF4745D5 /* Pods-senior_design_2019UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019UITests/Pods-senior_design_2019UITests.release.xcconfig"; sourceTree = "<group>"; };
 		C604CFB9C84350F9480C58ED /* Pods-senior_design_2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019.debug.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019/Pods-senior_design_2019.debug.xcconfig"; sourceTree = "<group>"; };
+		C91900B92CBBAFDCB660087C /* Pods_Save_YourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Save_YourTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFB4C360584E2F0D27498A21 /* Pods-Save-YourUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save-YourUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Save-YourUITests/Pods-Save-YourUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FDBEA7C8DA8F4B76633A258B /* Pods-senior_design_2019UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-senior_design_2019UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-senior_design_2019UITests/Pods-senior_design_2019UITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7FA7B291081295375FB93DC /* Pods_senior_design_2019.framework in Frameworks */,
+				00829B36A03140CC1BE752C8 /* Pods_Save_Your.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1C127D753A94626A199B801 /* Pods_senior_design_2019Tests.framework in Frameworks */,
+				6F313AE6562F6C9188A68638 /* Pods_Save_YourTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A8E06B1DABB3E68CBA66317 /* Pods_senior_design_2019UITests.framework in Frameworks */,
+				45BAA65EB3E9A1D681E3C651 /* Pods_Save_YourUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,9 +202,9 @@
 		75C21A9821FFA9AB0020E727 = {
 			isa = PBXGroup;
 			children = (
-				75C21AA321FFA9AB0020E727 /* senior_design_2019 */,
-				75C21AB821FFA9B00020E727 /* senior_design_2019Tests */,
-				75C21AC321FFA9B00020E727 /* senior_design_2019UITests */,
+				75C21AA321FFA9AB0020E727 /* Save-Your */,
+				75C21AB821FFA9B00020E727 /* Save-YourTests */,
+				75C21AC321FFA9B00020E727 /* Save-YourUITests */,
 				75C21AA221FFA9AB0020E727 /* Products */,
 				8B4035312F91BB49D903453F /* Pods */,
 				A3F8E252A30A4B24D0341044 /* Frameworks */,
@@ -208,7 +221,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		75C21AA321FFA9AB0020E727 /* senior_design_2019 */ = {
+		75C21AA321FFA9AB0020E727 /* Save-Your */ = {
 			isa = PBXGroup;
 			children = (
 				753777A922024F2D00FD7F4C /* Database */,
@@ -219,25 +232,25 @@
 				75C21AF021FFAB080020E727 /* Assets.xcassets */,
 				75C21AB021FFA9B00020E727 /* Info.plist */,
 			);
-			path = senior_design_2019;
+			path = "Save-Your";
 			sourceTree = "<group>";
 		};
-		75C21AB821FFA9B00020E727 /* senior_design_2019Tests */ = {
+		75C21AB821FFA9B00020E727 /* Save-YourTests */ = {
 			isa = PBXGroup;
 			children = (
 				75C21AB921FFA9B00020E727 /* senior_design_2019Tests.swift */,
 				75C21ABB21FFA9B00020E727 /* Info.plist */,
 			);
-			path = senior_design_2019Tests;
+			path = "Save-YourTests";
 			sourceTree = "<group>";
 		};
-		75C21AC321FFA9B00020E727 /* senior_design_2019UITests */ = {
+		75C21AC321FFA9B00020E727 /* Save-YourUITests */ = {
 			isa = PBXGroup;
 			children = (
 				75C21AC421FFA9B00020E727 /* senior_design_2019UITests.swift */,
 				75C21AC621FFA9B00020E727 /* Info.plist */,
 			);
-			path = senior_design_2019UITests;
+			path = "Save-YourUITests";
 			sourceTree = "<group>";
 		};
 		8B4035312F91BB49D903453F /* Pods */ = {
@@ -249,6 +262,12 @@
 				93EDAFF8199D37715AC27373 /* Pods-senior_design_2019Tests.release.xcconfig */,
 				FDBEA7C8DA8F4B76633A258B /* Pods-senior_design_2019UITests.debug.xcconfig */,
 				966DF74401B35F7FFF4745D5 /* Pods-senior_design_2019UITests.release.xcconfig */,
+				067862BB6CC01CB4BE7FDC8F /* Pods-Save-Your.debug.xcconfig */,
+				8A82AEF87BBECA3367113F0C /* Pods-Save-Your.release.xcconfig */,
+				780CDC1711F19436B60B4746 /* Pods-Save-YourTests.debug.xcconfig */,
+				6CDAA1822308D47379049F28 /* Pods-Save-YourTests.release.xcconfig */,
+				92FD12BD7A77A58A8B1213F0 /* Pods-Save-YourUITests.debug.xcconfig */,
+				EFB4C360584E2F0D27498A21 /* Pods-Save-YourUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -259,6 +278,9 @@
 				864DCE0AA747002F541DA020 /* Pods_senior_design_2019.framework */,
 				6F783671B1F5A1F60B1188D6 /* Pods_senior_design_2019Tests.framework */,
 				7BC1C8444DF84677C70C333B /* Pods_senior_design_2019UITests.framework */,
+				75698475077BD46CFD80537D /* Pods_Save_Your.framework */,
+				C91900B92CBBAFDCB660087C /* Pods_Save_YourTests.framework */,
+				68BF74BC9F6049026F6CC2A8 /* Pods_Save_YourUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -408,7 +430,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-senior_design_2019/Pods-senior_design_2019-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Save-Your/Pods-Save-Your-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -425,7 +447,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-senior_design_2019/Pods-senior_design_2019-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Save-Your/Pods-Save-Your-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		98F68A0F8C0DA31D3E3C6EDE /* [CP] Check Pods Manifest.lock */ = {
@@ -443,7 +465,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-senior_design_2019UITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Save-YourUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -465,7 +487,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-senior_design_2019-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Save-Your-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -487,7 +509,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-senior_design_2019Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Save-YourTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -502,7 +524,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-senior_design_2019/Pods-senior_design_2019-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Save-Your/Pods-Save-Your-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -513,7 +535,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-senior_design_2019/Pods-senior_design_2019-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Save-Your/Pods-Save-Your-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -699,12 +721,12 @@
 		};
 		75C21ACA21FFA9B00020E727 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C604CFB9C84350F9480C58ED /* Pods-senior_design_2019.debug.xcconfig */;
+			baseConfigurationReference = 067862BB6CC01CB4BE7FDC8F /* Pods-Save-Your.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9F5M4SK9Z3;
-				INFOPLIST_FILE = senior_design_2019/Info.plist;
+				INFOPLIST_FILE = "Save-Your/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -718,12 +740,12 @@
 		};
 		75C21ACB21FFA9B00020E727 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33088D3025DC94187EFC6DC4 /* Pods-senior_design_2019.release.xcconfig */;
+			baseConfigurationReference = 8A82AEF87BBECA3367113F0C /* Pods-Save-Your.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9F5M4SK9Z3;
-				INFOPLIST_FILE = senior_design_2019/Info.plist;
+				INFOPLIST_FILE = "Save-Your/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -737,7 +759,7 @@
 		};
 		75C21ACD21FFA9B00020E727 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03BCCB9A90D37642D7CD2C77 /* Pods-senior_design_2019Tests.debug.xcconfig */;
+			baseConfigurationReference = 780CDC1711F19436B60B4746 /* Pods-Save-YourTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -759,7 +781,7 @@
 		};
 		75C21ACE21FFA9B00020E727 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93EDAFF8199D37715AC27373 /* Pods-senior_design_2019Tests.release.xcconfig */;
+			baseConfigurationReference = 6CDAA1822308D47379049F28 /* Pods-Save-YourTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -781,7 +803,7 @@
 		};
 		75C21AD021FFA9B00020E727 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDBEA7C8DA8F4B76633A258B /* Pods-senior_design_2019UITests.debug.xcconfig */;
+			baseConfigurationReference = 92FD12BD7A77A58A8B1213F0 /* Pods-Save-YourUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -802,7 +824,7 @@
 		};
 		75C21AD121FFA9B00020E727 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 966DF74401B35F7FFF4745D5 /* Pods-senior_design_2019UITests.release.xcconfig */;
+			baseConfigurationReference = EFB4C360584E2F0D27498A21 /* Pods-Save-YourUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
