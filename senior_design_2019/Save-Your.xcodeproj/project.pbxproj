@@ -79,13 +79,13 @@
 		753777B6220270D800FD7F4C /* ManualEntryTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualEntryTransaction.swift; sourceTree = "<group>"; };
 		753777B8220270DD00FD7F4C /* MenuEntryTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuEntryTransaction.swift; sourceTree = "<group>"; };
 		75BC25402206370B0053DE59 /* ReturnValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnValue.swift; sourceTree = "<group>"; };
-		75C21AA121FFA9AB0020E727 /* senior_design_2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = senior_design_2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75C21AA121FFA9AB0020E727 /* Save-Your.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Save-Your.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C21AA421FFA9AB0020E727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75C21AB021FFA9B00020E727 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75C21AB521FFA9B00020E727 /* senior_design_2019Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = senior_design_2019Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		75C21AB521FFA9B00020E727 /* Save-YourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Save-YourTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C21AB921FFA9B00020E727 /* senior_design_2019Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = senior_design_2019Tests.swift; sourceTree = "<group>"; };
 		75C21ABB21FFA9B00020E727 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75C21AC021FFA9B00020E727 /* senior_design_2019UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = senior_design_2019UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		75C21AC021FFA9B00020E727 /* Save-YourUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Save-YourUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C21AC421FFA9B00020E727 /* senior_design_2019UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = senior_design_2019UITests.swift; sourceTree = "<group>"; };
 		75C21AC621FFA9B00020E727 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75C21AD421FFAA1F0020E727 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -201,9 +201,9 @@
 		75C21AA221FFA9AB0020E727 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				75C21AA121FFA9AB0020E727 /* senior_design_2019.app */,
-				75C21AB521FFA9B00020E727 /* senior_design_2019Tests.xctest */,
-				75C21AC021FFA9B00020E727 /* senior_design_2019UITests.xctest */,
+				75C21AA121FFA9AB0020E727 /* Save-Your.app */,
+				75C21AB521FFA9B00020E727 /* Save-YourTests.xctest */,
+				75C21AC021FFA9B00020E727 /* Save-YourUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,9 +266,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		75C21AA021FFA9AB0020E727 /* senior_design_2019 */ = {
+		75C21AA021FFA9AB0020E727 /* Save-Your */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75C21AC921FFA9B00020E727 /* Build configuration list for PBXNativeTarget "senior_design_2019" */;
+			buildConfigurationList = 75C21AC921FFA9B00020E727 /* Build configuration list for PBXNativeTarget "Save-Your" */;
 			buildPhases = (
 				B76152CFFFDC17CF9F4B7F61 /* [CP] Check Pods Manifest.lock */,
 				75C21A9D21FFA9AB0020E727 /* Sources */,
@@ -281,14 +281,14 @@
 			);
 			dependencies = (
 			);
-			name = senior_design_2019;
+			name = "Save-Your";
 			productName = senior_design_2019;
-			productReference = 75C21AA121FFA9AB0020E727 /* senior_design_2019.app */;
+			productReference = 75C21AA121FFA9AB0020E727 /* Save-Your.app */;
 			productType = "com.apple.product-type.application";
 		};
-		75C21AB421FFA9B00020E727 /* senior_design_2019Tests */ = {
+		75C21AB421FFA9B00020E727 /* Save-YourTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75C21ACC21FFA9B00020E727 /* Build configuration list for PBXNativeTarget "senior_design_2019Tests" */;
+			buildConfigurationList = 75C21ACC21FFA9B00020E727 /* Build configuration list for PBXNativeTarget "Save-YourTests" */;
 			buildPhases = (
 				D6C54BBA14BA19A6A56D6725 /* [CP] Check Pods Manifest.lock */,
 				75C21AB121FFA9B00020E727 /* Sources */,
@@ -300,14 +300,14 @@
 			dependencies = (
 				75C21AB721FFA9B00020E727 /* PBXTargetDependency */,
 			);
-			name = senior_design_2019Tests;
+			name = "Save-YourTests";
 			productName = senior_design_2019Tests;
-			productReference = 75C21AB521FFA9B00020E727 /* senior_design_2019Tests.xctest */;
+			productReference = 75C21AB521FFA9B00020E727 /* Save-YourTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		75C21ABF21FFA9B00020E727 /* senior_design_2019UITests */ = {
+		75C21ABF21FFA9B00020E727 /* Save-YourUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75C21ACF21FFA9B00020E727 /* Build configuration list for PBXNativeTarget "senior_design_2019UITests" */;
+			buildConfigurationList = 75C21ACF21FFA9B00020E727 /* Build configuration list for PBXNativeTarget "Save-YourUITests" */;
 			buildPhases = (
 				98F68A0F8C0DA31D3E3C6EDE /* [CP] Check Pods Manifest.lock */,
 				75C21ABC21FFA9B00020E727 /* Sources */,
@@ -319,9 +319,9 @@
 			dependencies = (
 				75C21AC221FFA9B00020E727 /* PBXTargetDependency */,
 			);
-			name = senior_design_2019UITests;
+			name = "Save-YourUITests";
 			productName = senior_design_2019UITests;
-			productReference = 75C21AC021FFA9B00020E727 /* senior_design_2019UITests.xctest */;
+			productReference = 75C21AC021FFA9B00020E727 /* Save-YourUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -347,7 +347,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 75C21A9C21FFA9AB0020E727 /* Build configuration list for PBXProject "senior_design_2019" */;
+			buildConfigurationList = 75C21A9C21FFA9AB0020E727 /* Build configuration list for PBXProject "Save-Your" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -360,9 +360,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				75C21AA021FFA9AB0020E727 /* senior_design_2019 */,
-				75C21AB421FFA9B00020E727 /* senior_design_2019Tests */,
-				75C21ABF21FFA9B00020E727 /* senior_design_2019UITests */,
+				75C21AA021FFA9AB0020E727 /* Save-Your */,
+				75C21AB421FFA9B00020E727 /* Save-YourTests */,
+				75C21ABF21FFA9B00020E727 /* Save-YourUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -570,12 +570,12 @@
 /* Begin PBXTargetDependency section */
 		75C21AB721FFA9B00020E727 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 75C21AA021FFA9AB0020E727 /* senior_design_2019 */;
+			target = 75C21AA021FFA9AB0020E727 /* Save-Your */;
 			targetProxy = 75C21AB621FFA9B00020E727 /* PBXContainerItemProxy */;
 		};
 		75C21AC221FFA9B00020E727 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 75C21AA021FFA9AB0020E727 /* senior_design_2019 */;
+			target = 75C21AA021FFA9AB0020E727 /* Save-Your */;
 			targetProxy = 75C21AC121FFA9B00020E727 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -753,7 +753,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/senior_design_2019.app/senior_design_2019";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Save-Your.app/Save-Your";
 			};
 			name = Debug;
 		};
@@ -775,7 +775,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/senior_design_2019.app/senior_design_2019";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Save-Your.app/Save-Your";
 			};
 			name = Release;
 		};
@@ -824,7 +824,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		75C21A9C21FFA9AB0020E727 /* Build configuration list for PBXProject "senior_design_2019" */ = {
+		75C21A9C21FFA9AB0020E727 /* Build configuration list for PBXProject "Save-Your" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				75C21AC721FFA9B00020E727 /* Debug */,
@@ -833,7 +833,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75C21AC921FFA9B00020E727 /* Build configuration list for PBXNativeTarget "senior_design_2019" */ = {
+		75C21AC921FFA9B00020E727 /* Build configuration list for PBXNativeTarget "Save-Your" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				75C21ACA21FFA9B00020E727 /* Debug */,
@@ -842,7 +842,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75C21ACC21FFA9B00020E727 /* Build configuration list for PBXNativeTarget "senior_design_2019Tests" */ = {
+		75C21ACC21FFA9B00020E727 /* Build configuration list for PBXNativeTarget "Save-YourTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				75C21ACD21FFA9B00020E727 /* Debug */,
@@ -851,7 +851,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75C21ACF21FFA9B00020E727 /* Build configuration list for PBXNativeTarget "senior_design_2019UITests" */ = {
+		75C21ACF21FFA9B00020E727 /* Build configuration list for PBXNativeTarget "Save-YourUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				75C21AD021FFA9B00020E727 /* Debug */,
