@@ -52,7 +52,7 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
                 print(amount!)
                 currAmount = amount!
                 
-                self.currentAmountLabel.text = "$\(amount!)"
+                self.currentAmountLabel.text = "You have saved $\(amount!) so far."
                 self.currentAmountLabel.sizeToFit()
             })
             self.database.getTargetOfGoal(goalId: goalId!, callback: {(target) -> Void in
