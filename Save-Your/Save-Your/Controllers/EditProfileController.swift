@@ -33,6 +33,11 @@ class EditProfileController: UIViewController {
         // Pad and round the 'Save' Button
         saveButton.layer.cornerRadius = 5
         saveButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
+        
+        // Add logo to navigation bar
+        let logo = UIImage(named: "saveyour logo-40.png")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {

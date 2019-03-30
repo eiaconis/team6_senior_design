@@ -17,7 +17,10 @@ class SaveMoneyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Add logo to navigation bar
+        let logo = UIImage(named: "saveyour logo-40.png")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
     }
     
 

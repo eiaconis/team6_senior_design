@@ -34,6 +34,12 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
             locManager.startUpdatingLocation()
             self.locManager.requestAlwaysAuthorization()
         }
+        
+        // Add logo to navigation bar
+        let logo = UIImage(named: "saveyour logo-40.png")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+        
         // Pad and round the 'Logout' Button
         logoutButton.layer.cornerRadius = 5
         logoutButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)

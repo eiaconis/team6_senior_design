@@ -23,6 +23,11 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         updateTableView()
+        
+        // Add logo to navigation bar
+        let logo = UIImage(named: "saveyour logo-40.png")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
