@@ -158,5 +158,10 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    // If view tapped, dismiss keyboard
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
 
 }

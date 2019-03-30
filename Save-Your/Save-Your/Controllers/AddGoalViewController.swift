@@ -115,6 +115,7 @@ class AddGoalViewController: UIViewController {
         dateField.text = formatter.string(from: picker.date)
     }
     
+    // If view tapped, dismiss keyboard
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
         view.endEditing(true)
     }

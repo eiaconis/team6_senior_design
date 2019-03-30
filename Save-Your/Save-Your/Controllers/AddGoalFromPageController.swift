@@ -59,6 +59,7 @@ class AddGoalFromPageController: UIViewController {
         print(dateField.text)
     }
     
+    // If view tapped, dismiss picker
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
         view.endEditing(true)
     }

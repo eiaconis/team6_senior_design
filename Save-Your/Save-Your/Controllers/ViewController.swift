@@ -41,6 +41,11 @@ class ViewController: UIViewController {
         database.login(email: emailTextField.text!, password: passwordTextField.text!, view: self)
     }
     
+    // If view tapped, dismiss keyboard
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     // Denote anchor for unwinding to upon logout
     @IBAction func unwindToLogout(segue:UIStoryboardSegue) { }
     
