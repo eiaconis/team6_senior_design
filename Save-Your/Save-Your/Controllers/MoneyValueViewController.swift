@@ -140,11 +140,22 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
         self.database.logout(view: self)
     }
     
+    @IBAction func plusButtonPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "SaveMoney", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SaveMoneyController") as UIViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+//        self.performSegue(withIdentifier: "logSavingSegue", sender: self)
+    }
+    
+    
     func createAlert(title: String) {
         let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    // Denote anchor for unwinding to
+    @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
     
 }

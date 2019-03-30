@@ -72,7 +72,7 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
             self.database.updateUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, newAmount: newTotal)
         }
         // Go back to homepage
-        self.performSegue(withIdentifier: "backToMain", sender: self)
+        performSegue(withIdentifier: "unwindSegueToHome", sender: self)
     }
 
 }

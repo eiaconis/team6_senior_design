@@ -13,7 +13,7 @@
         <!--Save Money Controller-->
         <scene sceneID="XLv-RA-ZCz">
             <objects>
-                <viewController storyboardIdentifier="SaveMoneyController" id="IBn-ri-VHf" customClass="SaveMoneyController" customModule="senior_design_2019" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SaveMoneyController" id="IBn-ri-VHf" customClass="SaveMoneyController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JrG-B6-1CO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,7 @@
         <!--Menu Item View Controller-->
         <scene sceneID="lPn-7s-pJ8">
             <objects>
-                <viewController id="THK-04-Js4" customClass="MenuItemViewController" customModule="senior_design_2019" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="THK-04-Js4" customClass="MenuItemViewController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0vR-6v-fo4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,12 +135,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p4x-4d-q9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14" y="-171"/>
+            <point key="canvasLocation" x="126" y="-171"/>
         </scene>
         <!--Ideal Menu Item View Controller-->
         <scene sceneID="GmP-62-vvu">
             <objects>
-                <viewController id="hqP-CO-EyG" customClass="IdealMenuItemViewController" customModule="senior_design_2019" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hqP-CO-EyG" customClass="IdealMenuItemViewController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h3Z-Gx-zCc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,12 +183,13 @@
                         <viewLayoutGuide key="safeArea" id="vOu-ez-Ur5"/>
                     </view>
                     <connections>
-                        <segue destination="ItX-D4-hel" kind="show" identifier="backToMain" id="eg2-iv-gZ3"/>
+                        <segue destination="aNf-Fw-SYn" kind="unwind" identifier="unwindSegueToHome" unwindAction="unwindToHomeWithSegue:" id="Nlw-ON-K58"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsW-Ij-Szc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aNf-Fw-SYn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="815" y="-171"/>
+            <point key="canvasLocation" x="938" y="-171"/>
         </scene>
         <!--MoneyValue-->
         <scene sceneID="FBG-dW-85S">
@@ -201,7 +202,7 @@
         <!--Manual Save Money View Controller-->
         <scene sceneID="xIu-97-qJB">
             <objects>
-                <viewController storyboardIdentifier="ManualSaveMoneyViewController" id="fQU-5W-zuI" customClass="ManualSaveMoneyViewController" customModule="senior_design_2019" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ManualSaveMoneyViewController" id="fQU-5W-zuI" customClass="ManualSaveMoneyViewController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cto-W6-hXE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -241,6 +242,7 @@
                                 <connections>
                                     <action selector="menuEntryButtonPressed:" destination="IBn-ri-VHf" eventType="touchUpInside" id="bUM-Wl-WkO"/>
                                     <action selector="saveButtonPressed:" destination="fQU-5W-zuI" eventType="touchUpInside" id="fQc-qG-7a8"/>
+                                    <segue destination="aQ3-n3-Swa" kind="unwind" identifier="unwindSegueToHome" unwindAction="unwindToHomeWithSegue:" id="eft-hi-Z0j"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGB-zg-XnW">
@@ -271,19 +273,16 @@
                         <outlet property="amountTextField" destination="Izl-uN-5Kf" id="llb-XC-vmn"/>
                         <outlet property="categoryLabel" destination="gGB-zg-XnW" id="TsW-Gt-H0w"/>
                         <outlet property="saveButton" destination="lYf-6O-2yk" id="TQm-n0-qtn"/>
-                        <segue destination="ItX-D4-hel" kind="show" identifier="manualSaveSegue" id="TsG-0Y-MqN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30I-vr-bkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aQ3-n3-Swa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="126" y="608"/>
         </scene>
     </scenes>
     <resources>
-        <image name="edit-5-128" width="96" height="96"/>
-        <image name="menu-4-128" width="96" height="96"/>
+        <image name="edit-5-128" width="128" height="128"/>
+        <image name="menu-4-128" width="128" height="128"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="TsG-0Y-MqN"/>
-    </inferredMetricsTieBreakers>
 </document>

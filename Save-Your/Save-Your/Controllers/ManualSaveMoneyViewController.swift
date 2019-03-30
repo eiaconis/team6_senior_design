@@ -106,7 +106,9 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         self.database.updateGoalAmountSaved(goalId: goalSelectedID, newAmount: currAmount!)
         // Add this amount to user's total savings
         self.database.updateUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, newAmount: newTotal)
-        self.performSegue(withIdentifier: "manualSaveSegue", sender: nil)
+        
+        // Go back to home screen
+        performSegue(withIdentifier: "unwindSegueToHome", sender: self)
     }
     
     // Function to load picker view with goal names for user
