@@ -13,7 +13,7 @@
         <!--First Page View Controller-->
         <scene sceneID="8rr-bP-CNS">
             <objects>
-                <viewController id="ZjA-He-axa" customClass="FirstPageViewController" customModule="senior_design_2019" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZjA-He-axa" customClass="FirstPageViewController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LTP-Mc-jPd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,7 +92,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" customClass="ViewController" customModule="senior_design_2019" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" customClass="ViewController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="createAccount" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +116,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTL-vu-5bC">
-                                <rect key="frame" x="301" y="333" width="48" height="48"/>
+                                <rect key="frame" x="285" y="333" width="64" height="64"/>
                                 <state key="normal" image="arrow-32-65">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -240,7 +240,7 @@
         <!--Create Account View Controller-->
         <scene sceneID="zxd-wy-UfG">
             <objects>
-                <viewController id="pk3-kI-KxE" customClass="CreateAccountViewController" customModule="senior_design_2019" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pk3-kI-KxE" customClass="CreateAccountViewController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ezz-k1-oNg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -506,7 +506,7 @@
         <!--Add Goal View Controller-->
         <scene sceneID="sQS-Mt-1HF">
             <objects>
-                <viewController id="WWV-DH-tee" customClass="AddGoalViewController" customModule="senior_design_2019" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WWV-DH-tee" customClass="AddGoalViewController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tZ6-X8-dOe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -661,14 +661,14 @@
     </scenes>
     <resources>
         <image name="008080_Swatch" width="336" height="280"/>
-        <image name="add-user-2-64" width="48" height="48"/>
-        <image name="arrow-32-65" width="48" height="48"/>
-        <image name="login-64" width="48" height="48"/>
+        <image name="add-user-2-64" width="64" height="64"/>
+        <image name="arrow-32-65" width="64" height="64"/>
+        <image name="login-64" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MOa-1b-0bo"/>
+        <segue reference="gNE-fY-D7Y"/>
         <segue reference="pQd-fp-Odd"/>
-        <segue reference="mSt-kG-ER6"/>
+        <segue reference="idK-Gd-dD6"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

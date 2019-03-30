@@ -41,6 +41,9 @@ class ViewController: UIViewController {
         database.login(email: emailTextField.text!, password: passwordTextField.text!, view: self)
     }
     
+    // Denote anchor for unwinding to upon logout
+    @IBAction func unwindToLogout(segue:UIStoryboardSegue) { }
+    
 
 }
 

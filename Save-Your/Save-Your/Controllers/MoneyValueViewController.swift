@@ -138,6 +138,7 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
         self.database.logout(view: self)
+        performSegue(withIdentifier: "unwindSegueToLogout", sender: self)
     }
     
     @IBAction func plusButtonPressed(_ sender: Any) {
@@ -155,7 +156,7 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
         self.present(alert, animated: true, completion: nil)
     }
     
-    // Denote anchor for unwinding to
+    // Denote anchor for unwinding to home
     @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
     
 }
