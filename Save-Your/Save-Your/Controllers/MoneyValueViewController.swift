@@ -13,13 +13,19 @@ import CoreLocation
 
 class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
 
+    // Variables
     var database : DatabaseAccess = DatabaseAccess.getInstance()
     let locManager = CLLocationManager()
+    var totalSavings : Double = 0.0
     
+    // Buttons
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var currentAmountLabel: UILabel!
-    @IBOutlet weak var progressPercentageLabel: UILabel!
+    
+    // Labels
+    @IBOutlet weak var totalSavingLabel: UILabel!
+    @IBOutlet weak var saverLevelLabel: UILabel!
+    @IBOutlet weak var nextLevelLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,30 +54,6 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
         plusButton.layer.cornerRadius = 5
         plusButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
         
-        // Read data from db for appropriate text rendering
-        var currAmount = 0.0
-        self.database.getUserCurrGoal(uid: Auth.auth().currentUser!.uid, callback: {(goalId) -> Void in
-            print("got goal id")
-            print(goalId ?? "Something went wrong getting goal id.")
-            self.database.getStateOfGoal(goalId: goalId!, callback: {(amount) -> Void in
-                print("got goal amount")
-                print(amount!)
-                currAmount = amount!
-                
-                self.currentAmountLabel.text = "$\(amount!)"
-                self.currentAmountLabel.sizeToFit()
-            })
-            self.database.getTargetOfGoal(goalId: goalId!, callback: {(target) -> Void in
-                print("got target amount")
-                print(target!)
-                let percentage = (currAmount / target!)*100
-                let truncPercentage = String (Double(floor(pow(10.0, Double(2)) * percentage)/pow(10.0, Double(2))))
-                
-                self.progressPercentageLabel.text = "\(truncPercentage)%"
-                self.progressPercentageLabel.sizeToFit()
-            })
-        })
-        
         // Pad and round the 'Logout' Button
         logoutButton.layer.cornerRadius = 5
         logoutButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
@@ -80,31 +62,22 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
         plusButton.layer.cornerRadius = 5
         plusButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
         
-        // Read data from db for appropriate text rendering
-        self.database.getUserCurrGoal(uid: Auth.auth().currentUser!.uid, callback: {(goalId) -> Void in
-            print("got goal id")
-            print(goalId ?? "Something went wrong getting goal id.")
-            self.database.getStateOfGoal(goalId: goalId!, callback: {(amount) -> Void in
-                print("got goal amount")
-                print(amount!)
-                currAmount = amount!
-                
-                self.currentAmountLabel.text = "$\(amount!)"
-                self.currentAmountLabel.sizeToFit()
-            })
-            self.database.getTargetOfGoal(goalId: goalId!, callback: {(target) -> Void in
-                print("got target amount")
-                print(target!)
-                let percentage = (currAmount / target!)*100
-                let truncPercentage = String (Double(floor(pow(10.0, Double(2)) * percentage)/pow(10.0, Double(2))))
-               
-                self.progressPercentageLabel.text = "\(truncPercentage)%"
-                self.progressPercentageLabel.sizeToFit()
-            })
-        })
-        
+        // Populate homescreen graphics
         self.database.getUserTotalSavings(uid: Auth.auth().currentUser!.uid, callback: {(totalSav) -> Void in
             print("got total sav/\(totalSav)")
+            self.totalSavings = totalSav ?? 0.0
+            let formattedTotalSavings = self.formatDollarAmount(amount: totalSav ?? 0.0)
+            self.totalSavingLabel.text = "Lifetime savings of $\(formattedTotalSavings)"
+            // Display saver level
+            let saverLevel = self.getSaverLevel(totalSav: self.totalSavings)
+            self.saverLevelLabel.text = "\(saverLevel) level"
+            let amountLeft = self.getNextLevel(totalSav: self.totalSavings)
+            let formattedAmountLeft = self.formatDollarAmount(amount: amountLeft)
+            if amountLeft == -1 {
+                self.nextLevelLabel.text = ""
+            } else {
+                self.nextLevelLabel.text = "Save $\(formattedAmountLeft) more to reach next level"
+            }
         })
         
 //        print("curr location\(locManager.location)")
@@ -164,5 +137,63 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
     
     // Denote anchor for unwinding to home
     @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
+    
+    // Retrieves user's saving level based on total savings
+    func getSaverLevel(totalSav: Double) -> String {
+        if totalSav < 10 {
+            return "Green"
+        } else if totalSav < 50 {
+            return "Black"
+        } else if totalSav < 100 {
+            return "Bronze"
+        } else if totalSav < 250 {
+            return "Silver"
+        } else if totalSav < 500 {
+            return "Gold"
+        } else if totalSav < 1000 {
+            return "Platinum"
+        } else if totalSav < 2500 {
+            return "Emerald"
+        } else if totalSav < 5000 {
+            return "Ruby"
+        } else if totalSav < 10000 {
+            return "Sapphire"
+        } else {
+            return "Diamond"
+        }
+    }
+    
+    // Calculates amount to next saving level
+    func getNextLevel(totalSav: Double) -> Double {
+        if totalSav < 10 {
+            return 10 - totalSav
+        } else if totalSav < 50 {
+            return 50 - totalSav
+        } else if totalSav < 100 {
+            return 100 - totalSav
+        } else if totalSav < 250 {
+            return 250 - totalSav
+        } else if totalSav < 500 {
+            return 500 - totalSav
+        } else if totalSav < 1000 {
+            return 1000 - totalSav
+        } else if totalSav < 2500 {
+            return 2500 - totalSav
+        } else if totalSav < 5000 {
+            return 5000 - totalSav
+        } else if totalSav < 10000 {
+            return 10000 - totalSav
+        } else {
+            return -1
+        }
+    }
+    
+    // Format double from DB to proper dollar amount
+    func formatDollarAmount(amount: Double) -> String {
+        let timesHundred = 100 * amount
+        let rounded = round(timesHundred) / 100
+        let returnVal : String = String(format: "%.2f", rounded)
+        return returnVal
+    }
     
 }

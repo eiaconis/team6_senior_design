@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="progress towards current goal!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbc-of-eD7">
-                                <rect key="frame" x="-5" y="299" width="386" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="26"/>
-                                <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yE5-aP-QMH">
                                 <rect key="frame" x="310" y="109" width="45" height="45"/>
                                 <constraints>
@@ -51,41 +44,45 @@
                                     <segue destination="7I1-Yy-F0j" kind="unwind" identifier="unwindSegueToLogout" unwindAction="unwindToLogoutWithSegue:" id="z8k-92-lSQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have saved             towards your goal." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmx-X7-TTc">
-                                <rect key="frame" x="26" y="197" width="323" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifetime savings of $00.00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifA-SX-7sL">
+                                <rect key="frame" x="82.5" y="229" width="210.5" height="26"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBg-18-pAo">
-                                <rect key="frame" x="152" y="220" width="45" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blank Level Saver!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUu-br-GrH">
+                                <rect key="frame" x="112.5" y="275" width="150" height="26"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dr-uo-Drr">
-                                <rect key="frame" x="123" y="256" width="130" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save $00.00 to reach the next level" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToL-Ze-kOV">
+                                <rect key="frame" x="48.5" y="321" width="278" height="26"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="LUu-br-GrH" firstAttribute="centerX" secondItem="REZ-c7-JMf" secondAttribute="centerX" id="5Qv-2f-YzP"/>
+                            <constraint firstItem="LUu-br-GrH" firstAttribute="top" secondItem="ifA-SX-7sL" secondAttribute="bottom" constant="20" id="MN5-FJ-oSL"/>
                             <constraint firstItem="NQn-du-t6s" firstAttribute="trailing" secondItem="yE5-aP-QMH" secondAttribute="trailing" constant="20" id="b2T-aL-tIa"/>
                             <constraint firstItem="yE5-aP-QMH" firstAttribute="top" secondItem="NQn-du-t6s" secondAttribute="top" constant="45" id="eiA-H1-XVD"/>
+                            <constraint firstItem="ifA-SX-7sL" firstAttribute="top" secondItem="yE5-aP-QMH" secondAttribute="bottom" constant="75" id="evF-h6-T5D"/>
+                            <constraint firstItem="ToL-Ze-kOV" firstAttribute="centerX" secondItem="REZ-c7-JMf" secondAttribute="centerX" id="qJN-8n-AHv"/>
+                            <constraint firstItem="ToL-Ze-kOV" firstAttribute="top" secondItem="LUu-br-GrH" secondAttribute="bottom" constant="20" id="tQP-ba-7ne"/>
+                            <constraint firstItem="ifA-SX-7sL" firstAttribute="centerX" secondItem="REZ-c7-JMf" secondAttribute="centerX" id="wfP-Nj-wWX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NQn-du-t6s"/>
                     </view>
                     <navigationItem key="navigationItem" id="cfJ-0G-C9Y"/>
                     <connections>
-                        <outlet property="currentAmountLabel" destination="cBg-18-pAo" id="q4v-AS-1Bk"/>
                         <outlet property="logoutButton" destination="LRJ-Pu-h0o" id="blJ-kj-8Dm"/>
+                        <outlet property="nextLevelLabel" destination="ToL-Ze-kOV" id="id2-kV-8rB"/>
                         <outlet property="plusButton" destination="yE5-aP-QMH" id="GyI-AM-DR5"/>
-                        <outlet property="progressPercentageLabel" destination="2dr-uo-Drr" id="dM1-lE-2XS"/>
+                        <outlet property="saverLevelLabel" destination="LUu-br-GrH" id="xpU-DT-FD6"/>
+                        <outlet property="totalSavingLabel" destination="ifA-SX-7sL" id="6KY-Y9-CQW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QO1-VA-gau" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -684,15 +681,35 @@
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have saved $00.00 towards 'Goal Name'" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVy-te-kgA">
+                                <rect key="frame" x="11.5" y="197" width="352" height="26"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00% of the way there.  Keep saving!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0o-P0-iqy">
+                                <rect key="frame" x="35" y="243" width="305.5" height="26"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="iVy-te-kgA" firstAttribute="top" secondItem="foO-ch-PZ8" secondAttribute="bottom" constant="40" id="29T-cZ-Dkd"/>
+                            <constraint firstItem="H0o-P0-iqy" firstAttribute="top" secondItem="iVy-te-kgA" secondAttribute="bottom" constant="20" id="Bax-5D-MSa"/>
                             <constraint firstItem="foO-ch-PZ8" firstAttribute="top" secondItem="hpF-Nn-Zj7" secondAttribute="top" constant="45" id="DXg-RL-Nhd"/>
                             <constraint firstItem="foO-ch-PZ8" firstAttribute="centerX" secondItem="kB1-eK-N2u" secondAttribute="centerX" id="E4P-kg-t7Z"/>
+                            <constraint firstItem="iVy-te-kgA" firstAttribute="centerX" secondItem="kB1-eK-N2u" secondAttribute="centerX" id="Gfj-dt-UcK"/>
+                            <constraint firstItem="H0o-P0-iqy" firstAttribute="centerX" secondItem="kB1-eK-N2u" secondAttribute="centerX" id="Woi-dp-K3L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hpF-Nn-Zj7"/>
                     </view>
                     <navigationItem key="navigationItem" id="pfA-1h-z08"/>
+                    <connections>
+                        <outlet property="amountSavedLabel" destination="iVy-te-kgA" id="auP-WN-qnj"/>
+                        <outlet property="percentLabel" destination="H0o-P0-iqy" id="m70-s9-fYL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1E0-Dx-ZBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
