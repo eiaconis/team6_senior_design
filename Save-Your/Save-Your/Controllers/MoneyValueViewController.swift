@@ -68,8 +68,8 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
             self.totalSavings = totalSav ?? 0.0
             let formattedTotalSavings = self.formatDollarAmount(amount: totalSav ?? 0.0)
             self.totalSavingLabel.text = "Lifetime savings of $\(formattedTotalSavings)"
-            // Display saver level
             let saverLevel = self.getSaverLevel(totalSav: self.totalSavings)
+            self.setLevelColor(totalSav: self.totalSavings)
             self.saverLevelLabel.text = "\(saverLevel) level"
             let amountLeft = self.getNextLevel(totalSav: self.totalSavings)
             let formattedAmountLeft = self.formatDollarAmount(amount: amountLeft)
@@ -124,7 +124,6 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
         let storyboard = UIStoryboard(name: "SaveMoney", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "SaveMoneyController") as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
-//        self.performSegue(withIdentifier: "logSavingSegue", sender: self)
     }
     
     
@@ -194,6 +193,41 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
         let rounded = round(timesHundred) / 100
         let returnVal : String = String(format: "%.2f", rounded)
         return returnVal
+    }
+    
+    // Set text color for saver label to match the level
+    func setLevelColor(totalSav: Double) {
+        if totalSav < 10 {
+            // "Green"
+            self.saverLevelLabel.textColor = UIColor.green
+        } else if totalSav < 50 {
+            // "Black"
+            self.saverLevelLabel.textColor = UIColor.black
+        } else if totalSav < 100 {
+            // "Bronze"
+            self.saverLevelLabel.textColor = UIColor(red: 218/255.0, green: 165/255.0, blue: 32/255.0, alpha: 1)
+        } else if totalSav < 250 {
+            // "Silver"
+            self.saverLevelLabel.textColor = UIColor(red: 192/255.0, green: 192/255.0, blue: 192/255.0, alpha: 1)
+        } else if totalSav < 500 {
+            // "Gold"
+            self.saverLevelLabel.textColor = UIColor.init(red: 218/255.0, green: 165/255.0, blue: 32/255.0, alpha: 1)
+        } else if totalSav < 1000 {
+            // "Platinum"
+            self.saverLevelLabel.textColor = UIColor.lightGray
+        } else if totalSav < 2500 {
+            // "Emerald"
+            self.saverLevelLabel.textColor = UIColor.init(red: 49/255.0, green: 155/255.0, blue: 84/255.0, alpha: 1)
+        } else if totalSav < 5000 {
+            // "Ruby"
+            self.saverLevelLabel.textColor = UIColor.init(red: 177/255.0, green: 13/255.0, blue: 75/255.0, alpha: 1)
+        } else if totalSav < 10000 {
+            // "Sapphire"
+            self.saverLevelLabel.textColor = UIColor.init(red: 15/255.0, green: 82/255.0, blue: 186/255.0, alpha: 1)
+        } else {
+            // "Diamond"
+            self.saverLevelLabel.textColor = UIColor.init(red: 209/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1)
+        }
     }
     
 }
