@@ -19,8 +19,9 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
     var totalSavings : Double = 0.0
     
     // Buttons
-    @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
+    
     
     // Labels
     @IBOutlet weak var totalSavingLabel: UILabel!
@@ -45,22 +46,6 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
         let logo = UIImage(named: "saveyour logo-40.png")
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
-        
-        // Pad and round the 'Logout' Button
-        logoutButton.layer.cornerRadius = 5
-        logoutButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
-        
-        // Pad and round the '+' Button
-        plusButton.layer.cornerRadius = 5
-        plusButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
-        
-        // Pad and round the 'Logout' Button
-        logoutButton.layer.cornerRadius = 5
-        logoutButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
-        
-        // Pad and round the '+' Button
-        plusButton.layer.cornerRadius = 5
-        plusButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
         
         // Populate homescreen graphics
         self.database.getUserTotalSavings(uid: Auth.auth().currentUser!.uid, callback: {(totalSav) -> Void in
@@ -114,18 +99,22 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
     
     }
     
-    
-    @IBAction func logoutButtonPressed(_ sender: Any) {
-        self.database.logout(view: self)
-        performSegue(withIdentifier: "unwindSegueToLogout", sender: self)
-    }
-    
     @IBAction func plusButtonPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "SaveMoney", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "SaveMoneyController") as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+//    @IBAction func logoutBarButtonPressed(_ sender: Any) {
+//        print("logout button pressed")
+//        self.database.logout(view: self)
+//        performSegue(withIdentifier: "unwindSegueToLogout", sender: self)
+//    }
+    
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        self.database.logout(view: self)
+        performSegue(withIdentifier: "unwindSegueToLogout", sender: self)
+    }
     
     func createAlert(title: String) {
         let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
