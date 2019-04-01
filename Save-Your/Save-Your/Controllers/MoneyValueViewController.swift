@@ -105,12 +105,6 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-//    @IBAction func logoutBarButtonPressed(_ sender: Any) {
-//        print("logout button pressed")
-//        self.database.logout(view: self)
-//        performSegue(withIdentifier: "unwindSegueToLogout", sender: self)
-//    }
-    
     @IBAction func logoutButtonPressed(_ sender: Any) {
         self.database.logout(view: self)
         performSegue(withIdentifier: "unwindSegueToLogout", sender: self)
