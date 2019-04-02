@@ -67,23 +67,19 @@ class EditProfileController: UIViewController {
         if phoneField.text != phoneField.placeholder && phoneField.text != ""{
             self.database.setUserPhoneNumber(uid: (Auth.auth().currentUser?.uid)!, phone: phoneField.text!)
         }
-        
+        // Update placeholder text with new information
+        updatePlaceholderText()
         // Display alert
         createAlert(title: "Profile information updated!")
         
-        // Update placeholder text with new information
-        updatePlaceholderText()
+        
     }
     
     func updatePlaceholderText() {
         self.emailField.placeholder = Auth.auth().currentUser?.email
         self.passwordField.placeholder = "******"
-        self.database.getUserFirstName(uid: (Auth.auth().currentUser?.uid)!, callback: {(firstName) -> Void in
-            self.firstNameField.placeholder = firstName
-        })
-        self.database.getUserLastName(uid: (Auth.auth().currentUser?.uid)!, callback: {(lastName) -> Void in
-            self.lastNameField.placeholder = lastName
-        })
+        self.firstNameField.placeholder = self.database.getUserFirstName()
+        self.lastNameField.placeholder = self.database.getUserLastName()
         self.database.getUserPhone(uid: (Auth.auth().currentUser?.uid)!, callback: {(phone) -> Void in
             self.phoneField.placeholder = phone
         })

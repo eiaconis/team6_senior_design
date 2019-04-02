@@ -57,6 +57,11 @@ class DatabaseAccess {
     func createAccount(newUser: User, goal: Goal?, password: String, view: UIViewController?) {
         print("creating user")
         Auth.auth().createUser(withEmail: newUser.email!, password: password) { user, error in
+            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+            changeRequest?.displayName = "\(newUser.firstName!)|\(newUser.lastName!)"
+            changeRequest?.commitChanges { (error) in
+                // TODO: handle
+            }
             print("created user \(String(describing: user)) with error \(String(describing: error))")
             // Handle error creating account
             if error != nil {
@@ -90,7 +95,6 @@ class DatabaseAccess {
                         if view != nil {
                             view?.performSegue(withIdentifier: "log_in", sender: view!)
                         }
-                    
                 }
             }
         }
@@ -151,8 +155,6 @@ class DatabaseAccess {
         }
         let newUser : Any = [ "uid" : uid,
                               "formattedEmail": user.formattedEmail!,
-                              "firstName": user.firstName!,
-                              "lastName": user.lastName!,
                               "phoneNumber": user.phoneNumber!,
                               "currentGoal": newGoalId!,
                               "totalSavings": 0
@@ -175,27 +177,16 @@ class DatabaseAccess {
     }
     
     // Get user's current first name
-    func getUserFirstName(uid: String, callback : @escaping (String?) -> Void) {
-        self.ref.child("UserTable/\(uid)/firstName").observe(.value, with: { (snapshot) in
-            if snapshot.exists(){
-                let firstName = snapshot.value as? String
-                callback(firstName!)
-            } else {
-                callback(nil)
-            }
-        })
+    func getUserFirstName() -> String? {
+        var fullNameArr  = (Auth.auth().currentUser?.displayName)!.characters.split{$0 == "|"}.map(String.init)
+        return fullNameArr[0]
     }
     
     // Get user's current last name
-    func getUserLastName(uid: String, callback : @escaping (String?) -> Void) {
-        self.ref.child("UserTable/\(uid)/lastName").observe(.value, with: { (snapshot) in
-            if snapshot.exists(){
-                let lastName = snapshot.value as? String
-                callback(lastName!)
-            } else {
-                callback(nil)
-            }
-        })
+    func getUserLastName() -> String {
+        var fullName = (Auth.auth().currentUser?.displayName)!
+        var fullNameArr  = (Auth.auth().currentUser?.displayName)!.characters.split{$0 == "|"}.map(String.init)
+        return fullNameArr[1]
     }
     
     // Get user's current phone number
@@ -218,12 +209,22 @@ class DatabaseAccess {
     
     // Set user first name
     func setUserFirstName(uid: String, firstName: String) {
-        self.ref.child("UserTable/\(uid)/firstName/").setValue(firstName)
+        var oldLastName = getUserLastName()
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = "\(firstName)|\(oldLastName)"
+        changeRequest?.commitChanges { (error) in
+            // TODO: handle
+        }
     }
     
     // Set user last name
     func setUserLastName(uid: String, lastName: String) {
-        self.ref.child("UserTable/\(uid)/lastName/").setValue(lastName)
+        var oldFirstName = getUserFirstName()
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = "\(oldFirstName)|\(lastName)"
+        changeRequest?.commitChanges { (error) in
+            // TODO: handle
+        }
     }
     
     // Set user phone number
