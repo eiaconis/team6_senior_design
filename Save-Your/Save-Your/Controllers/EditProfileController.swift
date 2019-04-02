@@ -27,6 +27,9 @@ class EditProfileController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // If screen tapped, dismiss keyboard
+        self.hideKeyboardWhenTappedAround()
+        
         // Fetch profile info and set placeholder text for each field
         updatePlaceholderText()
         
@@ -90,11 +93,6 @@ class EditProfileController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
         
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    // If view tapped, dismiss keyboard
-    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
-        view.endEditing(true)
     }
     
 }

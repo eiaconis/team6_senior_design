@@ -35,6 +35,9 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
         updatePickerView()
         populatePlaceholderText()
         
+        // If screen tapped, dismiss picker
+        self.hideKeyboardWhenTappedAround()
+        
         // Pad and round the 'Save' Button
         saveButton.layer.cornerRadius = 5
         saveButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
