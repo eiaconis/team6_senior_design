@@ -30,6 +30,9 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // If screen tapped, dismiss keyboard
+        self.hideKeyboardWhenTappedAround()
+        
         // Picker set up
         picker.delegate = self
         picker.dataSource = self
@@ -157,11 +160,6 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
         
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    // If view tapped, dismiss keyboard
-    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
-        view.endEditing(true)
     }
 
 }

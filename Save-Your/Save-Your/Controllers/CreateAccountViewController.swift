@@ -24,7 +24,11 @@ class CreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        // If screen tapped, dismiss keyboard
+        self.hideKeyboardWhenTappedAround()
         
         // Pad and round the 'Continue' Button
         continueButton.layer.cornerRadius = 5
@@ -58,11 +62,6 @@ class CreateAccountViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
         
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    // If view tapped, dismiss keyboard
-    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
-        view.endEditing(true)
     }
     
 }

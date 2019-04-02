@@ -21,6 +21,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // If screen tapped, dismiss keyboard
+        self.hideKeyboardWhenTappedAround()
+        
        // let appDelegate = UIApplication.shared.delegate as! AppDelegate
         // Test adding goal
 //         var testGoal = Goal(userId: "test", title: "test", target: 100.00)
@@ -41,14 +45,22 @@ class ViewController: UIViewController {
         database.login(email: emailTextField.text!, password: passwordTextField.text!, view: self)
     }
     
-    // If view tapped, dismiss keyboard
-    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
-        view.endEditing(true)
-    }
-    
     // Denote anchor for unwinding to upon logout
     @IBAction func unwindToLogout(segue:UIStoryboardSegue) { }
     
 
+}
+
+// Extension of View Controller to dismiss keyboard when screen is tapped
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
