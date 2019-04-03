@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTL-vu-5bC">
-                                <rect key="frame" x="285" y="452" width="64" height="64"/>
+                                <rect key="frame" x="301" y="452" width="48" height="48"/>
                                 <state key="normal" image="arrow-32-65">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -212,7 +212,6 @@
                                 </state>
                                 <connections>
                                     <action selector="continueButtonPressed:" destination="pk3-kI-KxE" eventType="touchUpInside" id="1p0-tc-C6H"/>
-                                    <segue destination="WWV-DH-tee" kind="show" id="Rvh-Ur-t7h"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="008080_Swatch" translatesAutoresizingMaskIntoConstraints="NO" id="083-C0-5zK">
@@ -419,11 +418,12 @@
                         <outlet property="lastNameTextField" destination="SfS-aP-6dI" id="Hda-DQ-45u"/>
                         <outlet property="passwordField" destination="qVj-UW-ArN" id="GnK-G5-Etk"/>
                         <outlet property="phoneNumberTextField" destination="gOt-jx-f8e" id="YTR-6t-fy2"/>
+                        <segue destination="WWV-DH-tee" kind="show" identifier="segue_to_add_goal" id="Jf5-Qd-JT1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIN-0i-7IR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="814.28571428571433"/>
+            <point key="canvasLocation" x="996" y="814"/>
         </scene>
         <!--Add Goal View Controller-->
         <scene sceneID="sQS-Mt-1HF">
@@ -583,12 +583,11 @@
     </scenes>
     <resources>
         <image name="008080_Swatch" width="336" height="280"/>
-        <image name="arrow-32-65" width="64" height="64"/>
-        <image name="saveyour logo-1024" width="1024" height="1024"/>
+        <image name="arrow-32-65" width="48" height="48"/>
+        <image name="saveyour logo-1024" width="245.75999450683594" height="245.75999450683594"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MOa-1b-0bo"/>
-        <segue reference="pQd-fp-Odd"/>
+        <segue reference="dxN-q2-mJI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

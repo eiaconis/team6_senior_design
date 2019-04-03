@@ -72,6 +72,7 @@ class DatabaseAccess {
             } else if user != nil {
                 // Add user to UserTable
                 self.addUser(user: newUser, goal: goal, uid: (Auth.auth().currentUser?.uid)!)
+                view?.performSegue(withIdentifier: "segue_to_add_goal", sender: view!)
             }
         }
     }
