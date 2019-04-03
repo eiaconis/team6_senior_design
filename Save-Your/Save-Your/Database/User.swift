@@ -12,7 +12,6 @@ class User {
     
     var uid: String?
     var email: String?
-    var formattedEmail: String? // Must reformat to store in Firebase
     var firstName: String?
     var lastName: String?
     var phoneNumber: String?
@@ -27,7 +26,6 @@ class User {
         self.firstName = firstName
         self.lastName = lastName
         self.phoneNumber = phoneNumber
-        self.formattedEmail = self.reformatEmail(email: email)
     }
     
     // Sets user id to unique identifier created when it is added to database

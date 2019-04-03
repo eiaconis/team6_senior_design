@@ -149,9 +149,7 @@ class DatabaseAccess {
         // If user did not choose to intialize a goal, create default goal
         //var newGoalId : String? = goal!.goalId
         let newUser : Any = [ "uid" : uid,
-                              "formattedEmail": user.formattedEmail!,
                               "phoneNumber": user.phoneNumber!,
-                              //"currentGoal": newGoalId!,
                               "totalSavings": 0
         ]
         self.ref.child("UserTable/\(uid)").setValue(newUser)
@@ -196,8 +194,7 @@ class DatabaseAccess {
     
     // Set user email
     func setUserEmail(uid: String, email: String) {
-        let formattedEmail = reformatEmail(email: email)
-        self.ref.child("UserTable/\(uid)/formattedEmail/").setValue(formattedEmail)
+        Auth.auth().currentUser?.updateEmail(to: email)
     }
     
     // Set user first name
@@ -240,10 +237,6 @@ class DatabaseAccess {
         Auth.auth().currentUser?.updateEmail(to: newEmail) { (error) in
             // TODO: Error handle
         }
-        // Update in UserTable
-        let newFormatEmail = reformatEmail(email: newEmail)
-        let userId = Auth.auth().currentUser?.uid
-        self.ref.child("UserTable/\(String(describing: userId))/formattedEmail").setValue(newFormatEmail)
     }
     
     // Edit password
