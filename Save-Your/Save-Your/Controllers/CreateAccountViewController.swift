@@ -55,6 +55,7 @@ class CreateAccountViewController: UIViewController {
             let newUser = User(email: email, firstName: firstName, lastName: lastName, phoneNumber: phone)
             database.createAccount(newUser: newUser, goal: nil, password: password, view: self)
         }
+        
     }
     
     func createAlert(title: String) {

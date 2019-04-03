@@ -30,6 +30,15 @@ class StatPageController: UIViewController {
         var goalName = ""
         var targetGoalAmt = 0.0
         self.database.getUserCurrGoal(uid: Auth.auth().currentUser!.uid, callback: {(goalId) -> Void in
+            if (goalId == nil) {
+                // Add Goal and update user's current goal
+                let defaultGoal = Goal(userId: (Auth.auth().currentUser?.uid)!, title: "First Time Saver", target: 100.00)
+                var goalId = self.database.addGoal(goal: defaultGoal)
+                self.database.addGoalToUser(goalId: goalId, userId: (Auth.auth().currentUser?.uid)!)
+                self.database.editGoalInUser(userId: (Auth.auth().currentUser?.uid)!, goalId: goalId)
+                self.amountSavedLabel.text = "You have saved $\(0) towards First Time Saver"
+                self.percentLabel.text = "\0% of the way there.  Keep saving!"
+            } else {
             self.database.getStateOfGoal(goalId: goalId!, callback: {(amount) -> Void in
                 print("goal amount = \(amount!)")
                 currAmount = amount ?? 0.0
@@ -46,6 +55,7 @@ class StatPageController: UIViewController {
                 let truncPercentage = self.formatDouble(amount: percentage)
                 self.percentLabel.text = "\(truncPercentage)% of the way there.  Keep saving!"
             })
+            }
         })
     }
     
