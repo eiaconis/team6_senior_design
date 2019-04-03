@@ -146,25 +146,17 @@ class DatabaseAccess {
     func addUser(user: User, goal: Goal?, uid: String)-> Void {
         print("adding user")
         // If user did not choose to intialize a goal, create default goal
-        var newGoalId : String?
-        if goal == nil {
-            let defaultGoal = Goal(userId: uid, title: "First Time Saver", target: 100.00)
-            newGoalId = self.addGoal(goal: defaultGoal)
-        } else {
-            newGoalId = goal!.goalId
-        }
+        //var newGoalId : String? = goal!.goalId
         let newUser : Any = [ "uid" : uid,
                               "formattedEmail": user.formattedEmail!,
                               "phoneNumber": user.phoneNumber!,
-                              "currentGoal": newGoalId!,
+                              //"currentGoal": newGoalId!,
                               "totalSavings": 0
         ]
         self.ref.child("UserTable/\(uid)").setValue(newUser)
     }
     
     func getUserCurrGoal(uid: String, callback : @escaping (String?) -> Void) {
-        //        if let currUID = Auth.auth().currentUser?.uid {
-        //            print("DB: \(currUid)")
         self.ref.child("UserTable/\(uid)/currentGoal").observe(.value, with: { (snapshot) in
             if snapshot.exists(){
                 let currGoalId = snapshot.value as? String

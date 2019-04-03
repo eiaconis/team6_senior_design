@@ -50,6 +50,11 @@ class AddGoalViewController: UIViewController {
 
     @IBAction func skipButtonPressed(_ sender: Any) {
         print("skip button pressed")
+        // Add Goal and update user's current goal
+        let defaultGoal = Goal(userId: (Auth.auth().currentUser?.uid)!, title: "First Time Saver", target: 100.00)
+        let goalId = database.addGoal(goal: defaultGoal)
+        database.addGoalToUser(goalId: goalId, userId: (Auth.auth().currentUser?.uid)!)
+        database.editGoalInUser(userId: (Auth.auth().currentUser?.uid)!, goalId: goalId)
     }
     
     @IBAction func addGoalButtonPressed(_ sender: Any) {
@@ -101,8 +106,13 @@ class AddGoalViewController: UIViewController {
                 return
             }
             // Add Goal and update user's current goal
+            // Add Goal and update user's current goal
+            let defaultGoal = Goal(userId: (Auth.auth().currentUser?.uid)!, title: "First Time Saver", target: 100.00)
+            let goalId1 = database.addGoal(goal: defaultGoal)
+            database.addGoalToUser(goalId: goalId1, userId: (Auth.auth().currentUser?.uid)!)
             let goalId = database.addGoal(goal: newGoal)
             database.addGoalToUser(goalId: goalId, userId: (Auth.auth().currentUser?.uid)!)
+            database.editGoalInUser(userId: (Auth.auth().currentUser?.uid)!, goalId: goalId)
             createSuccessAlert(title: "Goal Added!")
         }
     }
