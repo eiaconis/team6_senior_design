@@ -36,7 +36,7 @@ class StatPageController: UIViewController {
                 var goalId = self.database.addGoal(goal: defaultGoal)
                 self.database.addGoalToUser(goalId: goalId, userId: (Auth.auth().currentUser?.uid)!)
                 self.database.editGoalInUser(userId: (Auth.auth().currentUser?.uid)!, goalId: goalId)
-                self.amountSavedLabel.text = "You have saved $\(0) towards First Time Saver"
+                self.amountSavedLabel.text = "You have saved $\(0) towards\nFirst Time Saver"
                 self.percentLabel.text = "\0% of the way there.  Keep saving!"
             } else {
             self.database.getStateOfGoal(goalId: goalId!, callback: {(amount) -> Void in
@@ -45,7 +45,7 @@ class StatPageController: UIViewController {
                 self.database.getStringGoalTitle(goalID: goalId!, callback: {(name) -> Void in
                     goalName = name ?? "goal"
                     let formattedAmount = self.formatDouble(amount: currAmount)
-                    self.amountSavedLabel.text = "You have saved $\(formattedAmount) towards \(goalName)"
+                    self.amountSavedLabel.text = "You have saved $\(formattedAmount) towards\n\(goalName)"
                 })
             })
             self.database.getTargetOfGoal(goalId: goalId!, callback: {(target) -> Void in

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,23 +15,23 @@
             <objects>
                 <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" customClass="ViewController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="createAccount" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWa-6G-dNi">
-                                <rect key="frame" x="20" y="363" width="57" height="30"/>
+                                <rect key="frame" x="20" y="339" width="57" height="30"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFG-sL-iex">
-                                <rect key="frame" x="20" y="408" width="97" height="30"/>
+                                <rect key="frame" x="20" y="384" width="97" height="30"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTL-vu-5bC">
-                                <rect key="frame" x="285" y="452" width="64" height="64"/>
+                                <rect key="frame" x="230" y="428" width="64" height="64"/>
                                 <state key="normal" image="arrow-32-65">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -40,31 +40,31 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="008080_Swatch" translatesAutoresizingMaskIntoConstraints="NO" id="GU4-FG-HVF">
-                                <rect key="frame" x="81" y="384" width="268" height="1"/>
+                                <rect key="frame" x="81" y="360" width="213" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="xDt-KB-00f"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xiZ-we-AI1">
-                                <rect key="frame" x="82" y="349" width="268" height="30"/>
+                                <rect key="frame" x="82" y="325" width="213" height="30"/>
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rlv-7A-CEH">
-                                <rect key="frame" x="122" y="400" width="228" height="30"/>
+                                <rect key="frame" x="122" y="376" width="173" height="30"/>
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="008080_Swatch" translatesAutoresizingMaskIntoConstraints="NO" id="cBm-fB-Q5l">
-                                <rect key="frame" x="121" y="435" width="228" height="1"/>
+                                <rect key="frame" x="121" y="411" width="173" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="eGy-ci-EMS"/>
                                 </constraints>
                             </imageView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTO-bo-bFb">
-                                <rect key="frame" x="100" y="698" width="175" height="30"/>
+                                <rect key="frame" x="72.5" y="518" width="175" height="30"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="18"/>
                                 <state key="normal" title="Don't already have an account?">
                                     <color key="titleColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,7 +74,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saveyour logo-1024" translatesAutoresizingMaskIntoConstraints="NO" id="vUY-nK-kjZ">
-                                <rect key="frame" x="67.666666666666686" y="99" width="240" height="240"/>
+                                <rect key="frame" x="40" y="75" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="KPA-U4-KVU"/>
                                     <constraint firstAttribute="height" constant="240" id="RNz-QZ-Lmw"/>
@@ -84,30 +84,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cBm-fB-Q5l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="105" id="1R6-90-Hm7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lTO-bo-bFb" secondAttribute="bottom" constant="50" id="4hQ-ca-uTR"/>
                             <constraint firstItem="rlv-7A-CEH" firstAttribute="top" secondItem="GU4-FG-HVF" secondAttribute="bottom" constant="15" id="8tD-00-GjR"/>
+                            <constraint firstItem="lTO-bo-bFb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Ft-aj-Pz0"/>
                             <constraint firstItem="EWa-6G-dNi" firstAttribute="top" secondItem="vUY-nK-kjZ" secondAttribute="bottom" constant="24" id="G4X-tC-fli"/>
                             <constraint firstItem="xiZ-we-AI1" firstAttribute="leading" secondItem="EWa-6G-dNi" secondAttribute="trailing" constant="5" id="GMX-dd-hpB"/>
                             <constraint firstItem="EWa-6G-dNi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IgC-FZ-EB3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lTO-bo-bFb" secondAttribute="bottom" constant="50" id="Mdk-ea-qIU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lTO-bo-bFb" secondAttribute="bottom" constant="20" id="Mdk-ea-qIU"/>
                             <constraint firstItem="vUY-nK-kjZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="Nbu-KN-M3h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cBm-fB-Q5l" secondAttribute="trailing" constant="10" id="OCd-fs-djt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GU4-FG-HVF" secondAttribute="trailing" constant="10" id="ReE-oD-9Zl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xiZ-we-AI1" secondAttribute="trailing" constant="25" id="SPM-5H-vQh"/>
                             <constraint firstItem="GU4-FG-HVF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="65" id="SqL-kM-t2x"/>
                             <constraint firstItem="FFG-sL-iex" firstAttribute="top" secondItem="EWa-6G-dNi" secondAttribute="bottom" constant="15" id="Un6-0V-VRP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lTO-bo-bFb" secondAttribute="trailing" constant="100" id="Zdh-sK-ycS"/>
                             <constraint firstItem="GU4-FG-HVF" firstAttribute="top" secondItem="xiZ-we-AI1" secondAttribute="bottom" constant="5" id="cJd-Uh-hl8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yTL-vu-5bC" secondAttribute="trailing" constant="26" id="cgE-du-2OP"/>
                             <constraint firstItem="vUY-nK-kjZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eFP-ok-zQ9"/>
-                            <constraint firstItem="lTO-bo-bFb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="g0S-Kr-7BK"/>
                             <constraint firstItem="FFG-sL-iex" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ghr-5W-tmX"/>
                             <constraint firstItem="yTL-vu-5bC" firstAttribute="top" secondItem="cBm-fB-Q5l" secondAttribute="bottom" constant="16" id="ixO-Sk-8Hd"/>
                             <constraint firstItem="xiZ-we-AI1" firstAttribute="top" secondItem="vUY-nK-kjZ" secondAttribute="bottom" constant="10" id="laX-KG-kJT"/>
                             <constraint firstItem="cBm-fB-Q5l" firstAttribute="top" secondItem="rlv-7A-CEH" secondAttribute="bottom" constant="5" id="mRO-9L-az7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rlv-7A-CEH" secondAttribute="trailing" constant="25" id="vGB-gJ-Wxb"/>
                             <constraint firstItem="rlv-7A-CEH" firstAttribute="leading" secondItem="FFG-sL-iex" secondAttribute="trailing" constant="5" id="yED-hT-7kt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lTO-bo-bFb" secondAttribute="bottom" constant="50" id="zrn-9V-pAq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
@@ -164,35 +161,35 @@
             <objects>
                 <viewController id="pk3-kI-KxE" customClass="CreateAccountViewController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ezz-k1-oNg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mrk-OZ-f5d">
-                                <rect key="frame" x="114" y="276" width="241" height="30"/>
+                                <rect key="frame" x="114" y="252" width="186" height="30"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SfS-aP-6dI">
-                                <rect key="frame" x="112" y="328" width="243" height="30"/>
+                                <rect key="frame" x="112" y="304" width="188" height="30"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1N-yA-T6H">
-                                <rect key="frame" x="20" y="284" width="89" height="25"/>
+                                <rect key="frame" x="20" y="260" width="89" height="25"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPI-p1-Icr">
-                                <rect key="frame" x="20" y="334" width="87" height="25"/>
+                                <rect key="frame" x="20" y="310" width="87" height="25"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NC-ob-LwY">
-                                <rect key="frame" x="146.66666666666666" y="410" width="82" height="42"/>
+                                <rect key="frame" x="119" y="386" width="82" height="42"/>
                                 <color key="backgroundColor" red="0.81960784310000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
                                 <state key="normal" title="Continue">
@@ -203,61 +200,61 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="008080_Swatch" translatesAutoresizingMaskIntoConstraints="NO" id="083-C0-5zK">
-                                <rect key="frame" x="116" y="307" width="239" height="1"/>
+                                <rect key="frame" x="116" y="283" width="184" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="kr7-tb-Xak"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNh-sa-9ep">
-                                <rect key="frame" x="73" y="172" width="282" height="30"/>
+                                <rect key="frame" x="73" y="148" width="227" height="30"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9N-RP-1Pd">
-                                <rect key="frame" x="20" y="184" width="48" height="25"/>
+                                <rect key="frame" x="20" y="160" width="48" height="25"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="008080_Swatch" translatesAutoresizingMaskIntoConstraints="NO" id="Ge2-Mz-4Kz">
-                                <rect key="frame" x="71" y="203" width="284" height="1"/>
+                                <rect key="frame" x="71" y="179" width="229" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="d10-Uo-GxD"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="008080_Swatch" translatesAutoresizingMaskIntoConstraints="NO" id="n3G-5a-uBs">
-                                <rect key="frame" x="111" y="359" width="244" height="1"/>
+                                <rect key="frame" x="111" y="335" width="189" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="9jK-s6-UPr"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Z-4K-O7q">
-                                <rect key="frame" x="132" y="109" width="111" height="43"/>
+                                <rect key="frame" x="104.5" y="85" width="111" height="43"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="43"/>
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qVj-UW-ArN">
-                                <rect key="frame" x="106" y="224" width="249" height="30"/>
+                                <rect key="frame" x="106" y="200" width="194" height="30"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqV-mu-92Y">
-                                <rect key="frame" x="20" y="234" width="81" height="25"/>
+                                <rect key="frame" x="20" y="210" width="81" height="25"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="008080_Swatch" translatesAutoresizingMaskIntoConstraints="NO" id="Y7R-YS-erG">
-                                <rect key="frame" x="106" y="255" width="249" height="1"/>
+                                <rect key="frame" x="106" y="231" width="194" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="YhQ-Vd-tBj"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezm-KO-7bG">
-                                <rect key="frame" x="100" y="699" width="175" height="29"/>
+                                <rect key="frame" x="90.5" y="519" width="139" height="29"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
                                 <state key="normal" title="Sign into existing account.">
                                     <color key="titleColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -278,6 +275,7 @@
                             <constraint firstItem="6NC-ob-LwY" firstAttribute="top" secondItem="n3G-5a-uBs" secondAttribute="bottom" constant="50" id="4UV-YB-56A"/>
                             <constraint firstItem="i5Z-4K-O7q" firstAttribute="top" secondItem="HUg-pw-mdt" secondAttribute="top" constant="65" id="4aD-VP-6Fy"/>
                             <constraint firstItem="T9N-RP-1Pd" firstAttribute="top" secondItem="i5Z-4K-O7q" secondAttribute="bottom" constant="32" id="5A0-31-Zdg"/>
+                            <constraint firstItem="Ezm-KO-7bG" firstAttribute="centerX" secondItem="Ezz-k1-oNg" secondAttribute="centerX" id="60I-IO-WJU"/>
                             <constraint firstItem="qqV-mu-92Y" firstAttribute="leading" secondItem="HUg-pw-mdt" secondAttribute="leading" constant="20" id="6sf-72-8sT"/>
                             <constraint firstItem="n3G-5a-uBs" firstAttribute="top" secondItem="SfS-aP-6dI" secondAttribute="bottom" constant="1" id="7bS-oq-ue2"/>
                             <constraint firstItem="HUg-pw-mdt" firstAttribute="trailing" secondItem="Mrk-OZ-f5d" secondAttribute="trailing" constant="25" id="B6M-Ti-jbd"/>
@@ -292,8 +290,7 @@
                             <constraint firstItem="083-C0-5zK" firstAttribute="top" secondItem="Mrk-OZ-f5d" secondAttribute="bottom" constant="1" id="V7R-pm-haC"/>
                             <constraint firstItem="d1N-yA-T6H" firstAttribute="leading" secondItem="HUg-pw-mdt" secondAttribute="leading" constant="20" id="XIY-uV-c1c"/>
                             <constraint firstItem="SfS-aP-6dI" firstAttribute="top" secondItem="083-C0-5zK" secondAttribute="bottom" constant="20" id="a23-55-fL2"/>
-                            <constraint firstItem="HUg-pw-mdt" firstAttribute="trailing" secondItem="Ezm-KO-7bG" secondAttribute="trailing" constant="100" id="bAZ-mr-WZU"/>
-                            <constraint firstItem="HUg-pw-mdt" firstAttribute="bottom" secondItem="Ezm-KO-7bG" secondAttribute="bottom" constant="50" id="ccW-jo-WWg"/>
+                            <constraint firstItem="HUg-pw-mdt" firstAttribute="bottom" secondItem="Ezm-KO-7bG" secondAttribute="bottom" constant="20" id="ccW-jo-WWg"/>
                             <constraint firstItem="Y7R-YS-erG" firstAttribute="top" secondItem="qVj-UW-ArN" secondAttribute="bottom" constant="1" id="cwf-5b-aZn"/>
                             <constraint firstItem="Mrk-OZ-f5d" firstAttribute="top" secondItem="Y7R-YS-erG" secondAttribute="bottom" constant="20" id="dnG-MH-FMz"/>
                             <constraint firstItem="HUg-pw-mdt" firstAttribute="trailing" secondItem="qVj-UW-ArN" secondAttribute="trailing" constant="20" id="fYK-Ng-dj0"/>
@@ -307,7 +304,6 @@
                             <constraint firstItem="n3G-5a-uBs" firstAttribute="leading" secondItem="Ezz-k1-oNg" secondAttribute="leadingMargin" constant="50" id="krI-tC-pTE">
                                 <variation key="widthClass=compact" constant="95"/>
                             </constraint>
-                            <constraint firstItem="Ezm-KO-7bG" firstAttribute="leading" secondItem="HUg-pw-mdt" secondAttribute="leading" constant="100" id="lAF-nP-tlP"/>
                             <constraint firstItem="Y7R-YS-erG" firstAttribute="top" secondItem="qVj-UW-ArN" secondAttribute="bottom" constant="1" id="lXa-bY-Mct"/>
                             <constraint firstItem="dPI-p1-Icr" firstAttribute="top" secondItem="d1N-yA-T6H" secondAttribute="bottom" constant="20" id="mjR-W5-bj3">
                                 <variation key="widthClass=compact" constant="25"/>
@@ -385,17 +381,17 @@
             <objects>
                 <viewController id="WWV-DH-tee" customClass="AddGoalViewController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tZ6-X8-dOe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Goal?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOb-ms-8XA">
-                                <rect key="frame" x="109" y="89" width="157" height="43"/>
+                                <rect key="frame" x="81.5" y="65" width="157" height="43"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="43"/>
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6a-et-Xdt">
-                                <rect key="frame" x="218" y="321" width="82" height="42"/>
+                                <rect key="frame" x="163" y="297" width="82" height="42"/>
                                 <color key="backgroundColor" red="0.81960784310000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
                                 <state key="normal" title="Add Goal">
@@ -408,61 +404,61 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nJ2-1f-l02">
-                                <rect key="frame" x="113" y="152" width="242" height="30"/>
+                                <rect key="frame" x="113" y="128" width="187" height="30"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnc-Nu-UqV">
-                                <rect key="frame" x="20" y="164" width="88" height="25"/>
+                                <rect key="frame" x="20" y="140" width="88" height="25"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="008080_Swatch" translatesAutoresizingMaskIntoConstraints="NO" id="DlM-JW-X0Q">
-                                <rect key="frame" x="111" y="183" width="244" height="1"/>
+                                <rect key="frame" x="111" y="159" width="189" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="huX-9i-uHU"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sAC-fM-3jM">
-                                <rect key="frame" x="97" y="259" width="258" height="30"/>
+                                <rect key="frame" x="97" y="235" width="203" height="30"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOc-jk-PXm">
-                                <rect key="frame" x="20" y="269" width="72" height="25"/>
+                                <rect key="frame" x="20" y="245" width="72" height="25"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="008080_Swatch" translatesAutoresizingMaskIntoConstraints="NO" id="jAe-ph-w0p">
-                                <rect key="frame" x="96" y="290" width="259" height="1"/>
+                                <rect key="frame" x="96" y="266" width="204" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="sU6-do-5bv"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9qY-mp-VcQ">
-                                <rect key="frame" x="141" y="204" width="214" height="30"/>
+                                <rect key="frame" x="141" y="180" width="159" height="30"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fb-ND-JtL">
-                                <rect key="frame" x="20" y="214" width="116" height="25"/>
+                                <rect key="frame" x="20" y="190" width="116" height="25"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="008080_Swatch" translatesAutoresizingMaskIntoConstraints="NO" id="2ZJ-YS-Qaf">
-                                <rect key="frame" x="141" y="235" width="214" height="1"/>
+                                <rect key="frame" x="141" y="211" width="159" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="1MU-FG-dTs"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjb-ld-jDh">
-                                <rect key="frame" x="75" y="321" width="42" height="42"/>
+                                <rect key="frame" x="75" y="297" width="42" height="42"/>
                                 <color key="backgroundColor" red="0.81960784310000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
                                 <state key="normal" title="Skip">
@@ -542,7 +538,7 @@
         <image name="saveyour logo-1024" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dxN-q2-mJI"/>
+        <segue reference="pQd-fp-Odd"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
