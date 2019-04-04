@@ -20,7 +20,6 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var phoneNumberTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +39,6 @@ class CreateAccountViewController: UIViewController {
         let password = passwordField.text ?? ""
         let firstName = firstNameTextField.text ?? ""
         let lastName = lastNameTextField.text ?? ""
-        let phone = phoneNumberTextField.text ?? ""
         if email == "" {
             createAlert(title: "Email required")
         } else if password == "" {
@@ -49,10 +47,8 @@ class CreateAccountViewController: UIViewController {
             createAlert(title: "First name required")
         } else if lastName == "" {
             createAlert(title: "Last name required")
-        } else if phone == "" {
-            createAlert(title: "Phone number required")
         } else {
-            let newUser = User(email: email, firstName: firstName, lastName: lastName, phoneNumber: phone)
+            let newUser = User(email: email, firstName: firstName, lastName: lastName)
             database.createAccount(newUser: newUser, goal: nil, password: password, view: self)
         }
     }

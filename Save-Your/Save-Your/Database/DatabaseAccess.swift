@@ -149,7 +149,6 @@ class DatabaseAccess {
         // If user did not choose to intialize a goal, create default goal
         //var newGoalId : String? = goal!.goalId
         let newUser : Any = [ "uid" : uid,
-                              "phoneNumber": user.phoneNumber!,
                               "totalSavings": 0
         ]
         self.ref.child("UserTable/\(uid)").setValue(newUser)
@@ -180,17 +179,18 @@ class DatabaseAccess {
         return fullNameArr[1]
     }
     
-    // Get user's current phone number
-    func getUserPhone(uid: String, callback : @escaping (String?) -> Void) {
-        self.ref.child("UserTable/\(uid)/phoneNumber").observe(.value, with: { (snapshot) in
-            if snapshot.exists(){
-                let phoneNumber = snapshot.value as? String
-                callback(phoneNumber!)
-            } else {
-                callback(nil)
-            }
-        })
-    }
+    // DEPRECATED
+//    // Get user's current phone number
+//    func getUserPhone(uid: String, callback : @escaping (String?) -> Void) {
+//        self.ref.child("UserTable/\(uid)/phoneNumber").observe(.value, with: { (snapshot) in
+//            if snapshot.exists(){
+//                let phoneNumber = snapshot.value as? String
+//                callback(phoneNumber!)
+//            } else {
+//                callback(nil)
+//            }
+//        })
+//    }
     
     // Set user email
     func setUserEmail(uid: String, email: String) {
@@ -217,10 +217,11 @@ class DatabaseAccess {
         }
     }
     
-    // Set user phone number
-    func setUserPhoneNumber(uid: String, phone: String) {
-        self.ref.child("UserTable/\(uid)/phoneNumber/").setValue(phone)
-    }
+    // DEPRECATED
+//    // Set user phone number
+//    func setUserPhoneNumber(uid: String, phone: String) {
+//        self.ref.child("UserTable/\(uid)/phoneNumber/").setValue(phone)
+//    }
     
     // Edit currently set goal in user account
     // Input: String userId, String goalId
@@ -244,15 +245,15 @@ class DatabaseAccess {
         Auth.auth().currentUser?.updatePassword(to: newPassword)
     }
     
-    
-    // Edit currently signed in user's phone
-    // Input: String new phone
-    // Output: ??
-    func editPhone(newPhone: String) {
-        // Update in UserTable
-        let userId = Auth.auth().currentUser?.uid
-        self.ref.child("UserTable/\(String(describing: userId))/phoneNumber").setValue(newPhone)
-    }
+    // DEPRECATED
+//    // Edit currently signed in user's phone
+//    // Input: String new phone
+//    // Output: ??
+//    func editPhone(newPhone: String) {
+//        // Update in UserTable
+//        let userId = Auth.auth().currentUser?.uid
+//        self.ref.child("UserTable/\(String(describing: userId))/phoneNumber").setValue(newPhone)
+//    }
     
     func getUserTotalSavings(uid: String, callback : @escaping (Double?) -> Void) {
         self.ref.child("UserTable/\(uid)/totalSavings").observe(.value, with: { (snapshot) in

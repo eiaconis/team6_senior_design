@@ -14,18 +14,16 @@ class User {
     var email: String?
     var firstName: String?
     var lastName: String?
-    var phoneNumber: String?
     var goals: [String]? // Array of unique goal identifiers associated with this account
     var currentGoal: String?
     var transactions: [String]? // Array of all unique transaction identifiers associated with this account
     var totalSavings: NSNumber?
     
     
-    init(email: String, firstName: String, lastName: String, phoneNumber: String) {
+    init(email: String, firstName: String, lastName: String) {
         self.email = email
         self.firstName = firstName
         self.lastName = lastName
-        self.phoneNumber = phoneNumber
     }
     
     // Sets user id to unique identifier created when it is added to database

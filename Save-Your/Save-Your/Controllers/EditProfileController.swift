@@ -19,7 +19,6 @@ class EditProfileController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
-    @IBOutlet weak var phoneField: UITextField!
     
     // Buttons
     @IBOutlet weak var saveButton: UIButton!
@@ -67,9 +66,9 @@ class EditProfileController: UIViewController {
         if lastNameField.text != lastNameField.placeholder && lastNameField.text != ""{
             self.database.setUserLastName(uid: (Auth.auth().currentUser?.uid)!, lastName: lastNameField.text!)
         }
-        if phoneField.text != phoneField.placeholder && phoneField.text != ""{
-            self.database.setUserPhoneNumber(uid: (Auth.auth().currentUser?.uid)!, phone: phoneField.text!)
-        }
+//        if phoneField.text != phoneField.placeholder && phoneField.text != ""{
+//            self.database.setUserPhoneNumber(uid: (Auth.auth().currentUser?.uid)!, phone: phoneField.text!)
+//        }
         // Update placeholder text with new information
         updatePlaceholderText()
         // Display alert
@@ -83,9 +82,9 @@ class EditProfileController: UIViewController {
         self.passwordField.placeholder = "******"
         self.firstNameField.placeholder = self.database.getUserFirstName()
         self.lastNameField.placeholder = self.database.getUserLastName()
-        self.database.getUserPhone(uid: (Auth.auth().currentUser?.uid)!, callback: {(phone) -> Void in
-            self.phoneField.placeholder = phone
-        })
+//        self.database.getUserPhone(uid: (Auth.auth().currentUser?.uid)!, callback: {(phone) -> Void in
+//            self.phoneField.placeholder = phone
+//        })
     }
     
     func createAlert(title: String) {
