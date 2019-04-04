@@ -19,9 +19,8 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
     var totalSavings : Double = 0.0
     
     // Buttons
-    @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
-    
+    @IBOutlet weak var plusBarButton: UIButton!
     
     // Labels
     @IBOutlet weak var totalSavingLabel: UILabel!
@@ -99,7 +98,7 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
     
     }
     
-    @IBAction func plusButtonPressed(_ sender: Any) {
+    @IBAction func plusBarButtonPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "SaveMoney", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "SaveMoneyController") as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)

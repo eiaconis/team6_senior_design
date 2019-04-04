@@ -18,32 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yE5-aP-QMH">
-                                <rect key="frame" x="255" y="109" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="YDa-Cs-1G1"/>
-                                    <constraint firstAttribute="height" constant="45" id="cpb-5a-DnZ"/>
-                                </constraints>
-                                <state key="normal" image="plus-64">
-                                    <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="plusButtonPressed:" destination="LD3-bJ-poY" eventType="touchUpInside" id="RwI-KF-YUM"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifetime savings of $00.00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifA-SX-7sL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lifetime savings of $00.00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifA-SX-7sL">
                                 <rect key="frame" x="55" y="229" width="210.5" height="26"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blank Level Saver!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUu-br-GrH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Blank Level Saver!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUu-br-GrH">
                                 <rect key="frame" x="85" y="275" width="150" height="26"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save $00.00 to reach the next level" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToL-Ze-kOV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Save $00.00 to reach the next level" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToL-Ze-kOV">
                                 <rect key="frame" x="21" y="321" width="278" height="26"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,9 +41,6 @@
                         <constraints>
                             <constraint firstItem="LUu-br-GrH" firstAttribute="centerX" secondItem="REZ-c7-JMf" secondAttribute="centerX" id="5Qv-2f-YzP"/>
                             <constraint firstItem="LUu-br-GrH" firstAttribute="top" secondItem="ifA-SX-7sL" secondAttribute="bottom" constant="20" id="MN5-FJ-oSL"/>
-                            <constraint firstItem="NQn-du-t6s" firstAttribute="trailing" secondItem="yE5-aP-QMH" secondAttribute="trailing" constant="20" id="b2T-aL-tIa"/>
-                            <constraint firstItem="yE5-aP-QMH" firstAttribute="top" secondItem="NQn-du-t6s" secondAttribute="top" constant="45" id="eiA-H1-XVD"/>
-                            <constraint firstItem="ifA-SX-7sL" firstAttribute="top" secondItem="yE5-aP-QMH" secondAttribute="bottom" constant="75" id="evF-h6-T5D"/>
                             <constraint firstItem="ToL-Ze-kOV" firstAttribute="centerX" secondItem="REZ-c7-JMf" secondAttribute="centerX" id="qJN-8n-AHv"/>
                             <constraint firstItem="ToL-Ze-kOV" firstAttribute="top" secondItem="LUu-br-GrH" secondAttribute="bottom" constant="20" id="tQP-ba-7ne"/>
                             <constraint firstItem="ifA-SX-7sL" firstAttribute="centerX" secondItem="REZ-c7-JMf" secondAttribute="centerX" id="wfP-Nj-wWX"/>
@@ -76,11 +60,21 @@
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="yyL-ND-Ycw">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3RS-07-Z0j">
+                                <rect key="frame" x="280" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="small-plus3" backgroundImage="small-plus3"/>
+                                <connections>
+                                    <action selector="plusBarButtonPressed:" destination="LD3-bJ-poY" eventType="touchUpInside" id="9cD-pL-pgh"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="logoutButton" destination="qyu-fS-75D" id="xfE-8L-DRH"/>
                         <outlet property="nextLevelLabel" destination="ToL-Ze-kOV" id="id2-kV-8rB"/>
-                        <outlet property="plusButton" destination="yE5-aP-QMH" id="GyI-AM-DR5"/>
+                        <outlet property="plusBarButton" destination="3RS-07-Z0j" id="fij-x7-4fb"/>
                         <outlet property="saverLevelLabel" destination="LUu-br-GrH" id="xpU-DT-FD6"/>
                         <outlet property="totalSavingLabel" destination="ifA-SX-7sL" id="6KY-Y9-CQW"/>
                     </connections>
@@ -104,19 +98,6 @@
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHL-qz-Krz">
-                                <rect key="frame" x="255" y="109" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="1KV-0z-ftk"/>
-                                    <constraint firstAttribute="width" constant="45" id="m39-XN-rpI"/>
-                                </constraints>
-                                <state key="normal" image="plus-64">
-                                    <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="z1v-Lg-ax3" kind="show" id="X7L-kG-EHj"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-HE-eHp">
                                 <rect key="frame" x="30" y="207" width="260" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,18 +119,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="WHL-qz-Krz" firstAttribute="top" secondItem="DvC-lP-r3T" secondAttribute="top" constant="45" id="54W-JK-1iJ"/>
                             <constraint firstItem="DvC-lP-r3T" firstAttribute="bottom" secondItem="hnf-HE-eHp" secondAttribute="bottom" constant="30" id="DVJ-5s-UqQ"/>
                             <constraint firstItem="hnf-HE-eHp" firstAttribute="top" secondItem="mgk-rC-PlP" secondAttribute="bottom" constant="50" id="GLQ-RY-Cvt"/>
                             <constraint firstItem="DvC-lP-r3T" firstAttribute="trailing" secondItem="hnf-HE-eHp" secondAttribute="trailing" constant="30" id="GTu-nI-P0O"/>
                             <constraint firstItem="mgk-rC-PlP" firstAttribute="top" secondItem="DvC-lP-r3T" secondAttribute="top" constant="45" id="QBl-aG-4py"/>
                             <constraint firstItem="mgk-rC-PlP" firstAttribute="centerX" secondItem="OEI-pe-ILk" secondAttribute="centerX" id="RIv-cH-k7a"/>
-                            <constraint firstItem="DvC-lP-r3T" firstAttribute="trailing" secondItem="WHL-qz-Krz" secondAttribute="trailing" constant="20" id="hOM-wC-fNa"/>
                             <constraint firstItem="hnf-HE-eHp" firstAttribute="leading" secondItem="DvC-lP-r3T" secondAttribute="leading" constant="30" id="xRN-qo-aNu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DvC-lP-r3T"/>
                     </view>
-                    <navigationItem key="navigationItem" id="F5l-N0-vys"/>
+                    <navigationItem key="navigationItem" id="F5l-N0-vys">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="CRb-eO-TxG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vEF-Ld-5sU">
+                                <rect key="frame" x="280" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="small-plus3" backgroundImage="small-plus3"/>
+                                <connections>
+                                    <segue destination="z1v-Lg-ax3" kind="show" id="4KT-ey-M8D"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="goalTableView" destination="hnf-HE-eHp" id="uF4-xH-shb"/>
                     </connections>
@@ -782,12 +772,12 @@
         <image name="graph-32" width="25" height="25"/>
         <image name="home-7-32" width="25" height="25"/>
         <image name="info-2-64" width="64" height="64"/>
-        <image name="plus-64" width="64" height="64"/>
+        <image name="small-plus3" width="24" height="24"/>
         <image name="trophy-32" width="25" height="25"/>
         <image name="user-32" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hFo-pr-uE9"/>
+        <segue reference="gE0-KH-XF7"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
