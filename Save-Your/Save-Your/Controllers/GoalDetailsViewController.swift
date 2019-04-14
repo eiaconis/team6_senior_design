@@ -21,6 +21,8 @@ class GoalDetailsViewController: UIViewController {
     @IBOutlet weak var currentAmountLabel: UILabel!
     @IBOutlet weak var percentSavedLabel: UILabel!
     @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var deadlineLabel: UILabel!
+    @IBOutlet weak var timeUntilLabel: UILabel!
     
     
     // Bar
@@ -28,6 +30,11 @@ class GoalDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add logo to navigation bar
+        let logo = UIImage(named: "saveyour logo-40.png")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
 
         goalNameLabel.text = goalName
         
@@ -47,11 +54,46 @@ class GoalDetailsViewController: UIViewController {
                 })
             }
         })
+        
+        // Format deadline labels
+        self.database.getGoalDeadline(goalID: self.goalID, callback: {(deadline) -> Void in
+            if deadline == nil {
+                self.deadlineLabel.text = "This goal has no deadline"
+                self.timeUntilLabel.text = "Keep saving!"
+            } else {
+                let goalDeadline = deadline ?? ""
+                self.deadlineLabel.text = "Complete by: \(goalDeadline)"
+                let difference = self.calculateTimeLeft(deadline: goalDeadline)
+                let year = difference[0]
+                let month = difference[1]
+                let day = difference[2]
+                if year <= 0 && month <= 0 && day <= 0 {
+                    self.timeUntilLabel.text = "Deadline has already passed"
+                } else {
+                    self.timeUntilLabel.text = "\(year) years, \(month) months, and \(day) days left!"
+                }
+            }
+            
+        })
     }
     
     // Format double from DB to two decimals
     func formatDouble(amount: Double) -> String {
         return String(format: "%.2f", round(100 * amount) / 100)
+    }
+    
+    // Calculate time until deadline in years, months, and days
+    // Returns array of number of [years, months, days] left to complete goal
+    func calculateTimeLeft(deadline: String) -> [Int] {
+        let df = DateFormatter()
+        let calendar = Calendar.current
+        df.calendar = calendar
+        df.dateFormat = "MMM d, yyyy"
+        let deadlineDate = df.date(from: deadline)!
+        let currentDate = Date()
+        let requestedComponents: Set<Calendar.Component> = [.year, .month, .day]
+        let difference = calendar.dateComponents(requestedComponents, from: currentDate, to: deadlineDate)
+        return [difference.year!, difference.month!, difference.day!]
     }
 
 }

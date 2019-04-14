@@ -394,6 +394,18 @@ class DatabaseAccess {
             }
         })
     }
+
+    func getGoalDeadline(goalID: String, callback: @escaping (String?) -> Void) {
+        self.ref.child("GoalTable/\(goalID)/deadline").observe(.value, with: {(snapshot) in
+            if snapshot.exists() {
+                if let deadline = snapshot.value as? String {
+                    callback(deadline)
+                } else {
+                    callback(nil)
+                }
+            }
+        })
+    }
     
     // TODO: Transfer balance of goal 1 to goal 2
     
