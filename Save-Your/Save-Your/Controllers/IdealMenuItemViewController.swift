@@ -14,13 +14,15 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
 
     let database : DatabaseAccess = DatabaseAccess.getInstance()
     
-    let menu = ["Small Coffee", "Medium Coffee", "Large Coffee"]
+    var menu : [Any] = []
     let menuPrice = [1.00, 2.00, 3.00]
     var itemPurchasedPrice : Double = 0.0
     var currGoalId : String?
     var prevAmount : Double?
     var currTotal : Double?
     
+    @IBOutlet weak var size2: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +41,12 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
         self.database.getUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, callback: {(totalSav) -> Void in
             self.currTotal = totalSav
         })
+        self.database.getMenu(callback: {(totalSav) -> Void in
+            print("gotMenu: \(totalSav.allKeys)")
+            
+            self.menu = totalSav.allKeys
+            self.tableView.reloadData()
+        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,7 +55,7 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = menu[indexPath.row]
+        cell.textLabel?.text = (menu[indexPath.row]) as! String
         cell.textLabel?.font = UIFont(name:"DIN Condensed", size:20)
         print(menu[indexPath.row])
         return cell

@@ -39,6 +39,7 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
             locManager.desiredAccuracy = kCLLocationAccuracyBest
             locManager.startUpdatingLocation()
             self.locManager.requestAlwaysAuthorization()
+            
         }
         
         // Add logo to navigation bar
