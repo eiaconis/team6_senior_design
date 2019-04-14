@@ -386,7 +386,6 @@ class DatabaseAccess {
         self.ref.child("MenuTable/Starbucks").observe(.value, with: { (snapshot) in
             if snapshot.exists() {
                 if snapshot.exists() {
-                    print(snapshot)
                     callback((snapshot.value as? NSDictionary)!)
                 } else {
                     print("No menu")
