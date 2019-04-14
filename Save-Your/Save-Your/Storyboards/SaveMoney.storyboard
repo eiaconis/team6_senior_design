@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -98,8 +98,20 @@
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xwv-ke-P1W">
-                                <rect key="frame" x="29" y="230" width="316" height="297"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vuh-Op-DvA">
+                                <rect key="frame" x="29" y="215" width="316" height="29"/>
+                                <segments>
+                                    <segment title="Tall"/>
+                                    <segment title="Grande"/>
+                                    <segment title="Venti"/>
+                                </segments>
+                                <color key="tintColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sizeChange:" destination="THK-04-Js4" eventType="valueChanged" id="lor-ci-wzV"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xwv-ke-P1W">
+                                <rect key="frame" x="29" y="306" width="316" height="256"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="VFm-1f-Oti">
@@ -121,21 +133,26 @@
                         <constraints>
                             <constraint firstItem="xoN-jV-Bqm" firstAttribute="trailing" secondItem="xwv-ke-P1W" secondAttribute="trailing" constant="30" id="8Nh-pt-IIG"/>
                             <constraint firstItem="Iac-HX-ycA" firstAttribute="top" secondItem="xoN-jV-Bqm" secondAttribute="top" constant="95" id="8kU-ok-Mdj"/>
-                            <constraint firstItem="xwv-ke-P1W" firstAttribute="top" secondItem="Iac-HX-ycA" secondAttribute="bottom" constant="25" id="9Oz-sT-Qjr"/>
                             <constraint firstItem="xoN-jV-Bqm" firstAttribute="trailing" secondItem="Iac-HX-ycA" secondAttribute="trailing" constant="30" id="DaS-vb-NVv"/>
                             <constraint firstItem="xoN-jV-Bqm" firstAttribute="bottom" secondItem="xwv-ke-P1W" secondAttribute="bottom" constant="140" id="ZQO-1V-jIs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vuh-Op-DvA" secondAttribute="trailing" constant="14" id="ckS-E6-9FK"/>
+                            <constraint firstItem="vuh-Op-DvA" firstAttribute="top" secondItem="Iac-HX-ycA" secondAttribute="bottom" constant="10" id="fSw-IE-HPp"/>
                             <constraint firstItem="Iac-HX-ycA" firstAttribute="leading" secondItem="xoN-jV-Bqm" secondAttribute="leading" constant="29" id="fUs-D2-mjO"/>
+                            <constraint firstItem="vuh-Op-DvA" firstAttribute="leading" secondItem="0vR-6v-fo4" secondAttribute="leadingMargin" constant="13" id="nHg-z6-D2q"/>
+                            <constraint firstItem="xwv-ke-P1W" firstAttribute="top" secondItem="vuh-Op-DvA" secondAttribute="bottom" constant="28" id="orF-UT-yvL"/>
                             <constraint firstItem="xwv-ke-P1W" firstAttribute="leading" secondItem="xoN-jV-Bqm" secondAttribute="leading" constant="29" id="rys-1u-BC5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xoN-jV-Bqm"/>
                     </view>
                     <connections>
+                        <outlet property="size" destination="vuh-Op-DvA" id="8kw-va-dwb"/>
+                        <outlet property="tableView" destination="xwv-ke-P1W" id="Kbb-Qn-nU1"/>
                         <segue destination="hqP-CO-EyG" kind="show" identifier="menuItemSegue" id="nGe-oO-TQe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p4x-4d-q9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="-171"/>
+            <point key="canvasLocation" x="125.59999999999999" y="-171.36431784107947"/>
         </scene>
         <!--Ideal Menu Item View Controller-->
         <scene sceneID="GmP-62-vvu">
@@ -151,8 +168,8 @@
                                 <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Y8-hc-PKN">
-                                <rect key="frame" x="29" y="230" width="316" height="297"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Y8-hc-PKN">
+                                <rect key="frame" x="29" y="274" width="316" height="297"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="VZn-Dg-5yz">
@@ -169,20 +186,36 @@
                                     <outlet property="delegate" destination="hqP-CO-EyG" id="rhY-HX-4fX"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lez-Ji-j13">
+                                <rect key="frame" x="29" y="238" width="316" height="29"/>
+                                <segments>
+                                    <segment title="Tall"/>
+                                    <segment title="Grande"/>
+                                    <segment title="Venti"/>
+                                </segments>
+                                <color key="tintColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sizeChange:" destination="hqP-CO-EyG" eventType="valueChanged" id="LX0-Dy-72b"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Lez-Ji-j13" firstAttribute="top" secondItem="fdP-jF-VIr" secondAttribute="bottom" constant="10" id="2F4-g3-kq3"/>
                             <constraint firstItem="fdP-jF-VIr" firstAttribute="leading" secondItem="vOu-ez-Ur5" secondAttribute="leading" constant="15" id="9eT-r0-jIE"/>
                             <constraint firstItem="vOu-ez-Ur5" firstAttribute="bottom" secondItem="4Y8-hc-PKN" secondAttribute="bottom" constant="140" id="DM6-ds-hQJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lez-Ji-j13" secondAttribute="trailing" constant="14" id="PLl-Cc-ELK"/>
+                            <constraint firstItem="4Y8-hc-PKN" firstAttribute="top" secondItem="Lez-Ji-j13" secondAttribute="bottom" constant="38" id="U8p-0j-5qP"/>
                             <constraint firstItem="fdP-jF-VIr" firstAttribute="top" secondItem="vOu-ez-Ur5" secondAttribute="top" constant="95" id="Vnq-77-m8O"/>
                             <constraint firstItem="vOu-ez-Ur5" firstAttribute="trailing" secondItem="fdP-jF-VIr" secondAttribute="trailing" constant="15" id="dSi-bT-J4E"/>
-                            <constraint firstItem="4Y8-hc-PKN" firstAttribute="top" secondItem="fdP-jF-VIr" secondAttribute="bottom" constant="25" id="egT-UT-NCY"/>
                             <constraint firstItem="vOu-ez-Ur5" firstAttribute="trailing" secondItem="4Y8-hc-PKN" secondAttribute="trailing" constant="30" id="fxS-Ij-qJs"/>
                             <constraint firstItem="4Y8-hc-PKN" firstAttribute="leading" secondItem="vOu-ez-Ur5" secondAttribute="leading" constant="29" id="k4A-LN-gP0"/>
+                            <constraint firstItem="Lez-Ji-j13" firstAttribute="leading" secondItem="h3Z-Gx-zCc" secondAttribute="leadingMargin" constant="13" id="tBa-ny-3Q7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vOu-ez-Ur5"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="4Y8-hc-PKN" id="Oeg-6L-p7Q"/>
                         <segue destination="aNf-Fw-SYn" kind="unwind" identifier="unwindSegueToHome" unwindAction="unwindToHomeWithSegue:" id="Nlw-ON-K58"/>
                     </connections>
                 </viewController>
@@ -274,7 +307,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="edit-5-128" width="128" height="128"/>
-        <image name="menu-4-128" width="128" height="128"/>
+        <image name="edit-5-128" width="96" height="96"/>
+        <image name="menu-4-128" width="96" height="96"/>
     </resources>
 </document>

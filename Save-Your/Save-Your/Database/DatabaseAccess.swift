@@ -379,6 +379,22 @@ class DatabaseAccess {
         })
     }
     
+    /*
+     Function to get a menu
+     */
+    func getMenu(callback: @escaping (NSDictionary) -> Void) {
+        self.ref.child("MenuTable/Starbucks").observe(.value, with: { (snapshot) in
+            if snapshot.exists() {
+                if snapshot.exists() {
+                    callback((snapshot.value as? NSDictionary)!)
+                } else {
+                    print("No menu")
+                    callback([:])
+                }
+            }
+        })
+    }
+    
     // TODO: Transfer balance of goal 1 to goal 2
     
     // TODO: Delete goal

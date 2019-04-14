@@ -14,12 +14,16 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
 
     let database : DatabaseAccess = DatabaseAccess.getInstance()
     
-    let menu = ["Small Coffee", "Medium Coffee", "Large Coffee"]
-    let menuPrice = [1.00, 2.00, 3.00]
+    var menu : [Any] = []
+    var totalMenu : NSDictionary = [:]
     var itemPurchasedPrice : Double = 0.0
     var currGoalId : String?
     var prevAmount : Double?
     var currTotal : Double?
+    var sizeVal = "venti_price"
+    
+    @IBOutlet weak var size2: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +43,11 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
         self.database.getUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, callback: {(totalSav) -> Void in
             self.currTotal = totalSav
         })
+        self.database.getMenu(callback: {(men) -> Void in
+            self.totalMenu = men
+            self.menu = men.allKeys
+            self.tableView.reloadData()
+        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,15 +56,36 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = menu[indexPath.row]
+        cell.textLabel?.text = (menu[indexPath.row]) as! String
         cell.textLabel?.font = UIFont(name:"DIN Condensed", size:20)
         print(menu[indexPath.row])
         return cell
     }
     
+    
+    @IBAction func sizeChange(_ sender: UISegmentedControl) {
+        print("# of Segments = \(sender.numberOfSegments)")
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            print("first segement clicked")
+            sizeVal = "tall_price"
+        case 1:
+            print("second segment clicked")
+            sizeVal = "grande_price"
+        case 2:
+            print("third segemnet clicked")
+            sizeVal = "venti_price"
+        default:
+            break;
+        }  //Switch
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Calculate saving.  If item purchased is same as item wanted, don't log a saving.
-        var itemWantedPrice = menuPrice[indexPath.row]
+        var prices : NSDictionary = totalMenu[menu[indexPath.row]]! as! NSDictionary
+        var itemWantedPrice = (prices[sizeVal]! as! NSString).doubleValue
+        print("price wanted \(itemWantedPrice)")
         var saving = 0.0
         if itemWantedPrice > itemPurchasedPrice {
             saving = itemWantedPrice - itemPurchasedPrice
