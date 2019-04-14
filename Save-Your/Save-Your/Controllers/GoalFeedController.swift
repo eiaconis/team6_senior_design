@@ -18,7 +18,8 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
     
     var goalIDs : [String] = [String]()
     var goalNames : [String] = [String]()
-    var valueToPass : String = ""
+    var goalNameToPass : String = ""
+    var goalIDToPass : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,14 +49,17 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! UITableViewCell
-        self.valueToPass = (cell.textLabel?.text)!
+        self.goalNameToPass = (cell.textLabel?.text)!
+        self.goalIDToPass = goalIDs[indexPath.row]
+        print("goal name \(self.goalNameToPass) with goal ID \(self.goalIDToPass)")
         performSegue(withIdentifier: "goalDetailSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "goalDetailSegue") {
             let viewController = segue.destination as! GoalDetailsViewController
-            viewController.goalName = self.valueToPass
+            viewController.goalName = self.goalNameToPass
+            viewController.goalID = self.goalIDToPass
         }
     }
     

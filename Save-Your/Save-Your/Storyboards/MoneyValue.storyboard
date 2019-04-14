@@ -308,21 +308,55 @@
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eg4-sB-ouf">
+                                <rect key="frame" x="36" y="197" width="248" height="2"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFR-K4-cXt">
+                                <rect key="frame" x="20" y="234" width="41" height="20"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tb-S2-fH0">
+                                <rect key="frame" x="259" y="234" width="41" height="20"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dT0-wM-AO4">
+                                <rect key="frame" x="139.5" y="234" width="41" height="20"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GX9-2g-n7h" firstAttribute="centerX" secondItem="IuA-R6-9i8" secondAttribute="centerX" id="HLq-qR-XiX"/>
                             <constraint firstItem="GX9-2g-n7h" firstAttribute="top" secondItem="chy-M7-8Bq" secondAttribute="top" constant="45" id="LDa-fN-WkB"/>
+                            <constraint firstItem="eg4-sB-ouf" firstAttribute="leading" secondItem="IuA-R6-9i8" secondAttribute="leadingMargin" constant="20" id="Ncf-f7-h2i"/>
+                            <constraint firstItem="dT0-wM-AO4" firstAttribute="centerX" secondItem="IuA-R6-9i8" secondAttribute="centerX" id="VfW-DB-TY7"/>
+                            <constraint firstItem="BFR-K4-cXt" firstAttribute="top" secondItem="eg4-sB-ouf" secondAttribute="bottom" constant="35" id="Z1R-Yq-xA8"/>
+                            <constraint firstItem="chy-M7-8Bq" firstAttribute="trailing" secondItem="6tb-S2-fH0" secondAttribute="trailing" constant="20" id="btF-Zk-gVW"/>
+                            <constraint firstItem="BFR-K4-cXt" firstAttribute="leading" secondItem="chy-M7-8Bq" secondAttribute="leading" constant="20" id="jCu-lI-kh2"/>
+                            <constraint firstItem="eg4-sB-ouf" firstAttribute="top" secondItem="GX9-2g-n7h" secondAttribute="bottom" constant="40" id="kNd-Bk-vdp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eg4-sB-ouf" secondAttribute="trailing" constant="20" id="kv9-Gx-rki"/>
+                            <constraint firstItem="6tb-S2-fH0" firstAttribute="top" secondItem="eg4-sB-ouf" secondAttribute="bottom" constant="35" id="qLE-Xl-NBH"/>
+                            <constraint firstItem="dT0-wM-AO4" firstAttribute="top" secondItem="eg4-sB-ouf" secondAttribute="bottom" constant="35" id="v8x-eY-Eaw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="chy-M7-8Bq"/>
                     </view>
                     <connections>
+                        <outlet property="currentAmountLabel" destination="BFR-K4-cXt" id="b8y-zD-zQD"/>
                         <outlet property="goalNameLabel" destination="GX9-2g-n7h" id="HWF-QL-sO2"/>
+                        <outlet property="percentSavedLabel" destination="dT0-wM-AO4" id="rwZ-K8-5aT"/>
+                        <outlet property="progressBar" destination="eg4-sB-ouf" id="aKX-mB-FrL"/>
+                        <outlet property="targetLabel" destination="6tb-S2-fH0" id="EOp-6Y-4E2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0n-Gb-Ins" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2814" y="1414"/>
+            <point key="canvasLocation" x="2812.5" y="1413.3802816901409"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="jve-8D-QEl">
