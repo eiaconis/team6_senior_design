@@ -123,6 +123,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="i0c-j9-XRk" kind="show" identifier="goalDetailSegue" id="Ifp-OB-sng"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -289,7 +292,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZg-TL-mLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="HL5-Xb-tcL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2919.1999999999998" y="1414.5427286356824"/>
+            <point key="canvasLocation" x="2816" y="640"/>
+        </scene>
+        <!--Goal Details View Controller-->
+        <scene sceneID="E1l-CP-LCp">
+            <objects>
+                <viewController id="i0c-j9-XRk" customClass="GoalDetailsViewController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IuA-R6-9i8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GX9-2g-n7h">
+                                <rect key="frame" x="80" y="109" width="160" height="48"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="48"/>
+                                <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GX9-2g-n7h" firstAttribute="centerX" secondItem="IuA-R6-9i8" secondAttribute="centerX" id="HLq-qR-XiX"/>
+                            <constraint firstItem="GX9-2g-n7h" firstAttribute="top" secondItem="chy-M7-8Bq" secondAttribute="top" constant="45" id="LDa-fN-WkB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="chy-M7-8Bq"/>
+                    </view>
+                    <connections>
+                        <outlet property="goalNameLabel" destination="GX9-2g-n7h" id="HWF-QL-sO2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V0n-Gb-Ins" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2814" y="1414"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="jve-8D-QEl">

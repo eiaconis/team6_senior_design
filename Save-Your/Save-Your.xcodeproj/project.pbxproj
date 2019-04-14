@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		640B1EAC2263BAAC00221072 /* GoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640B1EAB2263BAAC00221072 /* GoalDetailsViewController.swift */; };
 		640FD0C3224C95D8004BE6D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640FD0C2224C95D8004BE6D5 /* AppDelegate.swift */; };
 		640FD0CA224C95D9004BE6D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 640FD0C9224C95D9004BE6D5 /* Assets.xcassets */; };
 		640FD0D8224C95D9004BE6D5 /* Save_YourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640FD0D7224C95D9004BE6D5 /* Save_YourTests.swift */; };
@@ -66,6 +67,7 @@
 		05B4A12FC1B4987425671EDD /* Pods-Save-Your.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save-Your.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Save-Your/Pods-Save-Your.debug.xcconfig"; sourceTree = "<group>"; };
 		14BDBA9AC30E95B653D31C67 /* Pods_Save_YourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Save_YourTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33637FB8F81F5C17C4D9E191 /* Pods-Save-YourUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save-YourUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Save-YourUITests/Pods-Save-YourUITests.release.xcconfig"; sourceTree = "<group>"; };
+		640B1EAB2263BAAC00221072 /* GoalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailsViewController.swift; sourceTree = "<group>"; };
 		640FD0BF224C95D8004BE6D5 /* Save-Your.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Save-Your.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		640FD0C2224C95D8004BE6D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		640FD0C9224C95D9004BE6D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				640FD119224C96C6004BE6D5 /* AccountViewController.swift */,
+				640B1EAB2263BAAC00221072 /* GoalDetailsViewController.swift */,
 				6415B41E22501A2800B24CEE /* AcknowledgmentsController.swift */,
 				640FD113224C96C5004BE6D5 /* AddGoalFromPageController.swift */,
 				6415B42022501BFD00B24CEE /* StatPageController.swift */,
@@ -543,6 +546,7 @@
 				640FD104224C969E004BE6D5 /* ReturnValue.swift in Sources */,
 				640FD11D224C96C6004BE6D5 /* MenuItemViewController.swift in Sources */,
 				640FD11F224C96C6004BE6D5 /* AddGoalViewController.swift in Sources */,
+				640B1EAC2263BAAC00221072 /* GoalDetailsViewController.swift in Sources */,
 				640FD127224C96C6004BE6D5 /* AccountViewController.swift in Sources */,
 				640FD11C224C96C6004BE6D5 /* GoalFeedController.swift in Sources */,
 				640FD11E224C96C6004BE6D5 /* ViewController.swift in Sources */,

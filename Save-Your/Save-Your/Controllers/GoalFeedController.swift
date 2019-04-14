@@ -16,9 +16,9 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var goalTableView: UITableView!
     
-    
     var goalIDs : [String] = [String]()
     var goalNames : [String] = [String]()
+    var valueToPass : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +41,22 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "goalCell")
-        print("goal names count = \(goalNames.count)")
         cell.textLabel?.text = goalNames[indexPath.row]
         cell.textLabel?.font = UIFont(name:"DIN Condensed", size:20)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! UITableViewCell
+        self.valueToPass = (cell.textLabel?.text)!
+        performSegue(withIdentifier: "goalDetailSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "goalDetailSegue") {
+            let viewController = segue.destination as! GoalDetailsViewController
+            viewController.goalName = self.valueToPass
+        }
     }
     
     // Denote anchor for unwinding to goal page
@@ -53,7 +65,6 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func updateTableView() {
-        print("updating table view...")
         let goalsClosure = {(returnedGoalIDs: [String]?) -> Void in
             self.goalIDs = returnedGoalIDs ?? []
             let goalNameClosure = { (goalName : String?) -> Void in
