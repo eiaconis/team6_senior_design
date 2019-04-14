@@ -15,7 +15,6 @@ class AddGoalFromPageController: UIViewController {
     let database : DatabaseAccess = DatabaseAccess.getInstance()
     
     // Buttons
-    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     
     // Text Fields
@@ -25,10 +24,6 @@ class AddGoalFromPageController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Pad and round the 'Cancel' Button
-        cancelButton.layer.cornerRadius = 5
-        cancelButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
         
         // Pad and round the 'Add' Button
         addButton.layer.cornerRadius = 5
@@ -129,7 +124,7 @@ class AddGoalFromPageController: UIViewController {
     
     func createSuccessAlert(title: String) {
         let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in self.performSegue(withIdentifier: "addGoalSegue", sender: nil)}))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in self.performSegue(withIdentifier: "unwindSegueToGoalFeed", sender: nil)}))
         
         self.present(alert, animated: true, completion: nil)
     }

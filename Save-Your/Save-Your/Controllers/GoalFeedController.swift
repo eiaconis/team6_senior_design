@@ -30,24 +30,38 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationItem.titleView = imageView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        updateTableView()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return goalNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "goalCell")
+        print("goal names count = \(goalNames.count)")
         cell.textLabel?.text = goalNames[indexPath.row]
         cell.textLabel?.font = UIFont(name:"DIN Condensed", size:20)
         return cell
     }
     
+    // Denote anchor for unwinding to goal page
+    @IBAction func unwindToGoalFeed(segue:UIStoryboardSegue) {
+        updateTableView()
+    }
+    
     func updateTableView() {
+        print("updating table view...")
         let goalsClosure = {(returnedGoalIDs: [String]?) -> Void in
             self.goalIDs = returnedGoalIDs ?? []
             let goalNameClosure = { (goalName : String?) -> Void in
                 if goalName != nil {
-                    self.goalNames.append(goalName!)
-                    self.goalTableView.reloadData()
+                    if !self.goalNames.contains(goalName!) {
+                        self.goalNames.append(goalName!)
+                        self.goalTableView.reloadData()
+                    }
                 }
             }
             self.goalIDs = returnedGoalIDs ?? []
