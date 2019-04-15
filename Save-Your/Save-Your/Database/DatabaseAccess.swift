@@ -395,6 +395,7 @@ class DatabaseAccess {
         })
     }
 
+    // Get deadline of a goal given the goal ID
     func getGoalDeadline(goalID: String, callback: @escaping (String?) -> Void) {
         self.ref.child("GoalTable/\(goalID)/deadline").observe(.value, with: {(snapshot) in
             if snapshot.exists() {
@@ -407,9 +408,22 @@ class DatabaseAccess {
         })
     }
     
+    // Set new target for a goal given the goal ID and new amount
+    func setGoalTarget(goalID: String, newAmount: Double) {
+        self.ref.child("GoalTable/\(goalID)/target").setValue(newAmount)
+    }
+    
+    // Set new deadline for a goal given the goal ID and new deadline
+    func setGoalDeadline(goalID: String, newDeadline: String) {
+        self.ref.child("GoalTable/\(goalID)/deadline").setValue(newDeadline)
+    }
+    
     // TODO: Transfer balance of goal 1 to goal 2
     
-    // TODO: Delete goal
+    // Delete goal
+    func deleteGoal(goalID: String) {
+        let goalRef = self.ref.child("GoalTable/\(goalID)")
+    }
     
     //----------------------- Transaction Methods----------------------------------------
     // Puts transaction item in TransactionTable

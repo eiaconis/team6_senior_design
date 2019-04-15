@@ -15,6 +15,7 @@ class GoalDetailsViewController: UIViewController {
     var goalName : String = ""
     var targetAmount : Double = 0.0
     var amountSaved : Double = 0.0
+    var goalDeadline : String = ""
     
     // Labels
     @IBOutlet weak var goalNameLabel: UILabel!
@@ -35,6 +36,9 @@ class GoalDetailsViewController: UIViewController {
         let logo = UIImage(named: "saveyour logo-40.png")
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
+        
+        // Add Edit button to navigation bar
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .done, target: self, action: #selector(editGoal))
 
         goalNameLabel.text = goalName
         
@@ -61,9 +65,9 @@ class GoalDetailsViewController: UIViewController {
                 self.deadlineLabel.text = "This goal has no deadline"
                 self.timeUntilLabel.text = "Keep saving!"
             } else {
-                let goalDeadline = deadline ?? ""
-                self.deadlineLabel.text = "Complete by: \(goalDeadline)"
-                let difference = self.calculateTimeLeft(deadline: goalDeadline)
+                self.goalDeadline = deadline ?? ""
+                self.deadlineLabel.text = "Complete by: \(self.goalDeadline)"
+                let difference = self.calculateTimeLeft(deadline: self.goalDeadline)
                 let year = difference[0]
                 let month = difference[1]
                 let day = difference[2]
@@ -95,5 +99,24 @@ class GoalDetailsViewController: UIViewController {
         let difference = calendar.dateComponents(requestedComponents, from: currentDate, to: deadlineDate)
         return [difference.year!, difference.month!, difference.day!]
     }
+    
+    // Denotes action for edit button in navigation bar
+    @objc public func editGoal() {
+        self.performSegue(withIdentifier: "editGoalSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "editGoalSegue") {
+            let viewController = segue.destination as! EditGoalController
+            viewController.goalName = self.goalName
+            viewController.goalID = self.goalID
+            viewController.goalTarget = self.targetAmount
+            viewController.deadline = self.goalDeadline
+            viewController.amountSaved = self.amountSaved
+        }
+    }
+    
+    // Denote anchor for unwinding to goal details page
+    @IBAction func unwindToGoalDetails(segue:UIStoryboardSegue) {}
 
 }

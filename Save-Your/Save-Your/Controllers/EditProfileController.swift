@@ -66,9 +66,6 @@ class EditProfileController: UIViewController {
         if lastNameField.text != lastNameField.placeholder && lastNameField.text != ""{
             self.database.setUserLastName(uid: (Auth.auth().currentUser?.uid)!, lastName: lastNameField.text!)
         }
-//        if phoneField.text != phoneField.placeholder && phoneField.text != ""{
-//            self.database.setUserPhoneNumber(uid: (Auth.auth().currentUser?.uid)!, phone: phoneField.text!)
-//        }
         // Update placeholder text with new information
         updatePlaceholderText()
         // Display alert
