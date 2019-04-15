@@ -559,7 +559,7 @@
                                 </state>
                                 <connections>
                                     <action selector="continueButtonPressed:" destination="pk3-kI-KxE" eventType="touchUpInside" id="Ydg-LB-VtL"/>
-                                    <segue destination="hST-Bo-qrb" kind="show" id="VcX-1S-NDf"/>
+                                    <segue destination="rho-A2-8fV" kind="show" id="ian-ht-gfx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -580,6 +580,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Im8-Pa-T0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1575" y="1539.0845070422536"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1qB-eg-3tM">
+            <objects>
+                <viewController id="rho-A2-8fV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W2a-SC-GJN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu-4-128" translatesAutoresizingMaskIntoConstraints="NO" id="PIK-YE-97T">
+                                <rect key="frame" x="95" y="95" width="130" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="MKX-I8-9Pe"/>
+                                    <constraint firstAttribute="width" constant="130" id="Twc-wi-4CW"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit-5-128" translatesAutoresizingMaskIntoConstraints="NO" id="TnQ-Kg-QG3">
+                                <rect key="frame" x="95" y="302" width="130" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="Bu4-be-rE3"/>
+                                    <constraint firstAttribute="width" constant="130" id="NlY-Lv-kwV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select two menu items from local menus and log the difference as a saving." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdG-kd-r6s">
+                                <rect key="frame" x="35" y="220" width="250" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="GfJ-1W-xTm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBl-up-PkV">
+                                <rect key="frame" x="35" y="430" width="250" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Y4l-14-eSt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="emq-dM-seO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manually enter an amount and the goal you would like to log the savings towards." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asv-do-r20">
+                                <rect key="frame" x="35" y="427" width="250" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="GiM-4K-mcV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="SVP-3b-CV9"/>
+                                    <constraint firstAttribute="height" constant="72" id="rji-Jb-4tY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17B-j6-05O">
+                                <rect key="frame" x="119" y="509" width="82" height="42"/>
+                                <color key="backgroundColor" red="0.81960784310000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="1rg-Jl-6xK"/>
+                                    <constraint firstAttribute="height" constant="42" id="fpq-Xx-2yG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButtonPressed:" destination="pk3-kI-KxE" eventType="touchUpInside" id="9py-cp-huZ"/>
+                                    <segue destination="hST-Bo-qrb" kind="show" id="vkQ-ir-OyM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="asv-do-r20" firstAttribute="centerX" secondItem="W2a-SC-GJN" secondAttribute="centerX" id="1RA-Yn-v2S"/>
+                            <constraint firstItem="asv-do-r20" firstAttribute="top" secondItem="TnQ-Kg-QG3" secondAttribute="bottom" constant="15" id="3jY-bB-nnN"/>
+                            <constraint firstItem="wBl-up-PkV" firstAttribute="centerX" secondItem="W2a-SC-GJN" secondAttribute="centerX" id="BMk-uo-wav"/>
+                            <constraint firstItem="TnQ-Kg-QG3" firstAttribute="top" secondItem="GdG-kd-r6s" secondAttribute="bottom" constant="10" id="RRi-Hu-TM3"/>
+                            <constraint firstItem="17B-j6-05O" firstAttribute="centerX" secondItem="W2a-SC-GJN" secondAttribute="centerX" id="Rj4-3n-drc"/>
+                            <constraint firstItem="PIK-YE-97T" firstAttribute="centerX" secondItem="W2a-SC-GJN" secondAttribute="centerX" id="ZTd-Cy-frs"/>
+                            <constraint firstItem="17B-j6-05O" firstAttribute="top" secondItem="asv-do-r20" secondAttribute="bottom" constant="10" id="ddQ-Ys-qTN"/>
+                            <constraint firstItem="GdG-kd-r6s" firstAttribute="centerX" secondItem="W2a-SC-GJN" secondAttribute="centerX" id="eAR-tY-Tgv"/>
+                            <constraint firstItem="PIK-YE-97T" firstAttribute="top" secondItem="W2a-SC-GJN" secondAttribute="topMargin" constant="75" id="nbr-bj-gg7"/>
+                            <constraint firstItem="GdG-kd-r6s" firstAttribute="top" secondItem="PIK-YE-97T" secondAttribute="bottom" constant="15" id="oEn-xD-ZiJ"/>
+                            <constraint firstItem="TnQ-Kg-QG3" firstAttribute="centerX" secondItem="W2a-SC-GJN" secondAttribute="centerX" id="vIL-CA-DZX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Psk-pI-Eca"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJ1-nw-wtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1996.875" y="2291.1971830985917"/>
         </scene>
         <!--Instructions View Controller-->
         <scene sceneID="yZV-vt-c2m">
@@ -675,6 +765,8 @@
     <resources>
         <image name="008080_Swatch" width="336" height="280"/>
         <image name="arrow-32-65" width="48" height="48"/>
+        <image name="edit-5-128" width="96" height="96"/>
+        <image name="menu-4-128" width="96" height="96"/>
         <image name="orangetrophy" width="200" height="200"/>
         <image name="saveyour logo-1024" width="245.75999450683594" height="245.75999450683594"/>
     </resources>
