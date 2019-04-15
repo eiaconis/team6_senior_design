@@ -141,7 +141,6 @@ class EditGoalController: UIViewController {
     
     // Handles deletion of goal and unwinding to home
     func deleteGoalAndUnwind() {
-        print("deleting goal - not really right now")
         self.database.deleteGoal(goalID: self.goalID)
         self.performSegue(withIdentifier: "unwindSegueToGoalFeed", sender: self)
     }

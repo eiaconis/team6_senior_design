@@ -46,7 +46,6 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.cellForRow(at: indexPath) as! UITableViewCell
         self.goalNameToPass = (cell.textLabel?.text)!
         self.goalIDToPass = goalIDs[indexPath.row]
-        print("goal name \(self.goalNameToPass) with goal ID \(self.goalIDToPass)")
         performSegue(withIdentifier: "goalDetailSegue", sender: self)
     }
     
@@ -60,16 +59,13 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Denote anchor for unwinding to goal page
     @IBAction func unwindToGoalFeed(segue:UIStoryboardSegue) {
-        // Clear existing goals and repopulate
-        self.goalIDs = [String]()
-        self.goalNames = [String]()
-        
         updateTableView()
     }
     
     func updateTableView() {
         let goalsClosure = {(returnedGoalIDs: [String]?) -> Void in
             self.goalIDs = returnedGoalIDs ?? []
+            self.goalNames = [String]()
             let goalNameClosure = { (goalName : String?) -> Void in
                 if goalName != nil {
                     if !self.goalNames.contains(goalName!) {
