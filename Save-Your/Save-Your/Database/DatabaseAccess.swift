@@ -422,7 +422,8 @@ class DatabaseAccess {
     
     // Delete goal
     func deleteGoal(goalID: String) {
-        let goalRef = self.ref.child("GoalTable/\(goalID)")
+        self.ref.child("GoalTable/\(goalID)").removeValue()
+        self.ref.child("UserTable/\((Auth.auth().currentUser?.uid)!)/goals/\(goalID)").removeValue()
     }
     
     //----------------------- Transaction Methods----------------------------------------
