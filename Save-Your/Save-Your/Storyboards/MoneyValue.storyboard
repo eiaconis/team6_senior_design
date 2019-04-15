@@ -113,7 +113,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-HE-eHp">
-                                <rect key="frame" x="30" y="207" width="260" height="282"/>
+                                <rect key="frame" x="30" y="187" width="260" height="302"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="goalCell" id="ysa-GK-PSf">
@@ -136,12 +136,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DvC-lP-r3T" firstAttribute="bottom" secondItem="hnf-HE-eHp" secondAttribute="bottom" constant="30" id="DVJ-5s-UqQ"/>
-                            <constraint firstItem="hnf-HE-eHp" firstAttribute="top" secondItem="mgk-rC-PlP" secondAttribute="bottom" constant="50" id="GLQ-RY-Cvt"/>
-                            <constraint firstItem="DvC-lP-r3T" firstAttribute="trailing" secondItem="hnf-HE-eHp" secondAttribute="trailing" constant="30" id="GTu-nI-P0O"/>
+                            <constraint firstItem="hnf-HE-eHp" firstAttribute="top" secondItem="mgk-rC-PlP" secondAttribute="bottom" constant="30" id="8p0-HJ-TbJ"/>
+                            <constraint firstItem="DvC-lP-r3T" firstAttribute="bottom" secondItem="hnf-HE-eHp" secondAttribute="bottom" constant="30" id="Fin-y9-qlK"/>
+                            <constraint firstItem="hnf-HE-eHp" firstAttribute="leading" secondItem="DvC-lP-r3T" secondAttribute="leading" constant="30" id="OOS-Xn-b6q"/>
                             <constraint firstItem="mgk-rC-PlP" firstAttribute="top" secondItem="DvC-lP-r3T" secondAttribute="top" constant="45" id="QBl-aG-4py"/>
                             <constraint firstItem="mgk-rC-PlP" firstAttribute="centerX" secondItem="OEI-pe-ILk" secondAttribute="centerX" id="RIv-cH-k7a"/>
-                            <constraint firstItem="hnf-HE-eHp" firstAttribute="leading" secondItem="DvC-lP-r3T" secondAttribute="leading" constant="30" id="xRN-qo-aNu"/>
+                            <constraint firstItem="DvC-lP-r3T" firstAttribute="trailing" secondItem="hnf-HE-eHp" secondAttribute="trailing" constant="30" id="Rs6-bo-A2a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DvC-lP-r3T"/>
                     </view>
@@ -163,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2R-DG-dH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2024.8" y="1414.5427286356824"/>
+            <point key="canvasLocation" x="2023.125" y="1414.4366197183099"/>
         </scene>
         <!--Add Goal From Page Controller-->
         <scene sceneID="qGE-1L-F4e">
@@ -508,14 +508,14 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ViX-4e-tSF">
-                                <rect key="frame" x="50" y="207" width="220" height="262"/>
+                                <rect key="frame" x="0.0" y="182" width="320" height="337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="26L-Xf-H9F">
-                                        <rect key="frame" x="0.0" y="28" width="220" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="26L-Xf-H9F" id="33h-31-x0n">
-                                            <rect key="frame" x="0.0" y="0.0" width="220" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -528,13 +528,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ViX-4e-tSF" firstAttribute="top" secondItem="mVi-8m-RLd" secondAttribute="bottom" constant="50" id="GAp-fV-PDD"/>
-                            <constraint firstItem="HrP-Ln-LxD" firstAttribute="bottom" secondItem="ViX-4e-tSF" secondAttribute="bottom" constant="50" id="W6M-rb-ewZ"/>
+                            <constraint firstItem="ViX-4e-tSF" firstAttribute="top" secondItem="mVi-8m-RLd" secondAttribute="bottom" constant="25" id="GAp-fV-PDD"/>
+                            <constraint firstItem="HrP-Ln-LxD" firstAttribute="bottom" secondItem="ViX-4e-tSF" secondAttribute="bottom" id="W6M-rb-ewZ"/>
                             <constraint firstItem="Gtg-xZ-Zh5" firstAttribute="top" secondItem="HrP-Ln-LxD" secondAttribute="top" constant="35" id="Wen-Qc-9xw"/>
                             <constraint firstItem="mVi-8m-RLd" firstAttribute="top" secondItem="HrP-Ln-LxD" secondAttribute="top" constant="45" id="X6r-l9-mMl"/>
-                            <constraint firstItem="HrP-Ln-LxD" firstAttribute="trailing" secondItem="ViX-4e-tSF" secondAttribute="trailing" constant="50" id="dzs-uo-1Pw"/>
+                            <constraint firstItem="HrP-Ln-LxD" firstAttribute="trailing" secondItem="ViX-4e-tSF" secondAttribute="trailing" id="dzs-uo-1Pw"/>
                             <constraint firstItem="mVi-8m-RLd" firstAttribute="centerX" secondItem="OeN-5i-b3V" secondAttribute="centerX" id="end-oz-Phq"/>
-                            <constraint firstItem="ViX-4e-tSF" firstAttribute="leading" secondItem="HrP-Ln-LxD" secondAttribute="leading" constant="50" id="sdD-Cv-L05"/>
+                            <constraint firstItem="ViX-4e-tSF" firstAttribute="leading" secondItem="HrP-Ln-LxD" secondAttribute="leading" id="sdD-Cv-L05"/>
                             <constraint firstItem="HrP-Ln-LxD" firstAttribute="trailing" secondItem="Gtg-xZ-Zh5" secondAttribute="trailing" constant="20" id="vul-8C-NOc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HrP-Ln-LxD"/>
