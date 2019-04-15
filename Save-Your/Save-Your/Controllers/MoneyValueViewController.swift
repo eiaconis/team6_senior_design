@@ -29,7 +29,7 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.database.deleteGoal(goalID: "-LcWDzsbsBpHs6C27SCI")
         self.locManager.requestAlwaysAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {

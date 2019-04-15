@@ -16,7 +16,6 @@ class AddGoalViewController: UIViewController {
     let database: DatabaseAccess = DatabaseAccess.getInstance()
     
     // Buttons on Page
-    @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var addGoalButton: UIButton!
     
     // Text Input Fields
@@ -27,9 +26,6 @@ class AddGoalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Pad and round the 'Skip' Button
-        skipButton.layer.cornerRadius = 5
-        skipButton.contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 7,right: 10)
         
         // Pad and round the 'Add Goal' Button
         addGoalButton.layer.cornerRadius = 5
@@ -47,15 +43,6 @@ class AddGoalViewController: UIViewController {
         dateField.inputView = datePicker
     }
     
-
-    @IBAction func skipButtonPressed(_ sender: Any) {
-        print("skip button pressed")
-        // Add Goal and update user's current goal
-        let defaultGoal = Goal(userId: (Auth.auth().currentUser?.uid)!, title: "First Time Saver", target: 100.00)
-        let goalId = database.addGoal(goal: defaultGoal)
-        database.addGoalToUser(goalId: goalId, userId: (Auth.auth().currentUser?.uid)!)
-        database.editGoalInUser(userId: (Auth.auth().currentUser?.uid)!, goalId: goalId)
-    }
     
     @IBAction func addGoalButtonPressed(_ sender: Any) {
         print("add goal pressed")
