@@ -31,11 +31,6 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationItem.titleView = imageView
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        updateTableView()
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return goalNames.count
     }
@@ -65,6 +60,10 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Denote anchor for unwinding to goal page
     @IBAction func unwindToGoalFeed(segue:UIStoryboardSegue) {
+        // Clear existing goals and repopulate
+        self.goalIDs = [String]()
+        self.goalNames = [String]()
+        
         updateTableView()
     }
     
