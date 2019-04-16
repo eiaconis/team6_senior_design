@@ -108,7 +108,8 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         // Get value from amount field
-        self.savingAmount = Double(amountTextField.text!) ?? 0.0
+        var trimAmount = amountTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        self.savingAmount = Double(trimAmount) ?? 0.0
         // If amount field is blank or negative, popup error and stay
         if (self.savingAmount == nil || self.savingAmount <= 0.0 ) {
             createErrorAlert(title: "Invalid savings amount entered!")
