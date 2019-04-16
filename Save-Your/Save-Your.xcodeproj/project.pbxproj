@@ -42,6 +42,9 @@
 		640FD12A224C9703004BE6D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 640FD129224C9703004BE6D5 /* GoogleService-Info.plist */; };
 		6415B41F22501A2800B24CEE /* AcknowledgmentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6415B41E22501A2800B24CEE /* AcknowledgmentsController.swift */; };
 		6415B42122501BFD00B24CEE /* StatPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6415B42022501BFD00B24CEE /* StatPageController.swift */; };
+		64C78E9D2265489B00C06D93 /* CompleteAndTransferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C78E9C2265489B00C06D93 /* CompleteAndTransferController.swift */; };
+		64C78E9F22656CB100C06D93 /* NewDefaultGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C78E9E22656CB100C06D93 /* NewDefaultGoalController.swift */; };
+		64C78EA122656FE300C06D93 /* NewDefaultGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64C78EA022656FE300C06D93 /* NewDefaultGoal.storyboard */; };
 		71784033C05791FC6C4F89E6 /* Pods_Save_Your.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2439F0D5660182D865FB956 /* Pods_Save_Your.framework */; };
 		862C12DE35BF57EE4DB9080A /* Pods_Save_YourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BDBA9AC30E95B653D31C67 /* Pods_Save_YourTests.framework */; };
 		E52556A054C8277C83794755 /* Pods_Save_YourUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89DBE106BE8803D1534A739 /* Pods_Save_YourUITests.framework */; };
@@ -110,6 +113,9 @@
 		6415B41E22501A2800B24CEE /* AcknowledgmentsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgmentsController.swift; sourceTree = "<group>"; };
 		6415B42022501BFD00B24CEE /* StatPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatPageController.swift; sourceTree = "<group>"; };
 		645785E8224D527F00E47FBB /* Save-Your.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Save-Your.entitlements"; sourceTree = "<group>"; };
+		64C78E9C2265489B00C06D93 /* CompleteAndTransferController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteAndTransferController.swift; sourceTree = "<group>"; };
+		64C78E9E22656CB100C06D93 /* NewDefaultGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDefaultGoalController.swift; sourceTree = "<group>"; };
+		64C78EA022656FE300C06D93 /* NewDefaultGoal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewDefaultGoal.storyboard; sourceTree = "<group>"; };
 		68ECEC251D73BB184ECAFDC5 /* Pods-Save-YourTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save-YourTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Save-YourTests/Pods-Save-YourTests.release.xcconfig"; sourceTree = "<group>"; };
 		6B50392376D5144F0999A126 /* Pods-Save-Your.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save-Your.release.xcconfig"; path = "Pods/Target Support Files/Pods-Save-Your/Pods-Save-Your.release.xcconfig"; sourceTree = "<group>"; };
 		D2439F0D5660182D865FB956 /* Pods_Save_Your.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Save_Your.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +229,7 @@
 				640FD107224C96B5004BE6D5 /* Main.storyboard */,
 				640FD105224C96B5004BE6D5 /* MoneyValue.storyboard */,
 				640FD106224C96B5004BE6D5 /* SaveMoney.storyboard */,
+				64C78EA022656FE300C06D93 /* NewDefaultGoal.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -230,6 +237,8 @@
 		640FD0F4224C964D004BE6D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				64C78E9E22656CB100C06D93 /* NewDefaultGoalController.swift */,
+				64C78E9C2265489B00C06D93 /* CompleteAndTransferController.swift */,
 				640FD119224C96C6004BE6D5 /* AccountViewController.swift */,
 				640B1EAB2263BAAC00221072 /* GoalDetailsViewController.swift */,
 				640B1EAD2263F66F00221072 /* EditGoalController.swift */,
@@ -389,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				640FD0CA224C95D9004BE6D5 /* Assets.xcassets in Resources */,
+				64C78EA122656FE300C06D93 /* NewDefaultGoal.storyboard in Resources */,
 				640FD109224C96B5004BE6D5 /* MoneyValue.storyboard in Resources */,
 				640FD10A224C96B5004BE6D5 /* SaveMoney.storyboard in Resources */,
 				640FD10C224C96B5004BE6D5 /* LaunchScreen.storyboard in Resources */,
@@ -540,6 +550,7 @@
 				640FD126224C96C6004BE6D5 /* CreateAccountViewController.swift in Sources */,
 				640FD0FE224C969E004BE6D5 /* DatabaseAccess.swift in Sources */,
 				640FD0FF224C969E004BE6D5 /* ManualEntryTransaction.swift in Sources */,
+				64C78E9D2265489B00C06D93 /* CompleteAndTransferController.swift in Sources */,
 				640FD103224C969E004BE6D5 /* Transaction.swift in Sources */,
 				6415B42122501BFD00B24CEE /* StatPageController.swift in Sources */,
 				6415B41F22501A2800B24CEE /* AcknowledgmentsController.swift in Sources */,
@@ -555,6 +566,7 @@
 				640FD11C224C96C6004BE6D5 /* GoalFeedController.swift in Sources */,
 				640FD11E224C96C6004BE6D5 /* ViewController.swift in Sources */,
 				640FD100224C969E004BE6D5 /* Goal.swift in Sources */,
+				64C78E9F22656CB100C06D93 /* NewDefaultGoalController.swift in Sources */,
 				640FD123224C96C6004BE6D5 /* ChangeGoalController.swift in Sources */,
 				640FD128224C96C6004BE6D5 /* ManualSaveMoneyViewController.swift in Sources */,
 				640FD121224C96C6004BE6D5 /* AddGoalFromPageController.swift in Sources */,

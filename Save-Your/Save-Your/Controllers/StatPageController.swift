@@ -40,7 +40,6 @@ class StatPageController: UIViewController {
                 self.percentLabel.text = "\0% of the way there.  Keep saving!"
             } else {
             self.database.getStateOfGoal(goalId: goalId!, callback: {(amount) -> Void in
-                print("goal amount = \(amount!)")
                 currAmount = amount ?? 0.0
                 self.database.getStringGoalTitle(goalID: goalId!, callback: {(name) -> Void in
                     goalName = name ?? "goal"
@@ -48,9 +47,7 @@ class StatPageController: UIViewController {
                     self.amountSavedLabel.text = "You have saved $\(formattedAmount) towards\n\(goalName)"
                 })
             })
-            self.database.getTargetOfGoal(goalId: goalId!, callback: {(target) -> Void in
-                print("got target amount = \(target!)")
-                targetGoalAmt = target ?? 0.0
+            self.database.getTargetOfGoal(goalId: goalId!, callback: {(target) -> Void in                targetGoalAmt = target ?? 0.0
                 let percentage = (currAmount / targetGoalAmt) * 100
                 let truncPercentage = self.formatDouble(amount: percentage)
                 self.percentLabel.text = "\(truncPercentage)% of the way there.  Keep saving!"

@@ -18,9 +18,12 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
     @IBOutlet weak var saveButton: UIButton!
     
     let database: DatabaseAccess = DatabaseAccess.getInstance()
-    var prevAmount : Double?
-    var currTotal : Double?
+    var currDefaultUserGoalID : String = ""
+    var currGoalAmount : Double = 0.0
+    var currTotalUserSaving : Double?
     var goalTarget : Double = 0.0
+    var savingAmount : Double = 0.0
+    var savingRemaining : Double = 0.0
     
     var picker = UIPickerView()
     var goalNames : [String] = [String]()
@@ -31,7 +34,7 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // If screen tapped, dismiss keyboard
+        // If screen tapped, dismiss picker
         self.hideKeyboardWhenTappedAround()
         
         // Picker set up
@@ -52,15 +55,16 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         
         // Initialize state for saving to default/current goal
         self.database.getUserCurrGoal(uid: (Auth.auth().currentUser?.uid)!, callback: {(goalId) -> Void in
-            self.database.getStateOfGoal(goalId: goalId!, callback: {(prev) -> Void in
-                self.prevAmount = prev
+            self.currDefaultUserGoalID = goalId ?? ""
+            self.database.getStateOfGoal(goalId: goalId!, callback: {(prevAmount) -> Void in
+                self.currGoalAmount = prevAmount ?? 0.0
                 self.database.getTargetOfGoal(goalId: goalId!, callback: {(target) -> Void in
                     self.goalTarget = target ?? 0.0
                 })
             })
         })
         self.database.getUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, callback: {(totalSav) -> Void in
-            self.currTotal = totalSav
+            self.currTotalUserSaving = totalSav
         })
     }
     
@@ -79,12 +83,9 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         goalSelected = goalNames[row] as String
         goalSelectedID = goalNameToID[goalSelected]!
-        print("goal selected = \(goalSelected) with id = \(goalSelectedID)")
         
         // Get current amount towards selected goal
-        self.database.getStateOfGoal(goalId: goalSelectedID, callback: {(prev) -> Void in
-            print("Previous amount saved towards goal = \(prev)")
-            self.prevAmount = prev
+        self.database.getStateOfGoal(goalId: goalSelectedID, callback: {(prevAmount) -> Void in            self.currGoalAmount = prevAmount ?? 0.0
         })
         
         
@@ -94,40 +95,56 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         self.view.endEditing(true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "manualToAddBalance") {
+            let viewController = segue.destination as! CompleteAndTransferController
+            viewController.savingAmountRemaining = savingRemaining
+            viewController.deletedGoalID = goalSelectedID
+        } else if (segue.identifier == "newDefaultGoalSegue") {
+            let viewController = segue.destination as! NewDefaultGoalController
+            viewController.oldCurrGoalID = currDefaultUserGoalID
+        }
+    }
+    
     @IBAction func saveButtonPressed(_ sender: Any) {
         // Get value from amount field
-        var savingAmount = Double(amountTextField.text!)
+        self.savingAmount = Double(amountTextField.text!) ?? 0.0
         // If amount field is blank or negative, popup error and stay
-        if (savingAmount == nil || savingAmount! <= 0.0 ) {
-            print("savingAmount is /\(savingAmount)")
+        if (self.savingAmount == nil || self.savingAmount <= 0.0 ) {
             createErrorAlert(title: "Invalid savings amount entered!")
             return
         }
         
+        // Update total lifetime user saving
+        let newUserSavingTotal = currTotalUserSaving! + savingAmount
+        // Add this amount to user's total savings
+        self.database.updateUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, newAmount: newUserSavingTotal)
+        
+        
         // Verify saved amount doesn't complete a goal
-        var totalWithSaving = savingAmount! + self.prevAmount!
+        var totalWithSaving = savingAmount + currGoalAmount
         if totalWithSaving < self.goalTarget {
             // Normal transaction if target not reached
-            self.logSavingWithoutExceedingGoal(savingAmount: savingAmount!)
+            self.logSaving(amount: savingAmount)
             // Go back to home screen
             performSegue(withIdentifier: "unwindSegueToHome", sender: self)
         } else if totalWithSaving == self.goalTarget {
             // Log saving
-            self.logSavingWithoutExceedingGoal(savingAmount: savingAmount!)
+            self.logSaving(amount: savingAmount)
             // Delete goal and unwind to home
             createCompletionAlert(title: "Congratulations!  You reached your goal of '\(self.goalSelected)'!")
         } else {
-            // Take to new screen and choose where remaining saving should go
-            // Delete goal that was completed
+            // Calculate amount remaining then proceed
+            self.savingRemaining = savingAmount - (goalTarget - currGoalAmount)
+            self.logSaving(amount: goalTarget - currGoalAmount)
+            createExceedAlert(title: "Congratulations!  You have exceeded your goal of '\(self.goalSelected)'!  Please allocate rest of saving")
         }
     }
     
-    // Handles logging a saving when the amount saved does not cause the user to complete the goal
-    func logSavingWithoutExceedingGoal(savingAmount: Double) {
+    // Handles logging a saving given the amount
+    func logSaving(amount: Double) {
         // Create transaction
-        var newTransaction = ManualEntryTransaction(category: "manual", userId: (Auth.auth().currentUser?.uid)!, amount: savingAmount, goalId: self.goalSelectedID)
-        var newUserSavingTotal = self.currTotal! + savingAmount
-        let newGoalAmount = savingAmount + self.prevAmount!
+        var newTransaction = ManualEntryTransaction(category: "manual", userId: (Auth.auth().currentUser?.uid)!, amount: amount, goalId: self.goalSelectedID)
         // Add transaction to db
         var newTransactionId = self.database.addTransaction(transaction: newTransaction)
         // Add transaction to user
@@ -135,9 +152,8 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         // Add transaction to goal
         self.database.addTransactionToGoal(transactionId: newTransactionId!, goalId: self.goalSelectedID)
         // Update goal--> Get current state, perform operations, update
+        let newGoalAmount = amount + currGoalAmount
         self.database.updateGoalAmountSaved(goalId: goalSelectedID, newAmount: newGoalAmount)
-        // Add this amount to user's total savings
-        self.database.updateUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, newAmount: newUserSavingTotal)
     }
     
     // Function to load picker view with goal names for user
@@ -166,7 +182,6 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
             self.goalSelectedID = goalID ?? ""
             let goalNameClosure = { (goalName : String?) -> Void in
                 if goalName != nil {
-                    print("Current goal is '\(goalName)'")
                     self.categoryLabel.placeholder = goalName
                     self.goalSelected = goalName ?? ""
                 }
@@ -183,10 +198,30 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         self.present(alert, animated: true, completion: nil)
     }
     
+    func createExceedAlert(title: String) {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: {(action) in self.deleteGoalAndTransferBalance(goalID: self.goalSelectedID)}))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     // Handles deletion of goal and unwinding to home
     func deleteGoalAndUnwind(goalID: String) {
-        self.database.deleteGoal(goalID: goalID)
-        self.performSegue(withIdentifier: "unwindSegueToHome", sender: self)
+//        self.database.deleteGoal(goalID: goalID)
+        print("pretend to delete in unwind")
+        // Designate new default goal if goal completed was default goal
+        if goalID == currDefaultUserGoalID {
+            performSegue(withIdentifier: "newDefaultGoalSegueFromManual", sender: self)
+        } else {
+            performSegue(withIdentifier: "unwindSegueToHome", sender: self)
+        }
+    }
+    
+    // Handles deletion of goal and segue to transfer balance screen
+    func deleteGoalAndTransferBalance(goalID: String) {
+//        self.database.deleteGoal(goalID: goalID)
+        print("pretend to delete in transfer")
+        performSegue(withIdentifier: "manualToAddBalance", sender: self)
     }
     
     func createErrorAlert(title: String) {
@@ -195,5 +230,7 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    
 
 }
