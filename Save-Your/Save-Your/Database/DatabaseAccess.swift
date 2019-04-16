@@ -408,6 +408,17 @@ class DatabaseAccess {
         })
     }
     
+    // Check goal is completed
+    func checkGoalCompleted(goalID: String, callback: @escaping (Bool) -> Void) {
+        self.ref.child("GoalTable/\(goalID)/completed").observe(.value, with: {(snapshot) in
+            if snapshot.exists() {
+                callback(true)
+            } else {
+                callback(false)
+            }
+        })
+    }
+    
     // Set new target for a goal given the goal ID and new amount
     func setGoalTarget(goalID: String, newAmount: Double) {
         self.ref.child("GoalTable/\(goalID)/target").setValue(newAmount)
@@ -416,6 +427,11 @@ class DatabaseAccess {
     // Set new deadline for a goal given the goal ID and new deadline
     func setGoalDeadline(goalID: String, newDeadline: String) {
         self.ref.child("GoalTable/\(goalID)/deadline").setValue(newDeadline)
+    }
+    
+    // Mark goal as completed
+    func setGoalCompleted(goalID: String) {
+        self.ref.child("GoalTable/\(goalID)/completed").setValue(true)
     }
     
     // TODO: Transfer balance of goal 1 to goal 2

@@ -10,21 +10,10 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+
 class InstructionsViewController: UIViewController {
     
     let database: DatabaseAccess = DatabaseAccess.getInstance()
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
-    }
-    
-    
-    
-
-
 
 }
 

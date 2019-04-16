@@ -581,10 +581,10 @@
             </objects>
             <point key="canvasLocation" x="1575" y="1539.0845070422536"/>
         </scene>
-        <!--View Controller-->
+        <!--Instructions View Controller-->
         <scene sceneID="1qB-eg-3tM">
             <objects>
-                <viewController id="rho-A2-8fV" sceneMemberID="viewController">
+                <viewController id="rho-A2-8fV" customClass="InstructionsViewController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W2a-SC-GJN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

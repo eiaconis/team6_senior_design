@@ -11,11 +11,10 @@ import Firebase
 import FirebaseDatabase
 import CoreLocation
 
-class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
+class MoneyValueViewController: UIViewController, CLLocationManagerDelegate  {
 
     // Variables
     var database : DatabaseAccess = DatabaseAccess.getInstance()
-    let locManager = CLLocationManager()
     var totalSavings : Double = 0.0
     
     // Buttons
@@ -27,20 +26,15 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var saverLevelLabel: UILabel!
     @IBOutlet weak var nextLevelLabel: UILabel!
     
+    var locManager: CLLocationManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.database.deleteGoal(goalID: "-LcWDzsbsBpHs6C27SCI")
-        self.locManager.requestAlwaysAuthorization()
         
-        if CLLocationManager.locationServicesEnabled() {
-            
-            // creates an instance of a location manager and
-            locManager.delegate = self
-            locManager.desiredAccuracy = kCLLocationAccuracyBest
-            locManager.startUpdatingLocation()
-            self.locManager.requestAlwaysAuthorization()
-            
-        }
+        // Request location
+        locManager = CLLocationManager()
+        locManager.delegate = self
+        locManager.requestWhenInUseAuthorization()
         
         // Add logo to navigation bar
         let logo = UIImage(named: "saveyour logo-40.png")
@@ -65,37 +59,6 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate{
             }
         })
         
-//        print("curr location\(locManager.location)")
-//        if (CLLocationManager.locationServicesEnabled()) {
-//            let geocoder = CLGeocoder()
-//            // Get location of device
-//            let deviceLatitude = locManager.location?.coordinate.latitude
-//            let deviceLongitude = locManager.location?.coordinate.longitude
-//            print("Devices lat = \(deviceLatitude!) and lon = \(deviceLongitude!)")
-//
-//            let address = "3401 Walnut St, Philadelphia, PA 19104"
-//            geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
-//                if ((error) != nil){
-//                    print("Error", error ?? "")
-//                }
-//                if let placemark = placemarks?.first {
-//                    let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
-//                    // Get latitude and longitude of house
-//                    let lat = coordinates.latitude
-//                    let lon = coordinates.longitude
-//                    // Calculate distance between house and device
-//                                        let latDif = abs(lat - deviceLatitude!)
-//                                        let lonDif = abs(lon - deviceLongitude!)
-//                                        print("latitude difference = \(latDif)")
-//                                        print("longitude difference = \(lonDif)")
-//                                        // Notify user if device is within 0.0001 km (about 36 feet)
-//                                        if latDif < 0.0001 && lonDif < 0.0001 {
-//                                            self.createAlert(title: "Looks like you are in Starbucks. Want to log a saving transaction?")
-//                                        }
-//
-//                }
-//            })
-//        }
     
     }
     
