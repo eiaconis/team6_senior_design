@@ -132,9 +132,9 @@ class EditGoalController: UIViewController {
     
     // Denotes action for delete button in navigation bar
     @objc public func deleteConfirmAlert() {
-        let alert = UIAlertController(title: "Are you sure you wish to delete \(self.goalName)?  This action cannot be undone", message: "", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Delete", style: UIAlertAction.Style.default, handler: { (action) in self.deleteGoalAndUnwind()}))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        let alert = UIAlertController(title: "Are you sure you wish to delete '\(self.goalName)'?  This action cannot be undone", message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        alert.addAction(UIAlertAction(title: "Delete", style: UIAlertAction.Style.destructive, handler: { (action) in self.deleteGoalAndUnwind()}))
         
         self.present(alert, animated: true, completion: nil)
     }

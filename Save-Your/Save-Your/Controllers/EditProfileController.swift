@@ -44,7 +44,6 @@ class EditProfileController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         if passwordField.text != nil && passwordField.text != "" && passwordField.text != "******" {
-            print("detected password change")
             let newPass : String = passwordField.text!
             if (newPass.count > 5) {
                 self.database.editPassword(newPassword: newPass)
@@ -57,7 +56,6 @@ class EditProfileController: UIViewController {
 
         }
         if emailField.text != emailField.placeholder && emailField.text != "" {
-            print(emailField.text)
             self.database.setUserEmail(uid: (Auth.auth().currentUser?.uid)!, email: emailField.text!)
         }
         if firstNameField.text != firstNameField.placeholder && firstNameField.text != ""{

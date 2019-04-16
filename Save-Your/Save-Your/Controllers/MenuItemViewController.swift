@@ -42,29 +42,22 @@ class MenuItemViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         cell.textLabel?.text = (menu[indexPath.row]) as! String
         cell.textLabel?.font = UIFont(name:"DIN Condensed", size:20)
-       // print(menu[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var prices : NSDictionary = totalMenu[menu[indexPath.row]]! as! NSDictionary
         self.itemPurchasedPrice = (prices[sizeVal]! as! NSString).doubleValue
-        print("item got price \(self.itemPurchasedPrice)")
         self.performSegue(withIdentifier: "menuItemSegue", sender: self)
     }
     
     @IBAction func sizeChange(_ sender: UISegmentedControl) {
-        print("# of Segments = \(sender.numberOfSegments)")
-        
         switch sender.selectedSegmentIndex {
         case 0:
-            print("first segement clicked")
             sizeVal = "tall_price"
         case 1:
-            print("second segment clicked")
             sizeVal = "grande_price"
         case 2:
-            print("third segemnet clicked")
             sizeVal = "venti_price"
         default:
             break;

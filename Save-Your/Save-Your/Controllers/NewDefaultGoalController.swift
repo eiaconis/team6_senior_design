@@ -62,7 +62,6 @@ class NewDefaultGoalController: UIViewController, UIPickerViewDelegate, UIPicker
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         goalSelected = goalNames[row] as String
         goalSelectedID = goalNameToID[goalSelected]!
-        print("goal selected = \(goalSelected) with id = \(goalSelectedID)")
         
         // Set label text
         goalField.text = goalSelected
@@ -92,7 +91,7 @@ class NewDefaultGoalController: UIViewController, UIPickerViewDelegate, UIPicker
     
     @IBAction func confirmButtonPressed(_ sender: Any) {
         self.database.editGoalInUser(userId: (Auth.auth().currentUser?.uid)!, goalId: goalSelectedID)
-        createAlert(title: "Default goal changed to \(goalSelected)")
+        createAlert(title: "Default goal changed to '\(goalSelected)'")
     }
     
     func createAlert(title: String) {

@@ -36,5 +36,8 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: segueIdentifiers[indexPath.row], sender: self)
     }
+    
+    // Denote anchor for unwinding to account page
+    @IBAction func unwindToAccountPage(segue:UIStoryboardSegue) { }
 
 }

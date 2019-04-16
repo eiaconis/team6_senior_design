@@ -50,9 +50,6 @@ class AddGoalViewController: UIViewController {
         let goalName = goalNameField.text ?? ""
         let amount = amountField.text ?? ""
         let date = dateField.text ?? ""
-        print("goalName = \(goalName)")
-        print("amount = \(amount)")
-        print("date = \(date)")
         // Check field values
         if goalName == "" {
             createErrorAlert(title: "Goal name required")

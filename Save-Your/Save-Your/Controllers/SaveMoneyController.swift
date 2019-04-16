@@ -22,14 +22,5 @@ class SaveMoneyController: UIViewController {
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
     }
-    
-
-    @IBAction func menuEntryButtonPressed(_ sender: Any) {
-        print("menu entry pressed")
-    }
-    
-    @IBAction func manualEntryButtonPressed(_ sender: Any) {
-        print("manual entry pressed")
-    }
 
 }

@@ -22,7 +22,6 @@ class Goal {
     // Constructor for goal. All goals must have a userId associated, title, and target amount
     // associated when created.
     init(userId: String, title: String, target: Double) {
-        print("creating goal")
         self.userId = userId
         self.title = title
         self.target = target

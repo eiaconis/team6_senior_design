@@ -95,11 +95,9 @@ class CompleteAndTransferController: UIViewController, UIPickerViewDelegate, UIP
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         goalSelected = goalNames[row] as String
         goalSelectedID = goalNameToID[goalSelected]!
-        print("goal selected = \(goalSelected) with id = \(goalSelectedID)")
         
         // Get current amount towards selected goal
         self.database.getStateOfGoal(goalId: goalSelectedID, callback: {(savedAmount) -> Void in
-            print("Previous amount saved towards goal = \(savedAmount)")
             self.amountSavedTowardsGoal = savedAmount ?? 0.0
         })
         

@@ -65,7 +65,6 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
         goalSelected = goalNames[row] as String
         goalSelectedRow = row
         goalSelectedID = goalIDs[row]
-        print("goal selected = \(goalSelected) at row = \(goalSelectedRow) with id = \(goalIDs[goalSelectedRow])")
         
         // Set label text
         goalField.text = goalSelected
@@ -102,7 +101,6 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
             self.goalSelectedID = goalID ?? ""
             let goalNameClosure = { (goalName : String?) -> Void in
                 if goalName != nil {
-                    print("Current goal is '\(goalName)'")
                     self.goalField.placeholder = goalName
                     self.goalSelected = goalName ?? ""
                 }
@@ -114,7 +112,7 @@ class ChangeGoalController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func createAlert(title: String) {
         let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in self.performSegue(withIdentifier: "unwindSegueToAccountPage", sender: self)}))
         
         self.present(alert, animated: true, completion: nil)
     }

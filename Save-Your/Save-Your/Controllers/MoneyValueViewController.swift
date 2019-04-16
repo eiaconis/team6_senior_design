@@ -43,7 +43,6 @@ class MoneyValueViewController: UIViewController, CLLocationManagerDelegate  {
         
         // Populate homescreen graphics
         self.database.getUserTotalSavings(uid: Auth.auth().currentUser!.uid, callback: {(totalSav) -> Void in
-            print("got total sav/\(totalSav)")
             self.totalSavings = totalSav ?? 0.0
             let formattedTotalSavings = self.formatDollarAmount(amount: totalSav ?? 0.0)
             self.totalSavingLabel.text = "Lifetime savings of $\(formattedTotalSavings)"

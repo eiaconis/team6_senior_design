@@ -67,23 +67,17 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         cell.textLabel?.text = (menu[indexPath.row]) as! String
         cell.textLabel?.font = UIFont(name:"DIN Condensed", size:20)
-        print(menu[indexPath.row])
         return cell
     }
     
     
     @IBAction func sizeChange(_ sender: UISegmentedControl) {
-        print("# of Segments = \(sender.numberOfSegments)")
-        
         switch sender.selectedSegmentIndex {
         case 0:
-            print("first segement clicked")
             sizeVal = "tall_price"
         case 1:
-            print("second segment clicked")
             sizeVal = "grande_price"
         case 2:
-            print("third segemnet clicked")
             sizeVal = "venti_price"
         default:
             break;
@@ -94,12 +88,9 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
         // Calculate saving.  If item purchased is same as item wanted, don't log a saving.
         var prices : NSDictionary = totalMenu[menu[indexPath.row]]! as! NSDictionary
         var itemWantedPrice = (prices[sizeVal]! as! NSString).doubleValue
-        print("price wanted \(itemWantedPrice)")
         var saving = 0.0
         if itemWantedPrice > itemPurchasedPrice {
             saving = itemWantedPrice - itemPurchasedPrice
-            print("purchased item = \(itemPurchasedPrice)")
-            print("saving = \(saving)")
             logSaving(saving: saving)
         
             // Update total savings for user

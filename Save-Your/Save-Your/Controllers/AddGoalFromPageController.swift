@@ -51,7 +51,6 @@ class AddGoalFromPageController: UIViewController {
         formatter.dateStyle = DateFormatter.Style.medium
         formatter.timeStyle = DateFormatter.Style.none
         dateField.text = formatter.string(from: picker.date)
-        print(dateField.text)
     }
     
     // If view tapped, dismiss picker
@@ -64,9 +63,6 @@ class AddGoalFromPageController: UIViewController {
         let goalName = goalNameField.text ?? ""
         let amount = amountField.text ?? ""
         let date = dateField.text ?? ""
-        print("goalName = \(goalName)")
-        print("amount = \(amount)")
-        print("date = \(date)")
         
         // Check field values
         if goalName == "" {
@@ -95,9 +91,7 @@ class AddGoalFromPageController: UIViewController {
                 guard let dateForm = dateFormatter.date(from: date) else {
                     fatalError()
                 }
-                print(dateForm)
                 if (today < dateForm) {
-                    print("HERE")
                     newGoal.setDeadline(date: date)
                 } else {
                     createErrorAlert(title: "That deadline has already passed.")
