@@ -101,6 +101,7 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
             let newGoalAmount = saving + currGoalAmount
             if newGoalAmount < currGoalTarget {
                 logSaving(saving: saving)
+                performSegue(withIdentifier: "unwindSegueToHome", sender: self)
             } else {
                 self.savingAmountRemaining = saving - (currGoalTarget - currGoalAmount)
                 logSaving(saving: currGoalTarget - currGoalAmount)
