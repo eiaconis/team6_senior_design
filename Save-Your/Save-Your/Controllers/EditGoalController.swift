@@ -16,6 +16,7 @@ class EditGoalController: UIViewController {
     var goalTarget : Double = 0.0
     var deadline : String = ""
     var amountSaved : Double = 0.0
+    var currDefaultGoalID : String = ""
     
     // Buttons
     @IBOutlet weak var saveButton: UIButton!
@@ -76,6 +77,14 @@ class EditGoalController: UIViewController {
     // If view tapped, dismiss picker
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "newDefaultGoalSegueFromEditGoal") {
+            let viewController = segue.destination as! NewDefaultGoalController
+            // Don't need to pass deleted goal ID because actually deletes through goal page
+            viewController.accessedThruGoalPage = true
+        }
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
@@ -141,8 +150,12 @@ class EditGoalController: UIViewController {
     
     // Handles deletion of goal and unwinding to home
     func deleteGoalAndUnwind() {
-        self.database.deleteGoal(goalID: self.goalID)
-        self.performSegue(withIdentifier: "unwindSegueToGoalFeed", sender: self)
+        self.database.deleteGoal(goalID: goalID)
+        if goalID == currDefaultGoalID {
+            performSegue(withIdentifier: "newDefaultGoalSegueFromEditGoal", sender: self)
+        } else {
+            performSegue(withIdentifier: "unwindSegueToGoalFeed", sender: self)
+        }
     }
 
 }

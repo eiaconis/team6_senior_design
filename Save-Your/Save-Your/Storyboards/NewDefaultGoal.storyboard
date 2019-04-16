@@ -69,6 +69,7 @@
                         <outlet property="confirmButton" destination="QxH-JT-0RQ" id="UvH-ed-vln"/>
                         <outlet property="goalField" destination="aWY-Bh-VSS" id="Ldi-5K-zKH"/>
                         <segue destination="SFQ-VW-g6P" kind="unwind" identifier="unwindSegueToHome" unwindAction="unwindToHomeWithSegue:" id="KBN-sh-Fdw"/>
+                        <segue destination="SFQ-VW-g6P" kind="unwind" identifier="unwindSegueToGoalFeed" unwindAction="unwindToGoalFeedWithSegue:" id="CEQ-6D-g05"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNy-v5-m2x" userLabel="First Responder" sceneMemberID="firstResponder"/>

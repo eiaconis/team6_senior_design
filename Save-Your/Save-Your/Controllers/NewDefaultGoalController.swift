@@ -18,6 +18,7 @@ class NewDefaultGoalController: UIViewController, UIPickerViewDelegate, UIPicker
     var goalSelected : String = ""
     var goalSelectedID : String = ""
     var oldCurrGoalID : String = ""
+    var accessedThruGoalPage : Bool = false
     
     // Fields
     @IBOutlet weak var goalField: UITextField!
@@ -96,9 +97,18 @@ class NewDefaultGoalController: UIViewController, UIPickerViewDelegate, UIPicker
     
     func createAlert(title: String) {
         let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in self.performSegue(withIdentifier: "unwindSegueToHome", sender: self)}))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in self.properSegue()}))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    // Determines proper segue based on how storyboard was accessed
+    func properSegue() {
+        if accessedThruGoalPage {
+            performSegue(withIdentifier: "unwindSegueToGoalFeed", sender: self)
+        } else {
+            performSegue(withIdentifier: "unwindSegueToHome", sender: self)
+        }
     }
     
 

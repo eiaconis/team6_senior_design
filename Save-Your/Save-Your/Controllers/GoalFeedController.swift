@@ -20,6 +20,7 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
     var goalNames : [String] = [String]()
     var goalNameToPass : String = ""
     var goalIDToPass : String = ""
+    var currDefaultGoalID : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,11 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
         let logo = UIImage(named: "saveyour logo-40.png")
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
+        
+        // Get user's current default goal
+        self.database.getUserCurrGoal(uid: (Auth.auth().currentUser?.uid)!) { (goalID) in
+            self.currDefaultGoalID = goalID ?? ""
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,8 +58,9 @@ class GoalFeedController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "goalDetailSegue") {
             let viewController = segue.destination as! GoalDetailsViewController
-            viewController.goalName = self.goalNameToPass
-            viewController.goalID = self.goalIDToPass
+            viewController.goalName = goalNameToPass
+            viewController.goalID = goalIDToPass
+            viewController.currDefaultGoalID = currDefaultGoalID
         }
     }
     

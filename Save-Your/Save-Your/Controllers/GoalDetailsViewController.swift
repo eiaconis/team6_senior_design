@@ -16,6 +16,7 @@ class GoalDetailsViewController: UIViewController {
     var targetAmount : Double = 0.0
     var amountSaved : Double = 0.0
     var goalDeadline : String = ""
+    var currDefaultGoalID : String = ""
     
     // Labels
     @IBOutlet weak var goalNameLabel: UILabel!
@@ -108,11 +109,12 @@ class GoalDetailsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "editGoalSegue") {
             let viewController = segue.destination as! EditGoalController
-            viewController.goalName = self.goalName
-            viewController.goalID = self.goalID
-            viewController.goalTarget = self.targetAmount
-            viewController.deadline = self.goalDeadline
-            viewController.amountSaved = self.amountSaved
+            viewController.goalName = goalName
+            viewController.goalID = goalID
+            viewController.goalTarget = targetAmount
+            viewController.deadline = goalDeadline
+            viewController.amountSaved = amountSaved
+            viewController.currDefaultGoalID = currDefaultGoalID
         }
     }
     

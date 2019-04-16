@@ -475,12 +475,21 @@
                         <outlet property="targetAmountField" destination="vd1-ew-Bpt" id="56C-T6-2Fu"/>
                         <segue destination="iDs-1T-kpx" kind="unwind" identifier="unwindSegueToGoalDetails" unwindAction="unwindToGoalDetailsWithSegue:" id="c2p-rR-xYE"/>
                         <segue destination="iDs-1T-kpx" kind="unwind" identifier="unwindSegueToGoalFeed" unwindAction="unwindToGoalFeedWithSegue:" id="YXG-gH-mgk"/>
+                        <segue destination="JE7-IS-xsl" kind="show" identifier="newDefaultGoalSegueFromEditGoal" id="4W2-dy-vDj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vVt-aG-Bsf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="iDs-1T-kpx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3525" y="1413"/>
+        </scene>
+        <!--NewDefaultGoal-->
+        <scene sceneID="TIs-k1-WtO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewDefaultGoal" id="JE7-IS-xsl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Irk-nc-XxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4151" y="1414"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="jve-8D-QEl">
