@@ -43,7 +43,10 @@ class CreateAccountViewController: UIViewController {
             createAlert(title: "Email required")
         } else if password == "" {
             createAlert(title: "Password required")
-        } else if firstName == "" {
+        } else if password.count < 6{
+            createAlert(title: "Weak password. Please make sure password is at least 6 characters.")
+        }
+        else if firstName == "" {
             createAlert(title: "First name required")
         } else if lastName == "" {
             createAlert(title: "Last name required")
