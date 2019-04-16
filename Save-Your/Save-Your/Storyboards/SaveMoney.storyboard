@@ -218,6 +218,7 @@
                         <outlet property="tableView" destination="4Y8-hc-PKN" id="Oeg-6L-p7Q"/>
                         <segue destination="aNf-Fw-SYn" kind="unwind" identifier="unwindSegueToHome" unwindAction="unwindToHomeWithSegue:" id="Nlw-ON-K58"/>
                         <segue destination="6NJ-aV-mE0" kind="show" identifier="menuToAddBalance" id="dQL-l9-Bo8"/>
+                        <segue destination="VX8-5l-wJ7" kind="show" identifier="newDefaultGoalSegueFromMenu" id="Xtq-Zn-pP4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsW-Ij-Szc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -402,7 +403,7 @@
         <image name="menu-4-128" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="evV-B7-1I1"/>
-        <segue reference="iEN-RU-fir"/>
+        <segue reference="Xtq-Zn-pP4"/>
+        <segue reference="dQL-l9-Bo8"/>
     </inferredMetricsTieBreakers>
 </document>

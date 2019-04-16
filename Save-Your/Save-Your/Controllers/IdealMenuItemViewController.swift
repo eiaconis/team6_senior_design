@@ -17,9 +17,12 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
     var menu : [Any] = []
     var totalMenu : NSDictionary = [:]
     var itemPurchasedPrice : Double = 0.0
-    var currGoalId : String?
-    var prevAmount : Double?
-    var currTotal : Double?
+    var currGoalId : String = ""
+    var currGoalName : String = ""
+    var currGoalAmount : Double = 0.0
+    var currGoalTarget : Double = 0.0
+    var totalUserSavings : Double = 0.0
+    var savingAmountRemaining : Double = 0.0
     var sizeVal = "venti_price"
     
     @IBOutlet weak var size2: UISegmentedControl!
@@ -35,13 +38,19 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
         
         // Get user's current goal
         self.database.getUserCurrGoal(uid: (Auth.auth().currentUser?.uid)!, callback: {(goalId) -> Void in
-            self.currGoalId = goalId
-            self.database.getStateOfGoal(goalId: goalId!, callback: {(prev) -> Void in
-                self.prevAmount = prev
+            self.currGoalId = goalId ?? ""
+            self.database.getStateOfGoal(goalId: self.currGoalId, callback: {(amount) -> Void in
+                self.currGoalAmount = amount ?? 0.0
+                self.database.getTargetOfGoal(goalId: self.currGoalId, callback: {(target) -> Void in
+                    self.currGoalTarget = target ?? 0.0
+                })
+            })
+            self.database.getStringGoalTitle(goalID: self.currGoalId, callback: { (goalName) in
+                self.currGoalName = goalName ?? ""
             })
         })
         self.database.getUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, callback: {(totalSav) -> Void in
-            self.currTotal = totalSav
+            self.totalUserSavings = totalSav ?? 0.0
         })
         self.database.getMenu(callback: {(men) -> Void in
             self.totalMenu = men
@@ -91,23 +100,83 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
             saving = itemWantedPrice - itemPurchasedPrice
             print("purchased item = \(itemPurchasedPrice)")
             print("saving = \(saving)")
+            logSaving(saving: saving)
         
-            // Create transaction
-            var newTransaction = ManualEntryTransaction(category: "menu", userId: (Auth.auth().currentUser?.uid)!, amount: saving, goalId: currGoalId!)
-            var newTotal = self.currTotal! + saving
-            saving += self.prevAmount!
-            // Add transaction to db
-            var newTransactionId = self.database.addTransaction(transaction: newTransaction)
-            // Add transaction to user
-            self.database.addTransactionToUser(transactionId: newTransactionId!, userId: (Auth.auth().currentUser?.uid)!)
-            // Add transaction to goal
-            self.database.addTransactionToGoal(transactionId: newTransactionId!, goalId: self.currGoalId!)
-            // Update goal--> Get current state, perform operations, update
-            self.database.updateGoalAmountSaved(goalId: self.currGoalId!, newAmount: saving)
-            self.database.updateUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, newAmount: newTotal)
+            // Update total savings for user
+            let newTotalUserSavings = totalUserSavings + saving
+            self.database.updateUserTotalSavings(uid: (Auth.auth().currentUser?.uid)!, newAmount: newTotalUserSavings)
+            
+            // Check if goal is completed
+            let newGoalAmount = saving + currGoalAmount
+            if newGoalAmount < currGoalTarget {
+                logSaving(saving: saving)
+            } else {
+                self.savingAmountRemaining = saving - (currGoalTarget - currGoalAmount)
+                logSaving(saving: currGoalTarget - currGoalAmount)
+                if newGoalAmount == currGoalTarget {
+                    // Create completion alert
+                    createCompletionAlert()
+                } else {
+                    // Create exceeds alert
+                    createExceedAlert()
+                }
+            }
+            
         }
-        // Go back to homepage
-        performSegue(withIdentifier: "unwindSegueToHome", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "menuToAddBalance") {
+            let viewController = segue.destination as! CompleteAndTransferController
+            viewController.savingAmountRemaining = savingAmountRemaining
+            viewController.deletedGoalID = currGoalId
+        } else if (segue.identifier == "newDefaultGoalSegueFromMenu") {
+            let viewController = segue.destination as! NewDefaultGoalController
+            viewController.oldCurrGoalID = currGoalId
+        }
+    }
+    
+    // Handles logging a saving given the amount
+    func logSaving(saving: Double) {
+        // Create transaction
+        var newTransaction = ManualEntryTransaction(category: "menu", userId: (Auth.auth().currentUser?.uid)!, amount: saving, goalId: currGoalId)
+        let newGoalAmount = saving + currGoalAmount
+        // Add transaction to db
+        var newTransactionId = self.database.addTransaction(transaction: newTransaction)
+        // Add transaction to user
+        self.database.addTransactionToUser(transactionId: newTransactionId!, userId: (Auth.auth().currentUser?.uid)!)
+        // Add transaction to goal
+        self.database.addTransactionToGoal(transactionId: newTransactionId!, goalId: self.currGoalId)
+        // Update goal--> Get current state, perform operations, update
+        self.database.updateGoalAmountSaved(goalId: currGoalId, newAmount: newGoalAmount)
+    }
+    
+    func createCompletionAlert() {
+        let alert = UIAlertController(title: "Congratulations!  You reached your goal of '\(self.currGoalName)'!", message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: {(action) in self.deleteGoalAndSegueToNewDefault(goalID: self.currGoalId)}))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func createExceedAlert() {
+        let alert = UIAlertController(title: "Congratulations!  You have exceeded your goal of '\(self.currGoalName)'!  Please allocate rest of saving to another goal", message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: {(action) in self.deleteGoalAndSegueToSavingAllocation(goalID: self.currGoalId)}))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // Deletes goal and segues to new default goal storyboard
+    func deleteGoalAndSegueToNewDefault(goalID: String) {
+//        self.database.deleteGoal(goalID: goalID)
+        print("deleting goal - not really right now")
+        performSegue(withIdentifier: "newDefaultGoalSegueFromMenu", sender: self)
+    }
+    
+    // Deletes goal and segues to allocating extra savings
+    func deleteGoalAndSegueToSavingAllocation(goalID: String) {
+//        self.database.deleteGoal(goalID: goalID)
+        print("deleting goal - not really right now")
+        performSegue(withIdentifier: "menuToAddBalance", sender: self)
     }
 
 }

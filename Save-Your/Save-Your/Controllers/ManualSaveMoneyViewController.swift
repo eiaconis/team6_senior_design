@@ -137,7 +137,7 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
             // Calculate amount remaining then proceed
             self.savingRemaining = savingAmount - (goalTarget - currGoalAmount)
             self.logSaving(amount: goalTarget - currGoalAmount)
-            createExceedAlert(title: "Congratulations!  You have exceeded your goal of '\(self.goalSelected)'!  Please allocate rest of saving")
+            createExceedAlert(title: "Congratulations!  You have exceeded your goal of '\(self.goalSelected)'!  Please allocate rest of saving to another goal")
         }
     }
     
