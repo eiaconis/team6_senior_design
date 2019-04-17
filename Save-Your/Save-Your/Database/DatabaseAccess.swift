@@ -349,6 +349,19 @@ class DatabaseAccess {
         })
     }
     
+    func getAllCompletedGoalsForUser(uid: String, callback : @escaping ([String]?) -> Void) {
+        self.ref.child("UserTable/\(uid)/completedGoals").observe(.value, with : {(snapshot) in
+            if snapshot.exists() {
+                let goalIDs = snapshot.value as? NSDictionary
+                if let goalIDstr = goalIDs?.allKeys as? [String]? {
+                    callback(goalIDstr)
+                }
+            } else {
+                callback(nil)
+            }
+        })
+    }
+    
     /*
      Function to get a goal's title from its goalID
      Input: String goal ID
@@ -419,6 +432,8 @@ class DatabaseAccess {
     // Mark goal as completed
     func setGoalCompleted(goalID: String) {
         self.ref.child("GoalTable/\(goalID)/completed").setValue(true)
+        self.ref.child("UserTable/\((Auth.auth().currentUser?.uid)!)/goals/\(goalID)").removeValue()
+        self.ref.child("UserTable/\((Auth.auth().currentUser?.uid)!)/completedGoals/\(goalID)").setValue(true)
     }
     
     // TODO: Transfer balance of goal 1 to goal 2

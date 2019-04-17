@@ -103,6 +103,7 @@ class IdealMenuItemViewController: UIViewController, UITableViewDelegate, UITabl
                 logSaving(saving: saving)
                 performSegue(withIdentifier: "unwindSegueToHome", sender: self)
             } else {
+                self.database.setGoalCompleted(goalID: currGoalId )
                 self.savingAmountRemaining = saving - (currGoalTarget - currGoalAmount)
                 logSaving(saving: currGoalTarget - currGoalAmount)
                 if newGoalAmount == currGoalTarget {

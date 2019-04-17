@@ -132,6 +132,7 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         } else if totalWithSaving == self.goalTarget {
             // Log saving
             self.logSaving(amount: savingAmount)
+            self.database.setGoalCompleted(goalID: goalSelectedID )
             // Delete goal and unwind to home
             createCompletionAlert(title: "Congratulations!  You reached your goal of '\(self.goalSelected)'!")
         } else {
