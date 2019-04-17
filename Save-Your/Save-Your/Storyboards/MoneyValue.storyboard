@@ -182,7 +182,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7F-se-Ihe">
                                 <rect key="frame" x="113" y="201" width="242" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXb-93-yHK">
@@ -200,7 +200,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NCo-I6-qO1">
                                 <rect key="frame" x="97" y="301" width="258" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaF-19-pNM">
@@ -218,7 +218,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6I-nj-ZJc">
                                 <rect key="frame" x="141" y="253" width="214" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAJ-Kt-Ont">
@@ -394,7 +394,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b7d-Du-QIq">
                                 <rect key="frame" x="97" y="251" width="258" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oo-XR-ZNP">
@@ -412,7 +412,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vd1-ew-Bpt">
                                 <rect key="frame" x="141" y="197" width="214" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vb-Tn-a4s">
@@ -505,17 +505,6 @@
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtg-xZ-Zh5">
-                                <rect key="frame" x="320" y="123" width="35" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="iPC-Bu-iPE"/>
-                                    <constraint firstAttribute="height" constant="35" id="rBz-1a-n7E"/>
-                                </constraints>
-                                <state key="normal" image="info-2-64"/>
-                                <connections>
-                                    <segue destination="wz7-bG-f5P" kind="show" id="ufF-Me-D9J"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ViX-4e-tSF">
                                 <rect key="frame" x="0.0" y="206" width="375" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -539,16 +528,25 @@
                         <constraints>
                             <constraint firstItem="ViX-4e-tSF" firstAttribute="top" secondItem="mVi-8m-RLd" secondAttribute="bottom" constant="25" id="GAp-fV-PDD"/>
                             <constraint firstItem="HrP-Ln-LxD" firstAttribute="bottom" secondItem="ViX-4e-tSF" secondAttribute="bottom" id="W6M-rb-ewZ"/>
-                            <constraint firstItem="Gtg-xZ-Zh5" firstAttribute="top" secondItem="HrP-Ln-LxD" secondAttribute="top" constant="35" id="Wen-Qc-9xw"/>
                             <constraint firstItem="mVi-8m-RLd" firstAttribute="top" secondItem="HrP-Ln-LxD" secondAttribute="top" constant="45" id="X6r-l9-mMl"/>
                             <constraint firstItem="HrP-Ln-LxD" firstAttribute="trailing" secondItem="ViX-4e-tSF" secondAttribute="trailing" id="dzs-uo-1Pw"/>
                             <constraint firstItem="mVi-8m-RLd" firstAttribute="centerX" secondItem="OeN-5i-b3V" secondAttribute="centerX" id="end-oz-Phq"/>
                             <constraint firstItem="ViX-4e-tSF" firstAttribute="leading" secondItem="HrP-Ln-LxD" secondAttribute="leading" id="sdD-Cv-L05"/>
-                            <constraint firstItem="HrP-Ln-LxD" firstAttribute="trailing" secondItem="Gtg-xZ-Zh5" secondAttribute="trailing" constant="20" id="vul-8C-NOc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HrP-Ln-LxD"/>
                     </view>
-                    <navigationItem key="navigationItem" id="d67-Fx-JK0"/>
+                    <navigationItem key="navigationItem" id="d67-Fx-JK0">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="4NR-NO-WHq">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kxP-C2-P67">
+                                <rect key="frame" x="311" y="0.0" width="48" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="info-2-24"/>
+                                <connections>
+                                    <segue destination="wz7-bG-f5P" kind="show" id="1i9-xq-CCA"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="6nO-e0-LZj" kind="show" identifier="editProfile" id="Vps-cd-vkg"/>
                         <segue destination="JlX-VS-U2s" kind="show" identifier="changeGoal" id="eeb-jY-k8N"/>
@@ -796,6 +794,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4UJ-Fh-6pW" id="pAD-6W-VRK"/>
+                                    <outlet property="delegate" destination="4UJ-Fh-6pW" id="1Bo-Na-V7j"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -869,7 +871,7 @@
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V5q-Du-lFH">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V5q-Du-lFH">
                                 <rect key="frame" x="36" y="221" width="303" height="2"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBz-Dr-Wnx">
@@ -897,11 +899,13 @@
                             <constraint firstItem="dH9-cs-W5c" firstAttribute="trailing" secondItem="Fzz-1Y-Kzy" secondAttribute="trailing" constant="20" id="8v2-5m-xS3"/>
                             <constraint firstItem="93J-1h-uNB" firstAttribute="centerX" secondItem="UtO-T5-xAI" secondAttribute="centerX" id="EGe-cC-TLN"/>
                             <constraint firstItem="DHz-us-qTn" firstAttribute="centerX" secondItem="UtO-T5-xAI" secondAttribute="centerX" id="QAl-Bf-7H2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V5q-Du-lFH" secondAttribute="trailing" constant="20" id="QBB-Hk-Vg2"/>
                             <constraint firstItem="93J-1h-uNB" firstAttribute="top" secondItem="dH9-cs-W5c" secondAttribute="top" constant="45" id="WAI-j4-TEd"/>
                             <constraint firstItem="WBz-Dr-Wnx" firstAttribute="top" secondItem="V5q-Du-lFH" secondAttribute="bottom" constant="35" id="Y9H-Oa-FMJ"/>
                             <constraint firstItem="Fzz-1Y-Kzy" firstAttribute="top" secondItem="V5q-Du-lFH" secondAttribute="bottom" constant="35" id="a1m-tS-dru"/>
                             <constraint firstItem="WBz-Dr-Wnx" firstAttribute="leading" secondItem="dH9-cs-W5c" secondAttribute="leading" constant="20" id="cnZ-dr-jkz"/>
                             <constraint firstItem="V5q-Du-lFH" firstAttribute="top" secondItem="93J-1h-uNB" secondAttribute="bottom" constant="40" id="uLG-oP-iMl"/>
+                            <constraint firstItem="V5q-Du-lFH" firstAttribute="leading" secondItem="UtO-T5-xAI" secondAttribute="leadingMargin" constant="20" id="zBl-Zv-I8p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dH9-cs-W5c"/>
                     </view>
@@ -1097,7 +1101,7 @@
         <image name="008080_Swatch" width="336" height="280"/>
         <image name="graph-32" width="25" height="25"/>
         <image name="home-7-32" width="25" height="25"/>
-        <image name="info-2-64" width="64" height="64"/>
+        <image name="info-2-24" width="24" height="24"/>
         <image name="small-plus3" width="24" height="24"/>
         <image name="trophy-32" width="25" height="25"/>
         <image name="user-32" width="25" height="25"/>
