@@ -138,13 +138,16 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         } else if totalWithSaving == self.goalTarget {
             // Log saving
             self.logSaving(amount: savingAmount)
-            self.database.setGoalCompleted(goalID: goalSelectedID )
+            if (self.goalSelected != "First Time Saver") {
+                self.database.setGoalCompleted(goalID: goalSelectedID )
+            }
             // Delete goal and unwind to home
             createCompletionAlert()
            // createCompletionAlert(title: "Congratulations!  You reached your goal of '\(self.goalSelected)'!")
         } else {
-            print("here")
-            self.database.setGoalCompleted(goalID: goalSelectedID )
+            if (self.goalSelected != "First Time Saver") {
+                self.database.setGoalCompleted(goalID: goalSelectedID )
+            }
             // Calculate amount remaining then proceed
             self.savingRemaining = savingAmount - (goalTarget - currGoalAmount)
             self.logSaving(amount: goalTarget - currGoalAmount)
