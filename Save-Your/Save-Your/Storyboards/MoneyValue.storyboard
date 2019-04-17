@@ -796,6 +796,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4UJ-Fh-6pW" id="pAD-6W-VRK"/>
+                                    <outlet property="delegate" destination="4UJ-Fh-6pW" id="1Bo-Na-V7j"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -869,7 +873,7 @@
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V5q-Du-lFH">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V5q-Du-lFH">
                                 <rect key="frame" x="36" y="221" width="303" height="2"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBz-Dr-Wnx">
@@ -897,11 +901,13 @@
                             <constraint firstItem="dH9-cs-W5c" firstAttribute="trailing" secondItem="Fzz-1Y-Kzy" secondAttribute="trailing" constant="20" id="8v2-5m-xS3"/>
                             <constraint firstItem="93J-1h-uNB" firstAttribute="centerX" secondItem="UtO-T5-xAI" secondAttribute="centerX" id="EGe-cC-TLN"/>
                             <constraint firstItem="DHz-us-qTn" firstAttribute="centerX" secondItem="UtO-T5-xAI" secondAttribute="centerX" id="QAl-Bf-7H2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V5q-Du-lFH" secondAttribute="trailing" constant="20" id="QBB-Hk-Vg2"/>
                             <constraint firstItem="93J-1h-uNB" firstAttribute="top" secondItem="dH9-cs-W5c" secondAttribute="top" constant="45" id="WAI-j4-TEd"/>
                             <constraint firstItem="WBz-Dr-Wnx" firstAttribute="top" secondItem="V5q-Du-lFH" secondAttribute="bottom" constant="35" id="Y9H-Oa-FMJ"/>
                             <constraint firstItem="Fzz-1Y-Kzy" firstAttribute="top" secondItem="V5q-Du-lFH" secondAttribute="bottom" constant="35" id="a1m-tS-dru"/>
                             <constraint firstItem="WBz-Dr-Wnx" firstAttribute="leading" secondItem="dH9-cs-W5c" secondAttribute="leading" constant="20" id="cnZ-dr-jkz"/>
                             <constraint firstItem="V5q-Du-lFH" firstAttribute="top" secondItem="93J-1h-uNB" secondAttribute="bottom" constant="40" id="uLG-oP-iMl"/>
+                            <constraint firstItem="V5q-Du-lFH" firstAttribute="leading" secondItem="UtO-T5-xAI" secondAttribute="leadingMargin" constant="20" id="zBl-Zv-I8p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dH9-cs-W5c"/>
                     </view>

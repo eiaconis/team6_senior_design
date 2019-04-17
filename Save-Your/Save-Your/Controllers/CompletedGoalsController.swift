@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-class CompletedGoalsController: UIViewController {
+class CompletedGoalsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Variables
     let database : DatabaseAccess = DatabaseAccess.getInstance()
@@ -16,7 +16,6 @@ class CompletedGoalsController: UIViewController {
     var goalNames : [String] = [String]()
     var goalNameToPass : String = ""
     var goalIDToPass : String = ""
-    var currDefaultGoalID : String = ""
     
     // Tableview
     @IBOutlet weak var goalTableView: UITableView!
@@ -30,11 +29,6 @@ class CompletedGoalsController: UIViewController {
         let logo = UIImage(named: "saveyour logo-40.png")
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
-        
-        // Get user's current default goal
-        self.database.getUserCurrGoal(uid: (Auth.auth().currentUser?.uid)!) { (goalID) in
-            self.currDefaultGoalID = goalID ?? ""
-        }
 
     }
     
@@ -53,40 +47,35 @@ class CompletedGoalsController: UIViewController {
         let cell = tableView.cellForRow(at: indexPath) as! UITableViewCell
         self.goalNameToPass = (cell.textLabel?.text)!
         self.goalIDToPass = goalIDs[indexPath.row]
-        performSegue(withIdentifier: "completedGoalDetailSegue", sender: self)
+        performSegue(withIdentifier: "completeGoalDetailSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "completedGoalDetailSegue") {
-            let viewController = segue.destination as! GoalDetailsViewController
+        if (segue.identifier == "completeGoalDetailSegue") {
+            let viewController = segue.destination as! CompletedGoalDetailController
             viewController.goalName = goalNameToPass
             viewController.goalID = goalIDToPass
         }
     }
     
-    // Denote anchor for unwinding to goal page
-    @IBAction func unwindToCompletedGoals(segue:UIStoryboardSegue) {
-        updateTableView()
-    }
-    
     func updateTableView() {
-//        let goalsClosure = {(returnedGoalIDs: [String]?) -> Void in
-//            self.goalIDs = returnedGoalIDs ?? []
-//            self.goalNames = [String]()
-//            let goalNameClosure = { (goalName : String?) -> Void in
-//                if goalName != nil {
-//                    if !self.goalNames.contains(goalName!) {
-//                        self.goalNames.append(goalName!)
-//                        self.goalTableView.reloadData()
-//                    }
-//                }
-//            }
-//            self.goalIDs = returnedGoalIDs ?? []
-//            for goalID in self.goalIDs {
-//                self.database.getStringGoalTitle(goalID: goalID, callback: goalNameClosure)
-//            }
-//        }
-//        self.database.getCompletedGoalsForUser(uid: (Auth.auth().currentUser?.uid)!, callback: goalsClosure)
+        let goalsClosure = {(returnedGoalIDs: [String]?) -> Void in
+            self.goalIDs = returnedGoalIDs ?? []
+            self.goalNames = [String]()
+            let goalNameClosure = { (goalName : String?) -> Void in
+                if goalName != nil {
+                    if !self.goalNames.contains(goalName!) {
+                        self.goalNames.append(goalName!)
+                        self.goalTableView.reloadData()
+                    }
+                }
+            }
+            self.goalIDs = returnedGoalIDs ?? []
+            for goalID in self.goalIDs {
+                self.database.getStringGoalTitle(goalID: goalID, callback: goalNameClosure)
+            }
+        }
+        self.database.getAllCompletedGoalsForUser(uid: (Auth.auth().currentUser?.uid)!, callback: goalsClosure)
     }
 
 }

@@ -40,8 +40,8 @@ class CompletedGoalDetailController: UIViewController {
         self.database.getTargetOfGoal(goalId: self.goalID, callback: {(target) -> Void in
             let targetAmount = target ?? 0.0
             let properAmount = self.formatDouble(amount: targetAmount)
-            self.goalTargetLabel.text = "$\(properAmount))"
-            self.currentAmountLabel.text = "$\(properAmount))"
+            self.goalTargetLabel.text = "$\(properAmount)"
+            self.currentAmountLabel.text = "$\(properAmount)"
         })
     }
     
