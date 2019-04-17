@@ -10,8 +10,8 @@ import UIKit
 
 class AccountViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let options = ["Edit Profile", "Change Primary Goal"]
-    let segueIdentifiers = ["editProfile", "changeGoal"]
+    let options = ["Edit Profile", "Change Primary Goal", "View Completed Goals"]
+    let segueIdentifiers = ["editProfile", "changeGoal", "completedGoalsSegue"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

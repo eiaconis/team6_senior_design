@@ -552,6 +552,7 @@
                     <connections>
                         <segue destination="6nO-e0-LZj" kind="show" identifier="editProfile" id="Vps-cd-vkg"/>
                         <segue destination="JlX-VS-U2s" kind="show" identifier="changeGoal" id="eeb-jY-k8N"/>
+                        <segue destination="4UJ-Fh-6pW" kind="show" identifier="completedGoalsSegue" id="TLv-tT-0ds"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSt-Nm-IBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -709,7 +710,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XcB-WW-lZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1980" y="2933"/>
+            <point key="canvasLocation" x="1086" y="2933"/>
         </scene>
         <!--Change Goal Controller-->
         <scene sceneID="VEQ-hD-7x3">
@@ -766,6 +767,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fs-tq-xe1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UJ2-8C-h63" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
+            <point key="canvasLocation" x="1980" y="2933"/>
+        </scene>
+        <!--Completed Goals Controller-->
+        <scene sceneID="Ocr-1f-okc">
+            <objects>
+                <viewController id="4UJ-Fh-6pW" customClass="CompletedGoalsController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="odA-wB-Vc4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed Goals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbr-JF-OVg">
+                                <rect key="frame" x="63" y="133" width="249" height="48"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="48"/>
+                                <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TL0-ha-Dof">
+                                <rect key="frame" x="30" y="211" width="315" height="488"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HSj-E0-r9w">
+                                        <rect key="frame" x="0.0" y="28" width="315" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HSj-E0-r9w" id="cjd-7m-CRL">
+                                            <rect key="frame" x="0.0" y="0.0" width="315" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Efy-Ct-sCN" firstAttribute="trailing" secondItem="TL0-ha-Dof" secondAttribute="trailing" constant="30" id="Okf-Z1-YsE"/>
+                            <constraint firstItem="TL0-ha-Dof" firstAttribute="top" secondItem="Wbr-JF-OVg" secondAttribute="bottom" constant="30" id="PSx-3N-Ktr"/>
+                            <constraint firstItem="Wbr-JF-OVg" firstAttribute="centerX" secondItem="odA-wB-Vc4" secondAttribute="centerX" id="Zpy-gB-7iM"/>
+                            <constraint firstItem="TL0-ha-Dof" firstAttribute="leading" secondItem="Efy-Ct-sCN" secondAttribute="leading" constant="30" id="fMt-ip-FDd"/>
+                            <constraint firstItem="Efy-Ct-sCN" firstAttribute="bottom" secondItem="TL0-ha-Dof" secondAttribute="bottom" constant="30" id="lcS-Hz-cDU"/>
+                            <constraint firstItem="Wbr-JF-OVg" firstAttribute="top" secondItem="Efy-Ct-sCN" secondAttribute="top" constant="45" id="stL-pS-0KV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Efy-Ct-sCN"/>
+                    </view>
+                    <connections>
+                        <outlet property="goalTableView" destination="TL0-ha-Dof" id="XAd-uj-tha"/>
+                        <segue destination="FN1-Sc-MDN" kind="show" identifier="completeGoalDetailSegue" id="4Q4-Kl-Sq9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="seg-XW-53A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="2817" y="2933"/>
         </scene>
         <!--Acknowledgments Controller-->
@@ -804,6 +854,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avH-yA-gWt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2817" y="2156"/>
+        </scene>
+        <!--Completed Goal Detail Controller-->
+        <scene sceneID="b9N-3r-Q1S">
+            <objects>
+                <viewController id="FN1-Sc-MDN" customClass="CompletedGoalDetailController" customModule="Save_Your" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UtO-T5-xAI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93J-1h-uNB">
+                                <rect key="frame" x="107.66666666666669" y="133" width="160" height="48"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="48"/>
+                                <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V5q-Du-lFH">
+                                <rect key="frame" x="36" y="221" width="303" height="2"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBz-Dr-Wnx">
+                                <rect key="frame" x="20" y="258" width="41" height="20"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzz-1Y-Kzy">
+                                <rect key="frame" x="314" y="258" width="41" height="20"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.00%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHz-us-qTn">
+                                <rect key="frame" x="163.66666666666666" y="258" width="48" height="20"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DHz-us-qTn" firstAttribute="top" secondItem="V5q-Du-lFH" secondAttribute="bottom" constant="35" id="4TB-zL-z2R"/>
+                            <constraint firstItem="dH9-cs-W5c" firstAttribute="trailing" secondItem="Fzz-1Y-Kzy" secondAttribute="trailing" constant="20" id="8v2-5m-xS3"/>
+                            <constraint firstItem="93J-1h-uNB" firstAttribute="centerX" secondItem="UtO-T5-xAI" secondAttribute="centerX" id="EGe-cC-TLN"/>
+                            <constraint firstItem="DHz-us-qTn" firstAttribute="centerX" secondItem="UtO-T5-xAI" secondAttribute="centerX" id="QAl-Bf-7H2"/>
+                            <constraint firstItem="93J-1h-uNB" firstAttribute="top" secondItem="dH9-cs-W5c" secondAttribute="top" constant="45" id="WAI-j4-TEd"/>
+                            <constraint firstItem="WBz-Dr-Wnx" firstAttribute="top" secondItem="V5q-Du-lFH" secondAttribute="bottom" constant="35" id="Y9H-Oa-FMJ"/>
+                            <constraint firstItem="Fzz-1Y-Kzy" firstAttribute="top" secondItem="V5q-Du-lFH" secondAttribute="bottom" constant="35" id="a1m-tS-dru"/>
+                            <constraint firstItem="WBz-Dr-Wnx" firstAttribute="leading" secondItem="dH9-cs-W5c" secondAttribute="leading" constant="20" id="cnZ-dr-jkz"/>
+                            <constraint firstItem="V5q-Du-lFH" firstAttribute="top" secondItem="93J-1h-uNB" secondAttribute="bottom" constant="40" id="uLG-oP-iMl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dH9-cs-W5c"/>
+                    </view>
+                    <connections>
+                        <outlet property="currentAmountLabel" destination="WBz-Dr-Wnx" id="egT-cd-XxC"/>
+                        <outlet property="goalNameLabel" destination="93J-1h-uNB" id="UhE-7f-jKd"/>
+                        <outlet property="goalTargetLabel" destination="Fzz-1Y-Kzy" id="iQR-k6-hll"/>
+                        <outlet property="progressBar" destination="V5q-Du-lFH" id="Ezb-dO-ZoE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VeJ-Ha-hMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3625" y="2933"/>
         </scene>
         <!--Item-->
         <scene sceneID="Ku9-6D-wQI">
