@@ -144,6 +144,7 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
            // createCompletionAlert(title: "Congratulations!  You reached your goal of '\(self.goalSelected)'!")
         } else {
             print("here")
+            self.database.setGoalCompleted(goalID: goalSelectedID )
             // Calculate amount remaining then proceed
             self.savingRemaining = savingAmount - (goalTarget - currGoalAmount)
             self.logSaving(amount: goalTarget - currGoalAmount)
