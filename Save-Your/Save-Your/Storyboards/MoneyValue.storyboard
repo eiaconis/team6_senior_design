@@ -505,17 +505,6 @@
                                 <color key="textColor" red="0.93333333330000001" green="0.46274509800000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtg-xZ-Zh5">
-                                <rect key="frame" x="320" y="123" width="35" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="iPC-Bu-iPE"/>
-                                    <constraint firstAttribute="height" constant="35" id="rBz-1a-n7E"/>
-                                </constraints>
-                                <state key="normal" image="info-2-64"/>
-                                <connections>
-                                    <segue destination="wz7-bG-f5P" kind="show" id="ufF-Me-D9J"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ViX-4e-tSF">
                                 <rect key="frame" x="0.0" y="206" width="375" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -539,16 +528,25 @@
                         <constraints>
                             <constraint firstItem="ViX-4e-tSF" firstAttribute="top" secondItem="mVi-8m-RLd" secondAttribute="bottom" constant="25" id="GAp-fV-PDD"/>
                             <constraint firstItem="HrP-Ln-LxD" firstAttribute="bottom" secondItem="ViX-4e-tSF" secondAttribute="bottom" id="W6M-rb-ewZ"/>
-                            <constraint firstItem="Gtg-xZ-Zh5" firstAttribute="top" secondItem="HrP-Ln-LxD" secondAttribute="top" constant="35" id="Wen-Qc-9xw"/>
                             <constraint firstItem="mVi-8m-RLd" firstAttribute="top" secondItem="HrP-Ln-LxD" secondAttribute="top" constant="45" id="X6r-l9-mMl"/>
                             <constraint firstItem="HrP-Ln-LxD" firstAttribute="trailing" secondItem="ViX-4e-tSF" secondAttribute="trailing" id="dzs-uo-1Pw"/>
                             <constraint firstItem="mVi-8m-RLd" firstAttribute="centerX" secondItem="OeN-5i-b3V" secondAttribute="centerX" id="end-oz-Phq"/>
                             <constraint firstItem="ViX-4e-tSF" firstAttribute="leading" secondItem="HrP-Ln-LxD" secondAttribute="leading" id="sdD-Cv-L05"/>
-                            <constraint firstItem="HrP-Ln-LxD" firstAttribute="trailing" secondItem="Gtg-xZ-Zh5" secondAttribute="trailing" constant="20" id="vul-8C-NOc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HrP-Ln-LxD"/>
                     </view>
-                    <navigationItem key="navigationItem" id="d67-Fx-JK0"/>
+                    <navigationItem key="navigationItem" id="d67-Fx-JK0">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="4NR-NO-WHq">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kxP-C2-P67">
+                                <rect key="frame" x="311" y="0.0" width="48" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="info-2-24"/>
+                                <connections>
+                                    <segue destination="wz7-bG-f5P" kind="show" id="1i9-xq-CCA"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="6nO-e0-LZj" kind="show" identifier="editProfile" id="Vps-cd-vkg"/>
                         <segue destination="JlX-VS-U2s" kind="show" identifier="changeGoal" id="eeb-jY-k8N"/>
@@ -1103,7 +1101,7 @@
         <image name="008080_Swatch" width="336" height="280"/>
         <image name="graph-32" width="25" height="25"/>
         <image name="home-7-32" width="25" height="25"/>
-        <image name="info-2-64" width="64" height="64"/>
+        <image name="info-2-24" width="24" height="24"/>
         <image name="small-plus3" width="24" height="24"/>
         <image name="trophy-32" width="25" height="25"/>
         <image name="user-32" width="25" height="25"/>
