@@ -88,6 +88,11 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         self.database.getStateOfGoal(goalId: goalSelectedID, callback: {(prevAmount) -> Void in            self.currGoalAmount = prevAmount ?? 0.0
         })
         
+        self.database.getTargetOfGoal(goalId: goalSelectedID, callback: {(targ) -> Void in            self.goalTarget = targ ?? 0
+            
+        })
+
+        
         
         // Set label text
         categoryLabel.text = goalSelected
@@ -124,6 +129,7 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
         
         // Verify saved amount doesn't complete a goal
         var totalWithSaving = savingAmount + currGoalAmount
+        print("here\(totalWithSaving)")
         if totalWithSaving < self.goalTarget {
             // Normal transaction if target not reached
             self.logSaving(amount: savingAmount)
@@ -134,14 +140,45 @@ class ManualSaveMoneyViewController: UIViewController, UIPickerViewDelegate, UIP
             self.logSaving(amount: savingAmount)
             self.database.setGoalCompleted(goalID: goalSelectedID )
             // Delete goal and unwind to home
-            createCompletionAlert(title: "Congratulations!  You reached your goal of '\(self.goalSelected)'!")
+            createCompletionAlert()
+           // createCompletionAlert(title: "Congratulations!  You reached your goal of '\(self.goalSelected)'!")
         } else {
+            print("here")
             // Calculate amount remaining then proceed
             self.savingRemaining = savingAmount - (goalTarget - currGoalAmount)
             self.logSaving(amount: goalTarget - currGoalAmount)
-            createExceedAlert(title: "Congratulations!  You have exceeded your goal of '\(self.goalSelected)'!  Please allocate rest of saving to another goal")
+            createExceedAlert()
         }
     }
+    
+    func createCompletionAlert() {
+        let alert = UIAlertController(title: "Congratulations!  You reached your goal of '\(self.goalSelected)'!", message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: {(action) in self.deleteGoalAndSegueToNewDefault(goalID: self.goalSelectedID)}))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func createExceedAlert() {
+        let alert = UIAlertController(title: "Congratulations!  You have exceeded your goal of '\(self.goalSelected)'!  Please allocate rest of saving to another goal", message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: {(action) in self.deleteGoalAndSegueToSavingAllocation(goalID: self.goalSelectedID)}))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // Deletes goal and segues to new default goal storyboard
+    func deleteGoalAndSegueToNewDefault(goalID: String) {
+        //        self.database.deleteGoal(goalID: goalID)
+        print("deleting goal - not really right now")
+        performSegue(withIdentifier: "newDefaultGoalSegueFromManual", sender: self)
+    }
+    
+    // Deletes goal and segues to allocating extra savings
+    func deleteGoalAndSegueToSavingAllocation(goalID: String) {
+        //        self.database.deleteGoal(goalID: goalID)
+        print("deleting goal - not really right now")
+        performSegue(withIdentifier: "manualToAddBalance", sender: self)
+    }
+    
     
     // Handles logging a saving given the amount
     func logSaving(amount: Double) {
