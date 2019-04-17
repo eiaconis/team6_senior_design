@@ -150,12 +150,22 @@ class EditGoalController: UIViewController {
     
     // Handles deletion of goal and unwinding to home
     func deleteGoalAndUnwind() {
-        self.database.deleteGoal(goalID: goalID)
-        if goalID == currDefaultGoalID {
-            performSegue(withIdentifier: "newDefaultGoalSegueFromEditGoal", sender: self)
+        if(goalName != "First Time Saver") {
+            self.database.deleteGoal(goalID: goalID)
+            if goalID == currDefaultGoalID {
+                performSegue(withIdentifier: "newDefaultGoalSegueFromEditGoal", sender: self)
+            } else {
+                performSegue(withIdentifier: "unwindSegueToGoalFeed", sender: self)
+            }
         } else {
-            performSegue(withIdentifier: "unwindSegueToGoalFeed", sender: self)
+            cannotDeleteGoal(title: "Cannot delete this goal.")
         }
     }
 
+    func cannotDeleteGoal(title: String) {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in self.performSegue(withIdentifier: "unwindSegueToGoalDetails", sender: self)}))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }
